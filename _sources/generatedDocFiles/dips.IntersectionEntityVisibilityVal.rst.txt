@@ -1,0 +1,7 @@
+dips.IntersectionEntityVisibilityVal module
+===========================================
+
+.. automodule:: dips.IntersectionEntityVisibilityVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

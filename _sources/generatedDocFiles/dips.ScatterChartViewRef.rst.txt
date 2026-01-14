@@ -1,0 +1,7 @@
+dips.ScatterChartViewRef module
+===============================
+
+.. automodule:: dips.ScatterChartViewRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,30 @@
+.. Dips documentation master file, created by
+   sphinx-quickstart on Mon Jan 12 13:07:19 2026.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Dips Scripting Reference Manual
+==================
+
+Prerequisites
+--------------------
+Before you begin, ensure you have the Dips program installed. You must have at minimum Version 9 in order to use this feature.
+
+
+Python Environment
+--------------------
+There are two methods to run a script, which differ in the Python environment used:
+
+1. Running on RocScript Editor
+	* Comes pre-installed with Dips and includes the **Dips Python API library**
+	* For all-level users
+2. Running on your own Python environment
+	* Requires downloading the **Dips Python API library**
+	* For advanced users
+
+
+.. toctree::
+   :maxdepth: 5
+   :caption: Dips API Reference:
+
+   generatedDocFiles/modules

@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dips.ValidatableResult_ProtoReference_FoldEntityInfoVal module &#8212; dips  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'generatedDocFiles/dips.ValidatableResult_ProtoReference_FoldEntityInfoVal';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal module" href="dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal.html" />
+    <link rel="prev" title="dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal module" href="dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="dips  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="dips  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="modules.html">
+    dips
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="modules.html">
+    dips
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dips.html">dips package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dips.AnchorPointVal.html">dips.AnchorPointVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.AngleDataVal.html">dips.AngleDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.AnnotativeTools2DVal.html">dips.AnnotativeTools2DVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ApplicationManager.html">dips.ApplicationManager module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ArrowToolEntityInfoRef.html">dips.ArrowToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ArrowToolEntityInfoVal.html">dips.ArrowToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.AutomaticClusterAnalysisSettingsVal.html">dips.AutomaticClusterAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.BuiltInDataDescriptors.html">dips.BuiltInDataDescriptors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.BuiltInDataFormatters.html">dips.BuiltInDataFormatters module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CircularWindowVal.html">dips.CircularWindowVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ClusterWindowVal.html">dips.ClusterWindowVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ColorSurrogateVal.html">dips.ColorSurrogateVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ConeToolEntityInfoRef.html">dips.ConeToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ConeToolEntityInfoVal.html">dips.ConeToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ConeVal.html">dips.ConeVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ContourEntityVisibilityVal.html">dips.ContourEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ContourOptionsVal.html">dips.ContourOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CumulativeChartViewRef.html">dips.CumulativeChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CumulativeChartViewVal.html">dips.CumulativeChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CumulativePlotSettingsVal.html">dips.CumulativePlotSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CurvedWindowVal.html">dips.CurvedWindowVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CustomColumnCollectionVal.html">dips.CustomColumnCollectionVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CustomHistogramOptionsVal.html">dips.CustomHistogramOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CustomRangeVal.html">dips.CustomRangeVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CustomRowRawDataVal.html">dips.CustomRowRawDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DataDescriptorVal.html">dips.DataDescriptorVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DataFilterRef.html">dips.DataFilterRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DataFilterVal.html">dips.DataFilterVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DataFormatterVal.html">dips.DataFormatterVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DataIdentifierVal.html">dips.DataIdentifierVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DipsAPI_pb2.html">dips.DipsAPI_pb2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DipsAPI_pb2_grpc.html">dips.DipsAPI_pb2_grpc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DipsApp.html">dips.DipsApp module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DiscontinuityDataVal.html">dips.DiscontinuityDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.EllipseToolEntityInfoRef.html">dips.EllipseToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.EllipseToolEntityInfoVal.html">dips.EllipseToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FillFormatVal.html">dips.FillFormatVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldEntityInfoRef.html">dips.FoldEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldEntityInfoVal.html">dips.FoldEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldEntityOptionsVal.html">dips.FoldEntityOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldEntityVisibilityRef.html">dips.FoldEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldEntityVisibilityVal.html">dips.FoldEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldWindowEntityInfoVal.html">dips.FoldWindowEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldWindowEntityVisibilityRef.html">dips.FoldWindowEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldWindowEntityVisibilityVal.html">dips.FoldWindowEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FreehandWindowVal.html">dips.FreehandWindowVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FullDataFormatVal.html">dips.FullDataFormatVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.GlobalPlaneEntityVisibilityVal.html">dips.GlobalPlaneEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.HistogramChartViewRef.html">dips.HistogramChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.HistogramChartViewVal.html">dips.HistogramChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.HistogramPlotSettingsVal.html">dips.HistogramPlotSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.IntersectionEntityVisibilityVal.html">dips.IntersectionEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.IntersectionOptionsVal.html">dips.IntersectionOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.IntervalVal.html">dips.IntervalVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointFrequencyAnalysisSettingsVal.html">dips.JointFrequencyAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointFrequencyChartViewRef.html">dips.JointFrequencyChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointFrequencyChartViewVal.html">dips.JointFrequencyChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointSpacingAnalysisSettingsVal.html">dips.JointSpacingAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointSpacingChartViewRef.html">dips.JointSpacingChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointSpacingChartViewVal.html">dips.JointSpacingChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.KinematicAnalysisEntityVisibilityVal.html">dips.KinematicAnalysisEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.KinematicAnalysisSettingsVal.html">dips.KinematicAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LatLongVal.html">dips.LatLongVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LengthDataVal.html">dips.LengthDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineFormatVal.html">dips.LineFormatVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineIntersectionCalculatorToolEntityInfoRef.html">dips.LineIntersectionCalculatorToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineIntersectionCalculatorToolEntityInfoVal.html">dips.LineIntersectionCalculatorToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineToolEntityInfoRef.html">dips.LineToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineToolEntityInfoVal.html">dips.LineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineationVal.html">dips.LineationVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.MeasureAngleToolEntityInfoRef.html">dips.MeasureAngleToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.MeasureAngleToolEntityInfoVal.html">dips.MeasureAngleToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.OrientationDataSetRef.html">dips.OrientationDataSetRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.OrientationDataSetVal.html">dips.OrientationDataSetVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PitchGridToolEntityInfoRef.html">dips.PitchGridToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PitchGridToolEntityInfoVal.html">dips.PitchGridToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneEntityInfoRef.html">dips.PlaneEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneEntityInfoVal.html">dips.PlaneEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneEntityVisibilityRef.html">dips.PlaneEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneEntityVisibilityVal.html">dips.PlaneEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneIntersectionCalculatorToolEntityInfoRef.html">dips.PlaneIntersectionCalculatorToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneIntersectionCalculatorToolEntityInfoVal.html">dips.PlaneIntersectionCalculatorToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneOptionsVal.html">dips.PlaneOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneVal.html">dips.PlaneVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PoleEntityOptionsVal.html">dips.PoleEntityOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PoleEntityVisibilityVal.html">dips.PoleEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PolygonToolEntityInfoRef.html">dips.PolygonToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PolygonToolEntityInfoVal.html">dips.PolygonToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PolylineToolEntityInfoRef.html">dips.PolylineToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PolylineToolEntityInfoVal.html">dips.PolylineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProcessedDataVal.html">dips.ProcessedDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProjStubRef.html">dips.ProjStubRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProjStubVal.html">dips.ProjStubVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProtobufCollectionWrappers.html">dips.ProtobufCollectionWrappers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.QualitativeQuantitativeAnalysisSettingsVal.html">dips.QualitativeQuantitativeAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.QualitativeQuantitativeChartViewRef.html">dips.QualitativeQuantitativeChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.QualitativeQuantitativeChartViewVal.html">dips.QualitativeQuantitativeChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.QuantitativeContourSettingsVal.html">dips.QuantitativeContourSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RQDAnalysisChartViewRef.html">dips.RQDAnalysisChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RQDAnalysisChartViewVal.html">dips.RQDAnalysisChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RQDAnalysisSettingsVal.html">dips.RQDAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RectangleToolEntityInfoRef.html">dips.RectangleToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RectangleToolEntityInfoVal.html">dips.RectangleToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ReportingConventionResultVal.html">dips.ReportingConventionResultVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RosettePresetOptionsVal.html">dips.RosettePresetOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RosetteSettingsVal.html">dips.RosetteSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RosetteViewRef.html">dips.RosetteViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RosetteViewVal.html">dips.RosetteViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ScatterChartViewRef.html">dips.ScatterChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ScatterChartViewVal.html">dips.ScatterChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ScatterPlotSettingsVal.html">dips.ScatterPlotSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityInfoRef.html">dips.SetEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityInfoVal.html">dips.SetEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityOptionsVal.html">dips.SetEntityOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityVisibilityRef.html">dips.SetEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityVisibilityVal.html">dips.SetEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetStatisticsSettingsVal.html">dips.SetStatisticsSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetVersusSetVal.html">dips.SetVersusSetVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetWindowEntityInfoVal.html">dips.SetWindowEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetWindowEntityVisibilityRef.html">dips.SetWindowEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetWindowEntityVisibilityVal.html">dips.SetWindowEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.StatisticalDistributionFilterVal.html">dips.StatisticalDistributionFilterVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet2DPresetOptionsVal.html">dips.Stereonet2DPresetOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet2DViewRef.html">dips.Stereonet2DViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet2DViewVal.html">dips.Stereonet2DViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet3DPresetOptionsVal.html">dips.Stereonet3DPresetOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet3DViewRef.html">dips.Stereonet3DViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet3DViewVal.html">dips.Stereonet3DViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.StereonetOverlayEntityVisibilityVal.html">dips.StereonetOverlayEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.StereonetOverlaySettingsVal.html">dips.StereonetOverlaySettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.StereonetProjectionModeVal.html">dips.StereonetProjectionModeVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SurveyDataVal.html">dips.SurveyDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SymbolDisplaySettingVal.html">dips.SymbolDisplaySettingVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SymbolicSettingsVal.html">dips.SymbolicSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TextFormatVal.html">dips.TextFormatVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TextToolEntityInfoRef.html">dips.TextToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TextToolEntityInfoVal.html">dips.TextToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TraverseEntityOptionsVal.html">dips.TraverseEntityOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TraverseEntityVisibilityRef.html">dips.TraverseEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TraverseEntityVisibilityVal.html">dips.TraverseEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TrendLineToolEntityInfoRef.html">dips.TrendLineToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TrendLineToolEntityInfoVal.html">dips.TrendLineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TrendPlungeVal.html">dips.TrendPlungeVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.UnitSystemResultVal.html">dips.UnitSystemResultVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.UserPlaneEntityOptionsVal.html">dips.UserPlaneEntityOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResultVal.html">dips.ValidatableResultVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_ConeToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_ConeToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal module</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">dips.ValidatableResult_ProtoReference_FoldEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_LineToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_LineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_OrientationDataSetVal.html">dips.ValidatableResult_ProtoReference_OrientationDataSetVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_PlaneEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PlaneEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_SetEntityInfoVal.html">dips.ValidatableResult_ProtoReference_SetEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_TextToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_TextToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidationErrorVal.html">dips.ValidationErrorVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Vector2DVal.html">dips.Vector2DVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Vector3Val.html">dips.Vector3Val module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.VectorDensityContourSettingsVal.html">dips.VectorDensityContourSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.WeightingSettingsVal.html">dips.WeightingSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.WrappedFreehandWindowVal.html">dips.WrappedFreehandWindowVal module</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dips</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dips.html" class="nav-link">dips package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">dips.ValidatableResult_ProtoReference_FoldEntityInfoVal module</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-dips.ValidatableResult_ProtoReference_FoldEntityInfoVal">
+<span id="dips-validatableresult-protoreference-foldentityinfoval-module"></span><h1>dips.ValidatableResult_ProtoReference_FoldEntityInfoVal module<a class="headerlink" href="#module-dips.ValidatableResult_ProtoReference_FoldEntityInfoVal" title="Link to this heading">#</a></h1>
+<p>Generated wrapper for ValidatableResult_ProtoReference_FoldEntityInfo protobuf message.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.</span></span><span class="sig-name descname"><span class="pre">ValidatableResult_ProtoReference_FoldEntityInfoVal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="dips.FoldEntityInfoRef.html#dips.FoldEntityInfoRef.FoldEntityInfoRef" title="dips.FoldEntityInfoRef.FoldEntityInfoRef"><span class="pre">FoldEntityInfoRef</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proto_message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_to_connect_on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Simple wrapper for ValidatableResult_ProtoReference_FoldEntityInfo with Pythonic getters and setters.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.copy" title="Link to this definition">#</a></dt>
+<dd><p>Create a copy of this wrapper.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.errors">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">errors</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dips.ValidationErrorVal.html#dips.ValidationErrorVal.ValidationErrorVal" title="dips.ValidationErrorVal.ValidationErrorVal"><span class="pre">ValidationErrorVal</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.errors" title="Link to this definition">#</a></dt>
+<dd><p>Get the Errors field as a list of wrappers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.from_proto">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_proto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proto_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.from_proto" title="Link to this definition">#</a></dt>
+<dd><p>Create wrapper from existing protobuf message.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.result">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">result</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dips.FoldEntityInfoRef.html#dips.FoldEntityInfoRef.FoldEntityInfoRef" title="dips.FoldEntityInfoRef.FoldEntityInfoRef"><span class="pre">FoldEntityInfoRef</span></a></span><a class="headerlink" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.result" title="Link to this definition">#</a></dt>
+<dd><p>Get the Result field as a reference.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.to_proto">
+<span class="sig-name descname"><span class="pre">to_proto</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.to_proto" title="Link to this definition">#</a></dt>
+<dd><p>Get the underlying protobuf message.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_FoldEntityInfoVal</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.copy"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_FoldEntityInfoVal.copy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.errors"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_FoldEntityInfoVal.errors</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.from_proto"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_FoldEntityInfoVal.from_proto()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.result"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_FoldEntityInfoVal.result</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal.to_proto"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_FoldEntityInfoVal.to_proto()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generatedDocFiles/dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Rocscience.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

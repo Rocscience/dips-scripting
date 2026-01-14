@@ -1,0 +1,7 @@
+dips.CumulativeChartViewRef module
+==================================
+
+.. automodule:: dips.CumulativeChartViewRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

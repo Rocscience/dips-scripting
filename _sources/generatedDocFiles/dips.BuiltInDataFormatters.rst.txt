@@ -1,0 +1,7 @@
+dips.BuiltInDataFormatters module
+=================================
+
+.. automodule:: dips.BuiltInDataFormatters
+   :members:
+   :show-inheritance:
+   :undoc-members:

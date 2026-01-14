@@ -1,0 +1,7 @@
+dips.AnnotativeTools2DVal module
+================================
+
+.. automodule:: dips.AnnotativeTools2DVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

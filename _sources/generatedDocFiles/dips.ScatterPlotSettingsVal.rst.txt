@@ -1,0 +1,7 @@
+dips.ScatterPlotSettingsVal module
+==================================
+
+.. automodule:: dips.ScatterPlotSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+dips.CustomRangeVal module
+==========================
+
+.. automodule:: dips.CustomRangeVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

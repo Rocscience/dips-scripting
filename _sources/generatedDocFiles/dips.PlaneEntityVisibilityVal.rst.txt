@@ -1,0 +1,7 @@
+dips.PlaneEntityVisibilityVal module
+====================================
+
+.. automodule:: dips.PlaneEntityVisibilityVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

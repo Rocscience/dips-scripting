@@ -1,0 +1,7 @@
+dips.ValidatableResult\_ProtoReference\_PolylineToolEntityInfoVal module
+========================================================================
+
+.. automodule:: dips.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

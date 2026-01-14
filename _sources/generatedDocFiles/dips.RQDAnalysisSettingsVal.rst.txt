@@ -1,0 +1,7 @@
+dips.RQDAnalysisSettingsVal module
+==================================
+
+.. automodule:: dips.RQDAnalysisSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

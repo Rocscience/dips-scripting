@@ -1,0 +1,7 @@
+dips.SetVersusSetVal module
+===========================
+
+.. automodule:: dips.SetVersusSetVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

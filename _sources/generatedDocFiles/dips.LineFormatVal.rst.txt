@@ -1,0 +1,7 @@
+dips.LineFormatVal module
+=========================
+
+.. automodule:: dips.LineFormatVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

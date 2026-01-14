@@ -1,0 +1,7 @@
+dips.RosettePresetOptionsVal module
+===================================
+
+.. automodule:: dips.RosettePresetOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

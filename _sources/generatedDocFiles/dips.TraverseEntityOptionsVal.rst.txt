@@ -1,0 +1,7 @@
+dips.TraverseEntityOptionsVal module
+====================================
+
+.. automodule:: dips.TraverseEntityOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

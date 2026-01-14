@@ -1,0 +1,7 @@
+dips.PolylineToolEntityInfoVal module
+=====================================
+
+.. automodule:: dips.PolylineToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

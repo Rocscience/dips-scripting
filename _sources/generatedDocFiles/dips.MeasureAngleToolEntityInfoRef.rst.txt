@@ -1,0 +1,7 @@
+dips.MeasureAngleToolEntityInfoRef module
+=========================================
+
+.. automodule:: dips.MeasureAngleToolEntityInfoRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

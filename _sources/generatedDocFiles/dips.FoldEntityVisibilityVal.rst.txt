@@ -1,0 +1,7 @@
+dips.FoldEntityVisibilityVal module
+===================================
+
+.. automodule:: dips.FoldEntityVisibilityVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

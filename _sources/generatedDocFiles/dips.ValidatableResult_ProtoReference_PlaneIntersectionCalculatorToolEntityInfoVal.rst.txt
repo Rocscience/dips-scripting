@@ -1,0 +1,7 @@
+dips.ValidatableResult\_ProtoReference\_PlaneIntersectionCalculatorToolEntityInfoVal module
+===========================================================================================
+
+.. automodule:: dips.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

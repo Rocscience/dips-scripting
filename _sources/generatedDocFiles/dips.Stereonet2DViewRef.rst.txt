@@ -1,0 +1,7 @@
+dips.Stereonet2DViewRef module
+==============================
+
+.. automodule:: dips.Stereonet2DViewRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

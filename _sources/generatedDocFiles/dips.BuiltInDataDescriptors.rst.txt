@@ -1,0 +1,7 @@
+dips.BuiltInDataDescriptors module
+==================================
+
+.. automodule:: dips.BuiltInDataDescriptors
+   :members:
+   :show-inheritance:
+   :undoc-members:

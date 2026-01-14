@@ -1,0 +1,7 @@
+dips.PitchGridToolEntityInfoVal module
+======================================
+
+.. automodule:: dips.PitchGridToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

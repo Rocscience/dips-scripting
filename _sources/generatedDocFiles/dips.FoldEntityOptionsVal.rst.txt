@@ -1,0 +1,7 @@
+dips.FoldEntityOptionsVal module
+================================
+
+.. automodule:: dips.FoldEntityOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+dips.FreehandWindowVal module
+=============================
+
+.. automodule:: dips.FreehandWindowVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

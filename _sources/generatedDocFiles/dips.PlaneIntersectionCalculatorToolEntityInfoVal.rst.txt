@@ -1,0 +1,7 @@
+dips.PlaneIntersectionCalculatorToolEntityInfoVal module
+========================================================
+
+.. automodule:: dips.PlaneIntersectionCalculatorToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

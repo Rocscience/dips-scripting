@@ -1,0 +1,7 @@
+dips.TrendPlungeVal module
+==========================
+
+.. automodule:: dips.TrendPlungeVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

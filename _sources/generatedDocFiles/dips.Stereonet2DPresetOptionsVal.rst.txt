@@ -1,0 +1,7 @@
+dips.Stereonet2DPresetOptionsVal module
+=======================================
+
+.. automodule:: dips.Stereonet2DPresetOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

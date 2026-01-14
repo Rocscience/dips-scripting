@@ -1,0 +1,7 @@
+dips.AnchorPointVal module
+==========================
+
+.. automodule:: dips.AnchorPointVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

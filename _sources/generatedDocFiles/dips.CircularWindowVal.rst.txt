@@ -1,0 +1,7 @@
+dips.CircularWindowVal module
+=============================
+
+.. automodule:: dips.CircularWindowVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

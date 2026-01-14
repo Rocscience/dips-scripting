@@ -1,0 +1,7 @@
+dips.FoldWindowEntityInfoVal module
+===================================
+
+.. automodule:: dips.FoldWindowEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

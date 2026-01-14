@@ -1,0 +1,7 @@
+dips.QualitativeQuantitativeChartViewVal module
+===============================================
+
+.. automodule:: dips.QualitativeQuantitativeChartViewVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

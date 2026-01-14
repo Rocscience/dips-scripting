@@ -1,0 +1,7 @@
+dips.RosetteViewRef module
+==========================
+
+.. automodule:: dips.RosetteViewRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

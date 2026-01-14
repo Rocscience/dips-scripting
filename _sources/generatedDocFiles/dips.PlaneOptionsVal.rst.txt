@@ -1,0 +1,7 @@
+dips.PlaneOptionsVal module
+===========================
+
+.. automodule:: dips.PlaneOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

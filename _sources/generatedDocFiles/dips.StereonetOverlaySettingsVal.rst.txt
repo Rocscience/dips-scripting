@@ -1,0 +1,7 @@
+dips.StereonetOverlaySettingsVal module
+=======================================
+
+.. automodule:: dips.StereonetOverlaySettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

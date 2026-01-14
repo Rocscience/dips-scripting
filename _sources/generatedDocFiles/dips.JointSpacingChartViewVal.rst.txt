@@ -1,0 +1,7 @@
+dips.JointSpacingChartViewVal module
+====================================
+
+.. automodule:: dips.JointSpacingChartViewVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

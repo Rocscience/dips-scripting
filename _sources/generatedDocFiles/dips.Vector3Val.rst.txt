@@ -1,0 +1,7 @@
+dips.Vector3Val module
+======================
+
+.. automodule:: dips.Vector3Val
+   :members:
+   :show-inheritance:
+   :undoc-members:

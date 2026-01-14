@@ -1,0 +1,7 @@
+dips.ProtobufCollectionWrappers module
+======================================
+
+.. automodule:: dips.ProtobufCollectionWrappers
+   :members:
+   :show-inheritance:
+   :undoc-members:

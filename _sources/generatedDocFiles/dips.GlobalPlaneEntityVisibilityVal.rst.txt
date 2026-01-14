@@ -1,0 +1,7 @@
+dips.GlobalPlaneEntityVisibilityVal module
+==========================================
+
+.. automodule:: dips.GlobalPlaneEntityVisibilityVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

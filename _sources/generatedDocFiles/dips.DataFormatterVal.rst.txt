@@ -1,0 +1,7 @@
+dips.DataFormatterVal module
+============================
+
+.. automodule:: dips.DataFormatterVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

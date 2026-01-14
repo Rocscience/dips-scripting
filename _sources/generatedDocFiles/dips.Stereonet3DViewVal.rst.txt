@@ -1,0 +1,7 @@
+dips.Stereonet3DViewVal module
+==============================
+
+.. automodule:: dips.Stereonet3DViewVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

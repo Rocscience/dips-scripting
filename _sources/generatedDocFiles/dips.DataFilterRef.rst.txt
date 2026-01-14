@@ -1,0 +1,7 @@
+dips.DataFilterRef module
+=========================
+
+.. automodule:: dips.DataFilterRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+dips.WeightingSettingsVal module
+================================
+
+.. automodule:: dips.WeightingSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

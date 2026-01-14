@@ -1,0 +1,7 @@
+dips.CurvedWindowVal module
+===========================
+
+.. automodule:: dips.CurvedWindowVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

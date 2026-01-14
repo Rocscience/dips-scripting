@@ -1,0 +1,7 @@
+dips.ValidatableResult\_ProtoReference\_PolygonToolEntityInfoVal module
+=======================================================================
+
+.. automodule:: dips.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

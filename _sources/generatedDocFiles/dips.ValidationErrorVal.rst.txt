@@ -1,0 +1,7 @@
+dips.ValidationErrorVal module
+==============================
+
+.. automodule:: dips.ValidationErrorVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

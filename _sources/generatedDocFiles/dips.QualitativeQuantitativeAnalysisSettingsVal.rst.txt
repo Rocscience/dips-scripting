@@ -1,0 +1,7 @@
+dips.QualitativeQuantitativeAnalysisSettingsVal module
+======================================================
+
+.. automodule:: dips.QualitativeQuantitativeAnalysisSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

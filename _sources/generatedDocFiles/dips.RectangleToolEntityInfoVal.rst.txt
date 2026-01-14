@@ -1,0 +1,7 @@
+dips.RectangleToolEntityInfoVal module
+======================================
+
+.. automodule:: dips.RectangleToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

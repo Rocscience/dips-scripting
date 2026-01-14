@@ -1,0 +1,7 @@
+dips.PlaneEntityInfoVal module
+==============================
+
+.. automodule:: dips.PlaneEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

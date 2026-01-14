@@ -1,0 +1,7 @@
+dips.AutomaticClusterAnalysisSettingsVal module
+===============================================
+
+.. automodule:: dips.AutomaticClusterAnalysisSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

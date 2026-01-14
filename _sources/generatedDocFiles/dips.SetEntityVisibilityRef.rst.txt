@@ -1,0 +1,7 @@
+dips.SetEntityVisibilityRef module
+==================================
+
+.. automodule:: dips.SetEntityVisibilityRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

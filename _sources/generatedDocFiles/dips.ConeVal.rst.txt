@@ -1,0 +1,7 @@
+dips.ConeVal module
+===================
+
+.. automodule:: dips.ConeVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

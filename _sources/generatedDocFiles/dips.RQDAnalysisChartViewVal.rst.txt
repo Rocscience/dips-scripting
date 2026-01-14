@@ -1,0 +1,7 @@
+dips.RQDAnalysisChartViewVal module
+===================================
+
+.. automodule:: dips.RQDAnalysisChartViewVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

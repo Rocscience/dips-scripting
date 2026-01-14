@@ -1,0 +1,7 @@
+dips.ValidatableResult\_ProtoReference\_RectangleToolEntityInfoVal module
+=========================================================================
+
+.. automodule:: dips.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+dips.SurveyDataVal module
+=========================
+
+.. automodule:: dips.SurveyDataVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

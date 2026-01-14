@@ -1,0 +1,7 @@
+dips.TextFormatVal module
+=========================
+
+.. automodule:: dips.TextFormatVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

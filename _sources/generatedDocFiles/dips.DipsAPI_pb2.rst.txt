@@ -1,0 +1,7 @@
+dips.DipsAPI\_pb2 module
+========================
+
+.. automodule:: dips.DipsAPI_pb2
+   :members:
+   :show-inheritance:
+   :undoc-members:

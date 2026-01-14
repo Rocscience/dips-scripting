@@ -1,0 +1,7 @@
+dips.ValidatableResult\_ProtoReference\_PitchGridToolEntityInfoVal module
+=========================================================================
+
+.. automodule:: dips.ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

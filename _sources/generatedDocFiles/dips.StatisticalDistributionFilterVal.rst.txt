@@ -1,0 +1,7 @@
+dips.StatisticalDistributionFilterVal module
+============================================
+
+.. automodule:: dips.StatisticalDistributionFilterVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

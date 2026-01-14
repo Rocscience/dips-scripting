@@ -1,0 +1,7 @@
+dips.IntersectionOptionsVal module
+==================================
+
+.. automodule:: dips.IntersectionOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

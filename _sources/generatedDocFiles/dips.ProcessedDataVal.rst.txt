@@ -1,0 +1,7 @@
+dips.ProcessedDataVal module
+============================
+
+.. automodule:: dips.ProcessedDataVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

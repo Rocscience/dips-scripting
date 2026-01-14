@@ -1,0 +1,7 @@
+dips.DataDescriptorVal module
+=============================
+
+.. automodule:: dips.DataDescriptorVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

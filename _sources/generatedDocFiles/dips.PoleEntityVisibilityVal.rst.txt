@@ -1,0 +1,7 @@
+dips.PoleEntityVisibilityVal module
+===================================
+
+.. automodule:: dips.PoleEntityVisibilityVal
+   :members:
+   :show-inheritance:
+   :undoc-members:
