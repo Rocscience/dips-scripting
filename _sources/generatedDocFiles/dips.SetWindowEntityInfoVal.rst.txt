@@ -1,0 +1,7 @@
+dips.SetWindowEntityInfoVal module
+==================================
+
+.. automodule:: dips.SetWindowEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

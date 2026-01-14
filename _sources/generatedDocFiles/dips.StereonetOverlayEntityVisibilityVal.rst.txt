@@ -1,0 +1,7 @@
+dips.StereonetOverlayEntityVisibilityVal module
+===============================================
+
+.. automodule:: dips.StereonetOverlayEntityVisibilityVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

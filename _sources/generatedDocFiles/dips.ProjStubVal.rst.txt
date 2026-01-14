@@ -1,0 +1,7 @@
+dips.ProjStubVal module
+=======================
+
+.. automodule:: dips.ProjStubVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

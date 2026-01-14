@@ -1,0 +1,7 @@
+dips.TraverseEntityVisibilityRef module
+=======================================
+
+.. automodule:: dips.TraverseEntityVisibilityRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

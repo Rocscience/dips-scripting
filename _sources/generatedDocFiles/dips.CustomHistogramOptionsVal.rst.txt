@@ -1,0 +1,7 @@
+dips.CustomHistogramOptionsVal module
+=====================================
+
+.. automodule:: dips.CustomHistogramOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

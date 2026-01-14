@@ -1,0 +1,7 @@
+dips.SetEntityOptionsVal module
+===============================
+
+.. automodule:: dips.SetEntityOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

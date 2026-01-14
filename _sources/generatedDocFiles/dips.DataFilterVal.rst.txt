@@ -1,0 +1,7 @@
+dips.DataFilterVal module
+=========================
+
+.. automodule:: dips.DataFilterVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

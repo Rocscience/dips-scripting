@@ -1,0 +1,7 @@
+dips.CustomRowRawDataVal module
+===============================
+
+.. automodule:: dips.CustomRowRawDataVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

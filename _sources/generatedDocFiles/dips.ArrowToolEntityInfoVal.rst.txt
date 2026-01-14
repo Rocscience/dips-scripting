@@ -1,0 +1,7 @@
+dips.ArrowToolEntityInfoVal module
+==================================
+
+.. automodule:: dips.ArrowToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

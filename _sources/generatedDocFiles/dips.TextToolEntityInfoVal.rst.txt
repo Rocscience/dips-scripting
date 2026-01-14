@@ -1,0 +1,7 @@
+dips.TextToolEntityInfoVal module
+=================================
+
+.. automodule:: dips.TextToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

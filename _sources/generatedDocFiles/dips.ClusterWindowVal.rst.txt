@@ -1,0 +1,7 @@
+dips.ClusterWindowVal module
+============================
+
+.. automodule:: dips.ClusterWindowVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

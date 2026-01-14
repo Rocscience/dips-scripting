@@ -1,0 +1,7 @@
+dips.StereonetProjectionModeVal module
+======================================
+
+.. automodule:: dips.StereonetProjectionModeVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

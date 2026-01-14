@@ -1,0 +1,1166 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dips Scripting Reference Manual &#8212; dips  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dips" href="generatedDocFiles/modules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="dips  documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="dips  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="generatedDocFiles/modules.html">
+    dips
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="generatedDocFiles/modules.html">
+    dips
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dips-scripting-reference-manual">
+<h1>Dips Scripting Reference Manual<a class="headerlink" href="#dips-scripting-reference-manual" title="Link to this heading">#</a></h1>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>Before you begin, ensure you have the Dips program installed. You must have at minimum Version 9 in order to use this feature.</p>
+</section>
+<section id="python-environment">
+<h2>Python Environment<a class="headerlink" href="#python-environment" title="Link to this heading">#</a></h2>
+<p>There are two methods to run a script, which differ in the Python environment used:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Running on RocScript Editor</dt><dd><ul class="simple">
+<li><p>Comes pre-installed with Dips and includes the <strong>Dips Python API library</strong></p></li>
+<li><p>For all-level users</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Running on your own Python environment</dt><dd><ul class="simple">
+<li><p>Requires downloading the <strong>Dips Python API library</strong></p></li>
+<li><p>For advanced users</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dips API Reference:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generatedDocFiles/modules.html">dips</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generatedDocFiles/dips.html">dips package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generatedDocFiles/dips.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.AnchorPointVal.html">dips.AnchorPointVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.AnchorPointVal.html#dips.AnchorPointVal.AnchorPointVal"><code class="docutils literal notranslate"><span class="pre">AnchorPointVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.AngleDataVal.html">dips.AngleDataVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.AngleDataVal.html#dips.AngleDataVal.AngleDataVal"><code class="docutils literal notranslate"><span class="pre">AngleDataVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.AnnotativeTools2DVal.html">dips.AnnotativeTools2DVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.AnnotativeTools2DVal.html#dips.AnnotativeTools2DVal.AnnotativeTools2DVal"><code class="docutils literal notranslate"><span class="pre">AnnotativeTools2DVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ApplicationManager.html">dips.ApplicationManager module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ApplicationManager.html#dips.ApplicationManager.ApplicationManager"><code class="docutils literal notranslate"><span class="pre">ApplicationManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ArrowToolEntityInfoRef.html">dips.ArrowToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ArrowToolEntityInfoRef.html#dips.ArrowToolEntityInfoRef.ArrowToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">ArrowToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ArrowToolEntityInfoVal.html">dips.ArrowToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ArrowToolEntityInfoVal.html#dips.ArrowToolEntityInfoVal.ArrowToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ArrowToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.AutomaticClusterAnalysisSettingsVal.html">dips.AutomaticClusterAnalysisSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.AutomaticClusterAnalysisSettingsVal.html#dips.AutomaticClusterAnalysisSettingsVal.AutomaticClusterAnalysisSettingsVal"><code class="docutils literal notranslate"><span class="pre">AutomaticClusterAnalysisSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.BuiltInDataDescriptors.html">dips.BuiltInDataDescriptors module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.BuiltInDataFormatters.html">dips.BuiltInDataFormatters module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.CircularWindowVal.html">dips.CircularWindowVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.CircularWindowVal.html#dips.CircularWindowVal.CircularWindowVal"><code class="docutils literal notranslate"><span class="pre">CircularWindowVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ClusterWindowVal.html">dips.ClusterWindowVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ClusterWindowVal.html#dips.ClusterWindowVal.ClusterWindowVal"><code class="docutils literal notranslate"><span class="pre">ClusterWindowVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ColorSurrogateVal.html">dips.ColorSurrogateVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ColorSurrogateVal.html#dips.ColorSurrogateVal.ColorSurrogateVal"><code class="docutils literal notranslate"><span class="pre">ColorSurrogateVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ConeToolEntityInfoRef.html">dips.ConeToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ConeToolEntityInfoRef.html#dips.ConeToolEntityInfoRef.ConeToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">ConeToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ConeToolEntityInfoVal.html">dips.ConeToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ConeToolEntityInfoVal.html#dips.ConeToolEntityInfoVal.ConeToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ConeToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ConeVal.html">dips.ConeVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ConeVal.html#dips.ConeVal.ConeVal"><code class="docutils literal notranslate"><span class="pre">ConeVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ContourEntityVisibilityVal.html">dips.ContourEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ContourEntityVisibilityVal.html#dips.ContourEntityVisibilityVal.ContourEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">ContourEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ContourOptionsVal.html">dips.ContourOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ContourOptionsVal.html#dips.ContourOptionsVal.ContourOptionsVal"><code class="docutils literal notranslate"><span class="pre">ContourOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.CumulativeChartViewRef.html">dips.CumulativeChartViewRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.CumulativeChartViewRef.html#dips.CumulativeChartViewRef.CumulativeChartViewRef"><code class="docutils literal notranslate"><span class="pre">CumulativeChartViewRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.CumulativeChartViewVal.html">dips.CumulativeChartViewVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.CumulativeChartViewVal.html#dips.CumulativeChartViewVal.CumulativeChartViewVal"><code class="docutils literal notranslate"><span class="pre">CumulativeChartViewVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.CumulativePlotSettingsVal.html">dips.CumulativePlotSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.CumulativePlotSettingsVal.html#dips.CumulativePlotSettingsVal.CumulativePlotSettingsVal"><code class="docutils literal notranslate"><span class="pre">CumulativePlotSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.CurvedWindowVal.html">dips.CurvedWindowVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.CurvedWindowVal.html#dips.CurvedWindowVal.CurvedWindowVal"><code class="docutils literal notranslate"><span class="pre">CurvedWindowVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.CustomColumnCollectionVal.html">dips.CustomColumnCollectionVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.CustomColumnCollectionVal.html#dips.CustomColumnCollectionVal.CustomColumnCollectionVal"><code class="docutils literal notranslate"><span class="pre">CustomColumnCollectionVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.CustomHistogramOptionsVal.html">dips.CustomHistogramOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.CustomHistogramOptionsVal.html#dips.CustomHistogramOptionsVal.CustomHistogramOptionsVal"><code class="docutils literal notranslate"><span class="pre">CustomHistogramOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.CustomRangeVal.html">dips.CustomRangeVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.CustomRangeVal.html#dips.CustomRangeVal.CustomRangeVal"><code class="docutils literal notranslate"><span class="pre">CustomRangeVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.CustomRowRawDataVal.html">dips.CustomRowRawDataVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.CustomRowRawDataVal.html#dips.CustomRowRawDataVal.CustomRowRawDataVal"><code class="docutils literal notranslate"><span class="pre">CustomRowRawDataVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.DataDescriptorVal.html">dips.DataDescriptorVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DataDescriptorVal.html#dips.DataDescriptorVal.DataDescriptorVal"><code class="docutils literal notranslate"><span class="pre">DataDescriptorVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.DataFilterRef.html">dips.DataFilterRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DataFilterRef.html#dips.DataFilterRef.DataFilterRef"><code class="docutils literal notranslate"><span class="pre">DataFilterRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.DataFilterVal.html">dips.DataFilterVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DataFilterVal.html#dips.DataFilterVal.DataFilterVal"><code class="docutils literal notranslate"><span class="pre">DataFilterVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.DataFormatterVal.html">dips.DataFormatterVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DataFormatterVal.html#dips.DataFormatterVal.DataFormatterVal"><code class="docutils literal notranslate"><span class="pre">DataFormatterVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.DataIdentifierVal.html">dips.DataIdentifierVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DataIdentifierVal.html#dips.DataIdentifierVal.DataIdentifierVal"><code class="docutils literal notranslate"><span class="pre">DataIdentifierVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2.html">dips.DipsAPI_pb2 module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html">dips.DipsAPI_pb2_grpc module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.AppService"><code class="docutils literal notranslate"><span class="pre">AppService</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.AppServiceServicer"><code class="docutils literal notranslate"><span class="pre">AppServiceServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.AppServiceStub"><code class="docutils literal notranslate"><span class="pre">AppServiceStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.CumulativeChartServices"><code class="docutils literal notranslate"><span class="pre">CumulativeChartServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.CumulativeChartServicesServicer"><code class="docutils literal notranslate"><span class="pre">CumulativeChartServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.CumulativeChartServicesStub"><code class="docutils literal notranslate"><span class="pre">CumulativeChartServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.EntityServices"><code class="docutils literal notranslate"><span class="pre">EntityServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.EntityServicesServicer"><code class="docutils literal notranslate"><span class="pre">EntityServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.EntityServicesStub"><code class="docutils literal notranslate"><span class="pre">EntityServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.HistogramServices"><code class="docutils literal notranslate"><span class="pre">HistogramServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.HistogramServicesServicer"><code class="docutils literal notranslate"><span class="pre">HistogramServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.HistogramServicesStub"><code class="docutils literal notranslate"><span class="pre">HistogramServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.JointFrequencyChartServices"><code class="docutils literal notranslate"><span class="pre">JointFrequencyChartServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.JointFrequencyChartServicesServicer"><code class="docutils literal notranslate"><span class="pre">JointFrequencyChartServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.JointFrequencyChartServicesStub"><code class="docutils literal notranslate"><span class="pre">JointFrequencyChartServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.JointSpacingChartServices"><code class="docutils literal notranslate"><span class="pre">JointSpacingChartServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.JointSpacingChartServicesServicer"><code class="docutils literal notranslate"><span class="pre">JointSpacingChartServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.JointSpacingChartServicesStub"><code class="docutils literal notranslate"><span class="pre">JointSpacingChartServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.ProcessedDataManager"><code class="docutils literal notranslate"><span class="pre">ProcessedDataManager</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.ProcessedDataManagerServicer"><code class="docutils literal notranslate"><span class="pre">ProcessedDataManagerServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.ProcessedDataManagerStub"><code class="docutils literal notranslate"><span class="pre">ProcessedDataManagerStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.ProjStubService"><code class="docutils literal notranslate"><span class="pre">ProjStubService</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.ProjStubServiceServicer"><code class="docutils literal notranslate"><span class="pre">ProjStubServiceServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.ProjStubServiceStub"><code class="docutils literal notranslate"><span class="pre">ProjStubServiceStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.QualitativeQuantitativeChartServices"><code class="docutils literal notranslate"><span class="pre">QualitativeQuantitativeChartServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.QualitativeQuantitativeChartServicesServicer"><code class="docutils literal notranslate"><span class="pre">QualitativeQuantitativeChartServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.QualitativeQuantitativeChartServicesStub"><code class="docutils literal notranslate"><span class="pre">QualitativeQuantitativeChartServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.RQDAnalysisChartServices"><code class="docutils literal notranslate"><span class="pre">RQDAnalysisChartServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.RQDAnalysisChartServicesServicer"><code class="docutils literal notranslate"><span class="pre">RQDAnalysisChartServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.RQDAnalysisChartServicesStub"><code class="docutils literal notranslate"><span class="pre">RQDAnalysisChartServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.RosetteServices"><code class="docutils literal notranslate"><span class="pre">RosetteServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.RosetteServicesServicer"><code class="docutils literal notranslate"><span class="pre">RosetteServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.RosetteServicesStub"><code class="docutils literal notranslate"><span class="pre">RosetteServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.ScatterChartServices"><code class="docutils literal notranslate"><span class="pre">ScatterChartServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.ScatterChartServicesServicer"><code class="docutils literal notranslate"><span class="pre">ScatterChartServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.ScatterChartServicesStub"><code class="docutils literal notranslate"><span class="pre">ScatterChartServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.SetServices"><code class="docutils literal notranslate"><span class="pre">SetServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.SetServicesServicer"><code class="docutils literal notranslate"><span class="pre">SetServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.SetServicesStub"><code class="docutils literal notranslate"><span class="pre">SetServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.Stereonet2DServices"><code class="docutils literal notranslate"><span class="pre">Stereonet2DServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.Stereonet2DServicesServicer"><code class="docutils literal notranslate"><span class="pre">Stereonet2DServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.Stereonet2DServicesStub"><code class="docutils literal notranslate"><span class="pre">Stereonet2DServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.Stereonet3DServices"><code class="docutils literal notranslate"><span class="pre">Stereonet3DServices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.Stereonet3DServicesServicer"><code class="docutils literal notranslate"><span class="pre">Stereonet3DServicesServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.Stereonet3DServicesStub"><code class="docutils literal notranslate"><span class="pre">Stereonet3DServicesStub</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_AppServiceServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_AppServiceServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_CumulativeChartServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_CumulativeChartServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_EntityServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_EntityServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_HistogramServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_HistogramServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_JointFrequencyChartServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_JointFrequencyChartServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_JointSpacingChartServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_JointSpacingChartServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_ProcessedDataManagerServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_ProcessedDataManagerServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_ProjStubServiceServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_ProjStubServiceServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_QualitativeQuantitativeChartServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_QualitativeQuantitativeChartServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_RQDAnalysisChartServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_RQDAnalysisChartServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_RosetteServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_RosetteServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_ScatterChartServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_ScatterChartServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_SetServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_SetServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_Stereonet2DServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_Stereonet2DServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_Stereonet3DServicesServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_Stereonet3DServicesServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.add_nSameModuleReferenceAccessorServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_nSameModuleReferenceAccessorServicer_to_server()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.nSameModuleReferenceAccessor"><code class="docutils literal notranslate"><span class="pre">nSameModuleReferenceAccessor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.nSameModuleReferenceAccessorServicer"><code class="docutils literal notranslate"><span class="pre">nSameModuleReferenceAccessorServicer</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsAPI_pb2_grpc.html#dips.DipsAPI_pb2_grpc.nSameModuleReferenceAccessorStub"><code class="docutils literal notranslate"><span class="pre">nSameModuleReferenceAccessorStub</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.DipsApp.html">dips.DipsApp module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DipsApp.html#dips.DipsApp.DipsApp"><code class="docutils literal notranslate"><span class="pre">DipsApp</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.DiscontinuityDataVal.html">dips.DiscontinuityDataVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.DiscontinuityDataVal.html#dips.DiscontinuityDataVal.DiscontinuityDataVal"><code class="docutils literal notranslate"><span class="pre">DiscontinuityDataVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.EllipseToolEntityInfoRef.html">dips.EllipseToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.EllipseToolEntityInfoRef.html#dips.EllipseToolEntityInfoRef.EllipseToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">EllipseToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.EllipseToolEntityInfoVal.html">dips.EllipseToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.EllipseToolEntityInfoVal.html#dips.EllipseToolEntityInfoVal.EllipseToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">EllipseToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FillFormatVal.html">dips.FillFormatVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FillFormatVal.html#dips.FillFormatVal.FillFormatVal"><code class="docutils literal notranslate"><span class="pre">FillFormatVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FoldEntityInfoRef.html">dips.FoldEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FoldEntityInfoRef.html#dips.FoldEntityInfoRef.FoldEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">FoldEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FoldEntityInfoVal.html">dips.FoldEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FoldEntityInfoVal.html#dips.FoldEntityInfoVal.FoldEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">FoldEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FoldEntityOptionsVal.html">dips.FoldEntityOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FoldEntityOptionsVal.html#dips.FoldEntityOptionsVal.FoldEntityOptionsVal"><code class="docutils literal notranslate"><span class="pre">FoldEntityOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FoldEntityVisibilityRef.html">dips.FoldEntityVisibilityRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FoldEntityVisibilityRef.html#dips.FoldEntityVisibilityRef.FoldEntityVisibilityRef"><code class="docutils literal notranslate"><span class="pre">FoldEntityVisibilityRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FoldEntityVisibilityVal.html">dips.FoldEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FoldEntityVisibilityVal.html#dips.FoldEntityVisibilityVal.FoldEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">FoldEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FoldWindowEntityInfoVal.html">dips.FoldWindowEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FoldWindowEntityInfoVal.html#dips.FoldWindowEntityInfoVal.FoldWindowEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">FoldWindowEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FoldWindowEntityVisibilityRef.html">dips.FoldWindowEntityVisibilityRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FoldWindowEntityVisibilityRef.html#dips.FoldWindowEntityVisibilityRef.FoldWindowEntityVisibilityRef"><code class="docutils literal notranslate"><span class="pre">FoldWindowEntityVisibilityRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FoldWindowEntityVisibilityVal.html">dips.FoldWindowEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FoldWindowEntityVisibilityVal.html#dips.FoldWindowEntityVisibilityVal.FoldWindowEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">FoldWindowEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FreehandWindowVal.html">dips.FreehandWindowVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FreehandWindowVal.html#dips.FreehandWindowVal.FreehandWindowVal"><code class="docutils literal notranslate"><span class="pre">FreehandWindowVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.FullDataFormatVal.html">dips.FullDataFormatVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.FullDataFormatVal.html#dips.FullDataFormatVal.FullDataFormatVal"><code class="docutils literal notranslate"><span class="pre">FullDataFormatVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.GlobalPlaneEntityVisibilityVal.html">dips.GlobalPlaneEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.GlobalPlaneEntityVisibilityVal.html#dips.GlobalPlaneEntityVisibilityVal.GlobalPlaneEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">GlobalPlaneEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.HistogramChartViewRef.html">dips.HistogramChartViewRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.HistogramChartViewRef.html#dips.HistogramChartViewRef.HistogramChartViewRef"><code class="docutils literal notranslate"><span class="pre">HistogramChartViewRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.HistogramChartViewVal.html">dips.HistogramChartViewVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.HistogramChartViewVal.html#dips.HistogramChartViewVal.HistogramChartViewVal"><code class="docutils literal notranslate"><span class="pre">HistogramChartViewVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.HistogramPlotSettingsVal.html">dips.HistogramPlotSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.HistogramPlotSettingsVal.html#dips.HistogramPlotSettingsVal.HistogramPlotSettingsVal"><code class="docutils literal notranslate"><span class="pre">HistogramPlotSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.IntersectionEntityVisibilityVal.html">dips.IntersectionEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.IntersectionEntityVisibilityVal.html#dips.IntersectionEntityVisibilityVal.IntersectionEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">IntersectionEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.IntersectionOptionsVal.html">dips.IntersectionOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.IntersectionOptionsVal.html#dips.IntersectionOptionsVal.IntersectionOptionsVal"><code class="docutils literal notranslate"><span class="pre">IntersectionOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.IntervalVal.html">dips.IntervalVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.IntervalVal.html#dips.IntervalVal.IntervalVal"><code class="docutils literal notranslate"><span class="pre">IntervalVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.JointFrequencyAnalysisSettingsVal.html">dips.JointFrequencyAnalysisSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.JointFrequencyAnalysisSettingsVal.html#dips.JointFrequencyAnalysisSettingsVal.JointFrequencyAnalysisSettingsVal"><code class="docutils literal notranslate"><span class="pre">JointFrequencyAnalysisSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.JointFrequencyChartViewRef.html">dips.JointFrequencyChartViewRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.JointFrequencyChartViewRef.html#dips.JointFrequencyChartViewRef.JointFrequencyChartViewRef"><code class="docutils literal notranslate"><span class="pre">JointFrequencyChartViewRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.JointFrequencyChartViewVal.html">dips.JointFrequencyChartViewVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.JointFrequencyChartViewVal.html#dips.JointFrequencyChartViewVal.JointFrequencyChartViewVal"><code class="docutils literal notranslate"><span class="pre">JointFrequencyChartViewVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.JointSpacingAnalysisSettingsVal.html">dips.JointSpacingAnalysisSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.JointSpacingAnalysisSettingsVal.html#dips.JointSpacingAnalysisSettingsVal.JointSpacingAnalysisSettingsVal"><code class="docutils literal notranslate"><span class="pre">JointSpacingAnalysisSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.JointSpacingChartViewRef.html">dips.JointSpacingChartViewRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.JointSpacingChartViewRef.html#dips.JointSpacingChartViewRef.JointSpacingChartViewRef"><code class="docutils literal notranslate"><span class="pre">JointSpacingChartViewRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.JointSpacingChartViewVal.html">dips.JointSpacingChartViewVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.JointSpacingChartViewVal.html#dips.JointSpacingChartViewVal.JointSpacingChartViewVal"><code class="docutils literal notranslate"><span class="pre">JointSpacingChartViewVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.KinematicAnalysisEntityVisibilityVal.html">dips.KinematicAnalysisEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.KinematicAnalysisEntityVisibilityVal.html#dips.KinematicAnalysisEntityVisibilityVal.KinematicAnalysisEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">KinematicAnalysisEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.KinematicAnalysisSettingsVal.html">dips.KinematicAnalysisSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.KinematicAnalysisSettingsVal.html#dips.KinematicAnalysisSettingsVal.KinematicAnalysisSettingsVal"><code class="docutils literal notranslate"><span class="pre">KinematicAnalysisSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.LatLongVal.html">dips.LatLongVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.LatLongVal.html#dips.LatLongVal.LatLongVal"><code class="docutils literal notranslate"><span class="pre">LatLongVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.LengthDataVal.html">dips.LengthDataVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.LengthDataVal.html#dips.LengthDataVal.LengthDataVal"><code class="docutils literal notranslate"><span class="pre">LengthDataVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.LineFormatVal.html">dips.LineFormatVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.LineFormatVal.html#dips.LineFormatVal.LineFormatVal"><code class="docutils literal notranslate"><span class="pre">LineFormatVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.LineIntersectionCalculatorToolEntityInfoRef.html">dips.LineIntersectionCalculatorToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.LineIntersectionCalculatorToolEntityInfoRef.html#dips.LineIntersectionCalculatorToolEntityInfoRef.LineIntersectionCalculatorToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">LineIntersectionCalculatorToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.LineIntersectionCalculatorToolEntityInfoVal.html">dips.LineIntersectionCalculatorToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.LineIntersectionCalculatorToolEntityInfoVal.html#dips.LineIntersectionCalculatorToolEntityInfoVal.LineIntersectionCalculatorToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">LineIntersectionCalculatorToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.LineToolEntityInfoRef.html">dips.LineToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.LineToolEntityInfoRef.html#dips.LineToolEntityInfoRef.LineToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">LineToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.LineToolEntityInfoVal.html">dips.LineToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.LineToolEntityInfoVal.html#dips.LineToolEntityInfoVal.LineToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">LineToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.LineationVal.html">dips.LineationVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.LineationVal.html#dips.LineationVal.LineationVal"><code class="docutils literal notranslate"><span class="pre">LineationVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.MeasureAngleToolEntityInfoRef.html">dips.MeasureAngleToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.MeasureAngleToolEntityInfoRef.html#dips.MeasureAngleToolEntityInfoRef.MeasureAngleToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">MeasureAngleToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.MeasureAngleToolEntityInfoVal.html">dips.MeasureAngleToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.MeasureAngleToolEntityInfoVal.html#dips.MeasureAngleToolEntityInfoVal.MeasureAngleToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">MeasureAngleToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.OrientationDataSetRef.html">dips.OrientationDataSetRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.OrientationDataSetRef.html#dips.OrientationDataSetRef.OrientationDataSetRef"><code class="docutils literal notranslate"><span class="pre">OrientationDataSetRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.OrientationDataSetVal.html">dips.OrientationDataSetVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.OrientationDataSetVal.html#dips.OrientationDataSetVal.OrientationDataSetVal"><code class="docutils literal notranslate"><span class="pre">OrientationDataSetVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PitchGridToolEntityInfoRef.html">dips.PitchGridToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PitchGridToolEntityInfoRef.html#dips.PitchGridToolEntityInfoRef.PitchGridToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">PitchGridToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PitchGridToolEntityInfoVal.html">dips.PitchGridToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PitchGridToolEntityInfoVal.html#dips.PitchGridToolEntityInfoVal.PitchGridToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">PitchGridToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PlaneEntityInfoRef.html">dips.PlaneEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PlaneEntityInfoRef.html#dips.PlaneEntityInfoRef.PlaneEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">PlaneEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PlaneEntityInfoVal.html">dips.PlaneEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PlaneEntityInfoVal.html#dips.PlaneEntityInfoVal.PlaneEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">PlaneEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PlaneEntityVisibilityRef.html">dips.PlaneEntityVisibilityRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PlaneEntityVisibilityRef.html#dips.PlaneEntityVisibilityRef.PlaneEntityVisibilityRef"><code class="docutils literal notranslate"><span class="pre">PlaneEntityVisibilityRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PlaneEntityVisibilityVal.html">dips.PlaneEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PlaneEntityVisibilityVal.html#dips.PlaneEntityVisibilityVal.PlaneEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">PlaneEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PlaneIntersectionCalculatorToolEntityInfoRef.html">dips.PlaneIntersectionCalculatorToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PlaneIntersectionCalculatorToolEntityInfoRef.html#dips.PlaneIntersectionCalculatorToolEntityInfoRef.PlaneIntersectionCalculatorToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">PlaneIntersectionCalculatorToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PlaneIntersectionCalculatorToolEntityInfoVal.html">dips.PlaneIntersectionCalculatorToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PlaneIntersectionCalculatorToolEntityInfoVal.html#dips.PlaneIntersectionCalculatorToolEntityInfoVal.PlaneIntersectionCalculatorToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">PlaneIntersectionCalculatorToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PlaneOptionsVal.html">dips.PlaneOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PlaneOptionsVal.html#dips.PlaneOptionsVal.PlaneOptionsVal"><code class="docutils literal notranslate"><span class="pre">PlaneOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PlaneVal.html">dips.PlaneVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PlaneVal.html#dips.PlaneVal.PlaneVal"><code class="docutils literal notranslate"><span class="pre">PlaneVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PoleEntityOptionsVal.html">dips.PoleEntityOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PoleEntityOptionsVal.html#dips.PoleEntityOptionsVal.PoleEntityOptionsVal"><code class="docutils literal notranslate"><span class="pre">PoleEntityOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PoleEntityVisibilityVal.html">dips.PoleEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PoleEntityVisibilityVal.html#dips.PoleEntityVisibilityVal.PoleEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">PoleEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PolygonToolEntityInfoRef.html">dips.PolygonToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PolygonToolEntityInfoRef.html#dips.PolygonToolEntityInfoRef.PolygonToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">PolygonToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PolygonToolEntityInfoVal.html">dips.PolygonToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PolygonToolEntityInfoVal.html#dips.PolygonToolEntityInfoVal.PolygonToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">PolygonToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PolylineToolEntityInfoRef.html">dips.PolylineToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PolylineToolEntityInfoRef.html#dips.PolylineToolEntityInfoRef.PolylineToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">PolylineToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.PolylineToolEntityInfoVal.html">dips.PolylineToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.PolylineToolEntityInfoVal.html#dips.PolylineToolEntityInfoVal.PolylineToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">PolylineToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ProcessedDataVal.html">dips.ProcessedDataVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ProcessedDataVal.html#dips.ProcessedDataVal.ProcessedDataVal"><code class="docutils literal notranslate"><span class="pre">ProcessedDataVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ProjStubRef.html">dips.ProjStubRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ProjStubRef.html#dips.ProjStubRef.ProjStubRef"><code class="docutils literal notranslate"><span class="pre">ProjStubRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ProjStubVal.html">dips.ProjStubVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ProjStubVal.html#dips.ProjStubVal.ProjStubVal"><code class="docutils literal notranslate"><span class="pre">ProjStubVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ProtobufCollectionWrappers.html">dips.ProtobufCollectionWrappers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.QualitativeQuantitativeAnalysisSettingsVal.html">dips.QualitativeQuantitativeAnalysisSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.QualitativeQuantitativeAnalysisSettingsVal.html#dips.QualitativeQuantitativeAnalysisSettingsVal.QualitativeQuantitativeAnalysisSettingsVal"><code class="docutils literal notranslate"><span class="pre">QualitativeQuantitativeAnalysisSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.QualitativeQuantitativeChartViewRef.html">dips.QualitativeQuantitativeChartViewRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.QualitativeQuantitativeChartViewRef.html#dips.QualitativeQuantitativeChartViewRef.QualitativeQuantitativeChartViewRef"><code class="docutils literal notranslate"><span class="pre">QualitativeQuantitativeChartViewRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.QualitativeQuantitativeChartViewVal.html">dips.QualitativeQuantitativeChartViewVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.QualitativeQuantitativeChartViewVal.html#dips.QualitativeQuantitativeChartViewVal.QualitativeQuantitativeChartViewVal"><code class="docutils literal notranslate"><span class="pre">QualitativeQuantitativeChartViewVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.QuantitativeContourSettingsVal.html">dips.QuantitativeContourSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.QuantitativeContourSettingsVal.html#dips.QuantitativeContourSettingsVal.QuantitativeContourSettingsVal"><code class="docutils literal notranslate"><span class="pre">QuantitativeContourSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.RQDAnalysisChartViewRef.html">dips.RQDAnalysisChartViewRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.RQDAnalysisChartViewRef.html#dips.RQDAnalysisChartViewRef.RQDAnalysisChartViewRef"><code class="docutils literal notranslate"><span class="pre">RQDAnalysisChartViewRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.RQDAnalysisChartViewVal.html">dips.RQDAnalysisChartViewVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.RQDAnalysisChartViewVal.html#dips.RQDAnalysisChartViewVal.RQDAnalysisChartViewVal"><code class="docutils literal notranslate"><span class="pre">RQDAnalysisChartViewVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.RQDAnalysisSettingsVal.html">dips.RQDAnalysisSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.RQDAnalysisSettingsVal.html#dips.RQDAnalysisSettingsVal.RQDAnalysisSettingsVal"><code class="docutils literal notranslate"><span class="pre">RQDAnalysisSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.RectangleToolEntityInfoRef.html">dips.RectangleToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.RectangleToolEntityInfoRef.html#dips.RectangleToolEntityInfoRef.RectangleToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">RectangleToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.RectangleToolEntityInfoVal.html">dips.RectangleToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.RectangleToolEntityInfoVal.html#dips.RectangleToolEntityInfoVal.RectangleToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">RectangleToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ReportingConventionResultVal.html">dips.ReportingConventionResultVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ReportingConventionResultVal.html#dips.ReportingConventionResultVal.ReportingConventionResultVal"><code class="docutils literal notranslate"><span class="pre">ReportingConventionResultVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.RosettePresetOptionsVal.html">dips.RosettePresetOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.RosettePresetOptionsVal.html#dips.RosettePresetOptionsVal.RosettePresetOptionsVal"><code class="docutils literal notranslate"><span class="pre">RosettePresetOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.RosetteSettingsVal.html">dips.RosetteSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.RosetteSettingsVal.html#dips.RosetteSettingsVal.RosetteSettingsVal"><code class="docutils literal notranslate"><span class="pre">RosetteSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.RosetteViewRef.html">dips.RosetteViewRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.RosetteViewRef.html#dips.RosetteViewRef.RosetteViewRef"><code class="docutils literal notranslate"><span class="pre">RosetteViewRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.RosetteViewVal.html">dips.RosetteViewVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.RosetteViewVal.html#dips.RosetteViewVal.RosetteViewVal"><code class="docutils literal notranslate"><span class="pre">RosetteViewVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ScatterChartViewRef.html">dips.ScatterChartViewRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ScatterChartViewRef.html#dips.ScatterChartViewRef.ScatterChartViewRef"><code class="docutils literal notranslate"><span class="pre">ScatterChartViewRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ScatterChartViewVal.html">dips.ScatterChartViewVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ScatterChartViewVal.html#dips.ScatterChartViewVal.ScatterChartViewVal"><code class="docutils literal notranslate"><span class="pre">ScatterChartViewVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ScatterPlotSettingsVal.html">dips.ScatterPlotSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ScatterPlotSettingsVal.html#dips.ScatterPlotSettingsVal.ScatterPlotSettingsVal"><code class="docutils literal notranslate"><span class="pre">ScatterPlotSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SetEntityInfoRef.html">dips.SetEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SetEntityInfoRef.html#dips.SetEntityInfoRef.SetEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">SetEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SetEntityInfoVal.html">dips.SetEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SetEntityInfoVal.html#dips.SetEntityInfoVal.SetEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">SetEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SetEntityOptionsVal.html">dips.SetEntityOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SetEntityOptionsVal.html#dips.SetEntityOptionsVal.SetEntityOptionsVal"><code class="docutils literal notranslate"><span class="pre">SetEntityOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SetEntityVisibilityRef.html">dips.SetEntityVisibilityRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SetEntityVisibilityRef.html#dips.SetEntityVisibilityRef.SetEntityVisibilityRef"><code class="docutils literal notranslate"><span class="pre">SetEntityVisibilityRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SetEntityVisibilityVal.html">dips.SetEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SetEntityVisibilityVal.html#dips.SetEntityVisibilityVal.SetEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">SetEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SetStatisticsSettingsVal.html">dips.SetStatisticsSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SetStatisticsSettingsVal.html#dips.SetStatisticsSettingsVal.SetStatisticsSettingsVal"><code class="docutils literal notranslate"><span class="pre">SetStatisticsSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SetVersusSetVal.html">dips.SetVersusSetVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SetVersusSetVal.html#dips.SetVersusSetVal.SetVersusSetVal"><code class="docutils literal notranslate"><span class="pre">SetVersusSetVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SetWindowEntityInfoVal.html">dips.SetWindowEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SetWindowEntityInfoVal.html#dips.SetWindowEntityInfoVal.SetWindowEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">SetWindowEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SetWindowEntityVisibilityRef.html">dips.SetWindowEntityVisibilityRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SetWindowEntityVisibilityRef.html#dips.SetWindowEntityVisibilityRef.SetWindowEntityVisibilityRef"><code class="docutils literal notranslate"><span class="pre">SetWindowEntityVisibilityRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SetWindowEntityVisibilityVal.html">dips.SetWindowEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SetWindowEntityVisibilityVal.html#dips.SetWindowEntityVisibilityVal.SetWindowEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">SetWindowEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.StatisticalDistributionFilterVal.html">dips.StatisticalDistributionFilterVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.StatisticalDistributionFilterVal.html#dips.StatisticalDistributionFilterVal.StatisticalDistributionFilterVal"><code class="docutils literal notranslate"><span class="pre">StatisticalDistributionFilterVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.Stereonet2DPresetOptionsVal.html">dips.Stereonet2DPresetOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.Stereonet2DPresetOptionsVal.html#dips.Stereonet2DPresetOptionsVal.Stereonet2DPresetOptionsVal"><code class="docutils literal notranslate"><span class="pre">Stereonet2DPresetOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.Stereonet2DViewRef.html">dips.Stereonet2DViewRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.Stereonet2DViewRef.html#dips.Stereonet2DViewRef.Stereonet2DViewRef"><code class="docutils literal notranslate"><span class="pre">Stereonet2DViewRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.Stereonet2DViewVal.html">dips.Stereonet2DViewVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.Stereonet2DViewVal.html#dips.Stereonet2DViewVal.Stereonet2DViewVal"><code class="docutils literal notranslate"><span class="pre">Stereonet2DViewVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.Stereonet3DPresetOptionsVal.html">dips.Stereonet3DPresetOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.Stereonet3DPresetOptionsVal.html#dips.Stereonet3DPresetOptionsVal.Stereonet3DPresetOptionsVal"><code class="docutils literal notranslate"><span class="pre">Stereonet3DPresetOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.Stereonet3DViewRef.html">dips.Stereonet3DViewRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.Stereonet3DViewRef.html#dips.Stereonet3DViewRef.Stereonet3DViewRef"><code class="docutils literal notranslate"><span class="pre">Stereonet3DViewRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.Stereonet3DViewVal.html">dips.Stereonet3DViewVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.Stereonet3DViewVal.html#dips.Stereonet3DViewVal.Stereonet3DViewVal"><code class="docutils literal notranslate"><span class="pre">Stereonet3DViewVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.StereonetOverlayEntityVisibilityVal.html">dips.StereonetOverlayEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.StereonetOverlayEntityVisibilityVal.html#dips.StereonetOverlayEntityVisibilityVal.StereonetOverlayEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">StereonetOverlayEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.StereonetOverlaySettingsVal.html">dips.StereonetOverlaySettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.StereonetOverlaySettingsVal.html#dips.StereonetOverlaySettingsVal.StereonetOverlaySettingsVal"><code class="docutils literal notranslate"><span class="pre">StereonetOverlaySettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.StereonetProjectionModeVal.html">dips.StereonetProjectionModeVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.StereonetProjectionModeVal.html#dips.StereonetProjectionModeVal.StereonetProjectionModeVal"><code class="docutils literal notranslate"><span class="pre">StereonetProjectionModeVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SurveyDataVal.html">dips.SurveyDataVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SurveyDataVal.html#dips.SurveyDataVal.SurveyDataVal"><code class="docutils literal notranslate"><span class="pre">SurveyDataVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SymbolDisplaySettingVal.html">dips.SymbolDisplaySettingVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SymbolDisplaySettingVal.html#dips.SymbolDisplaySettingVal.SymbolDisplaySettingVal"><code class="docutils literal notranslate"><span class="pre">SymbolDisplaySettingVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.SymbolicSettingsVal.html">dips.SymbolicSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.SymbolicSettingsVal.html#dips.SymbolicSettingsVal.SymbolicSettingsVal"><code class="docutils literal notranslate"><span class="pre">SymbolicSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.TextFormatVal.html">dips.TextFormatVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.TextFormatVal.html#dips.TextFormatVal.TextFormatVal"><code class="docutils literal notranslate"><span class="pre">TextFormatVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.TextToolEntityInfoRef.html">dips.TextToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.TextToolEntityInfoRef.html#dips.TextToolEntityInfoRef.TextToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">TextToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.TextToolEntityInfoVal.html">dips.TextToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.TextToolEntityInfoVal.html#dips.TextToolEntityInfoVal.TextToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">TextToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.TraverseEntityOptionsVal.html">dips.TraverseEntityOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.TraverseEntityOptionsVal.html#dips.TraverseEntityOptionsVal.TraverseEntityOptionsVal"><code class="docutils literal notranslate"><span class="pre">TraverseEntityOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.TraverseEntityVisibilityRef.html">dips.TraverseEntityVisibilityRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.TraverseEntityVisibilityRef.html#dips.TraverseEntityVisibilityRef.TraverseEntityVisibilityRef"><code class="docutils literal notranslate"><span class="pre">TraverseEntityVisibilityRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.TraverseEntityVisibilityVal.html">dips.TraverseEntityVisibilityVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.TraverseEntityVisibilityVal.html#dips.TraverseEntityVisibilityVal.TraverseEntityVisibilityVal"><code class="docutils literal notranslate"><span class="pre">TraverseEntityVisibilityVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.TrendLineToolEntityInfoRef.html">dips.TrendLineToolEntityInfoRef module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.TrendLineToolEntityInfoRef.html#dips.TrendLineToolEntityInfoRef.TrendLineToolEntityInfoRef"><code class="docutils literal notranslate"><span class="pre">TrendLineToolEntityInfoRef</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.TrendLineToolEntityInfoVal.html">dips.TrendLineToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.TrendLineToolEntityInfoVal.html#dips.TrendLineToolEntityInfoVal.TrendLineToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">TrendLineToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.TrendPlungeVal.html">dips.TrendPlungeVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.TrendPlungeVal.html#dips.TrendPlungeVal.TrendPlungeVal"><code class="docutils literal notranslate"><span class="pre">TrendPlungeVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.UnitSystemResultVal.html">dips.UnitSystemResultVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.UnitSystemResultVal.html#dips.UnitSystemResultVal.UnitSystemResultVal"><code class="docutils literal notranslate"><span class="pre">UnitSystemResultVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.UserPlaneEntityOptionsVal.html">dips.UserPlaneEntityOptionsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.UserPlaneEntityOptionsVal.html#dips.UserPlaneEntityOptionsVal.UserPlaneEntityOptionsVal"><code class="docutils literal notranslate"><span class="pre">UserPlaneEntityOptionsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResultVal.html">dips.ValidatableResultVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResultVal.html#dips.ValidatableResultVal.ValidatableResultVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResultVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_ArrowToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_ConeToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_ConeToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_ConeToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_ConeToolEntityInfoVal.ValidatableResult_ProtoReference_ConeToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_ConeToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_EllipseToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.html">dips.ValidatableResult_ProtoReference_FoldEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.html#dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.ValidatableResult_ProtoReference_FoldEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_FoldEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_LineToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_LineToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_LineToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_LineToolEntityInfoVal.ValidatableResult_ProtoReference_LineToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_LineToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal.ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_OrientationDataSetVal.html">dips.ValidatableResult_ProtoReference_OrientationDataSetVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_OrientationDataSetVal.html#dips.ValidatableResult_ProtoReference_OrientationDataSetVal.ValidatableResult_ProtoReference_OrientationDataSetVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_OrientationDataSetVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal.ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_PlaneEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PlaneEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_PlaneEntityInfoVal.html#dips.ValidatableResult_ProtoReference_PlaneEntityInfoVal.ValidatableResult_ProtoReference_PlaneEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_PlaneEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_PolygonToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_PolylineToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_RectangleToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_SetEntityInfoVal.html">dips.ValidatableResult_ProtoReference_SetEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_SetEntityInfoVal.html#dips.ValidatableResult_ProtoReference_SetEntityInfoVal.ValidatableResult_ProtoReference_SetEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_SetEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_TextToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_TextToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_TextToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_TextToolEntityInfoVal.ValidatableResult_ProtoReference_TextToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_TextToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal.html#dips.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal"><code class="docutils literal notranslate"><span class="pre">ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.ValidationErrorVal.html">dips.ValidationErrorVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.ValidationErrorVal.html#dips.ValidationErrorVal.ValidationErrorVal"><code class="docutils literal notranslate"><span class="pre">ValidationErrorVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.Vector2DVal.html">dips.Vector2DVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.Vector2DVal.html#dips.Vector2DVal.Vector2DVal"><code class="docutils literal notranslate"><span class="pre">Vector2DVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.Vector3Val.html">dips.Vector3Val module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.Vector3Val.html#dips.Vector3Val.Vector3Val"><code class="docutils literal notranslate"><span class="pre">Vector3Val</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.VectorDensityContourSettingsVal.html">dips.VectorDensityContourSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.VectorDensityContourSettingsVal.html#dips.VectorDensityContourSettingsVal.VectorDensityContourSettingsVal"><code class="docutils literal notranslate"><span class="pre">VectorDensityContourSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.WeightingSettingsVal.html">dips.WeightingSettingsVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.WeightingSettingsVal.html#dips.WeightingSettingsVal.WeightingSettingsVal"><code class="docutils literal notranslate"><span class="pre">WeightingSettingsVal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.WrappedFreehandWindowVal.html">dips.WrappedFreehandWindowVal module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.WrappedFreehandWindowVal.html#dips.WrappedFreehandWindowVal.WrappedFreehandWindowVal"><code class="docutils literal notranslate"><span class="pre">WrappedFreehandWindowVal</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="generatedDocFiles/dips.html#module-dips">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generatedDocFiles/dips.html#dips.DipsApp"><code class="docutils literal notranslate"><span class="pre">DipsApp</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.html#dips.DipsApp.AttachToExisting"><code class="docutils literal notranslate"><span class="pre">DipsApp.AttachToExisting()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.html#dips.DipsApp.Close"><code class="docutils literal notranslate"><span class="pre">DipsApp.Close()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.html#dips.DipsApp.GetModel"><code class="docutils literal notranslate"><span class="pre">DipsApp.GetModel()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.html#dips.DipsApp.Hide"><code class="docutils literal notranslate"><span class="pre">DipsApp.Hide()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.html#dips.DipsApp.LaunchApp"><code class="docutils literal notranslate"><span class="pre">DipsApp.LaunchApp()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.html#dips.DipsApp.Ping"><code class="docutils literal notranslate"><span class="pre">DipsApp.Ping()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.html#dips.DipsApp.Show"><code class="docutils literal notranslate"><span class="pre">DipsApp.Show()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="generatedDocFiles/dips.html#dips.DipsApp.startApplication"><code class="docutils literal notranslate"><span class="pre">DipsApp.startApplication()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="generatedDocFiles/modules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dips</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment">Python Environment</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Rocscience.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

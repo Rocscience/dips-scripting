@@ -1,0 +1,7 @@
+dips.KinematicAnalysisSettingsVal module
+========================================
+
+.. automodule:: dips.KinematicAnalysisSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

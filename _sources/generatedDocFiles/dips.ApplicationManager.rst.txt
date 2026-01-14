@@ -1,0 +1,7 @@
+dips.ApplicationManager module
+==============================
+
+.. automodule:: dips.ApplicationManager
+   :members:
+   :show-inheritance:
+   :undoc-members:

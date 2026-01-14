@@ -1,0 +1,7 @@
+dips.ContourEntityVisibilityVal module
+======================================
+
+.. automodule:: dips.ContourEntityVisibilityVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

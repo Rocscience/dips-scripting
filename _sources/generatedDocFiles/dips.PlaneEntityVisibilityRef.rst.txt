@@ -1,0 +1,7 @@
+dips.PlaneEntityVisibilityRef module
+====================================
+
+.. automodule:: dips.PlaneEntityVisibilityRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

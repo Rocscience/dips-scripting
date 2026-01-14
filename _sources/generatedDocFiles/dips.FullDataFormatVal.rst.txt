@@ -1,0 +1,7 @@
+dips.FullDataFormatVal module
+=============================
+
+.. automodule:: dips.FullDataFormatVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

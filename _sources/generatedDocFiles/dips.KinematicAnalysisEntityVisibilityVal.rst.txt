@@ -1,0 +1,7 @@
+dips.KinematicAnalysisEntityVisibilityVal module
+================================================
+
+.. automodule:: dips.KinematicAnalysisEntityVisibilityVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

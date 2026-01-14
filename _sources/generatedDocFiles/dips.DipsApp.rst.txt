@@ -1,0 +1,7 @@
+dips.DipsApp module
+===================
+
+.. automodule:: dips.DipsApp
+   :members:
+   :show-inheritance:
+   :undoc-members:

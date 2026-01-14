@@ -1,0 +1,7 @@
+dips.Vector2DVal module
+=======================
+
+.. automodule:: dips.Vector2DVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

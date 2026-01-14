@@ -1,0 +1,7 @@
+dips.LengthDataVal module
+=========================
+
+.. automodule:: dips.LengthDataVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

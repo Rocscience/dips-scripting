@@ -1,0 +1,7 @@
+dips.ValidatableResult\_ProtoReference\_EllipseToolEntityInfoVal module
+=======================================================================
+
+.. automodule:: dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

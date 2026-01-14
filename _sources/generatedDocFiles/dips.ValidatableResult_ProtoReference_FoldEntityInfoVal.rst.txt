@@ -1,0 +1,7 @@
+dips.ValidatableResult\_ProtoReference\_FoldEntityInfoVal module
+================================================================
+
+.. automodule:: dips.ValidatableResult_ProtoReference_FoldEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

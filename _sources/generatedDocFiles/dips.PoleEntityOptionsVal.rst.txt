@@ -1,0 +1,7 @@
+dips.PoleEntityOptionsVal module
+================================
+
+.. automodule:: dips.PoleEntityOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

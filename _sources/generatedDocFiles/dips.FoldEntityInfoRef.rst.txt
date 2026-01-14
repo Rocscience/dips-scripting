@@ -1,0 +1,7 @@
+dips.FoldEntityInfoRef module
+=============================
+
+.. automodule:: dips.FoldEntityInfoRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

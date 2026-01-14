@@ -1,0 +1,7 @@
+dips.CumulativePlotSettingsVal module
+=====================================
+
+.. automodule:: dips.CumulativePlotSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

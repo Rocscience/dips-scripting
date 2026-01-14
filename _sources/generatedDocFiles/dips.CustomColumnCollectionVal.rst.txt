@@ -1,0 +1,7 @@
+dips.CustomColumnCollectionVal module
+=====================================
+
+.. automodule:: dips.CustomColumnCollectionVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

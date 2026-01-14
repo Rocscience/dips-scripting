@@ -1,0 +1,7 @@
+dips.EllipseToolEntityInfoRef module
+====================================
+
+.. automodule:: dips.EllipseToolEntityInfoRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+dips.DiscontinuityDataVal module
+================================
+
+.. automodule:: dips.DiscontinuityDataVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

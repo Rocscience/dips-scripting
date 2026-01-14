@@ -1,0 +1,7 @@
+dips.OrientationDataSetVal module
+=================================
+
+.. automodule:: dips.OrientationDataSetVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+dips.JointFrequencyChartViewRef module
+======================================
+
+.. automodule:: dips.JointFrequencyChartViewRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

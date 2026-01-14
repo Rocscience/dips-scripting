@@ -1,0 +1,7 @@
+dips.SetStatisticsSettingsVal module
+====================================
+
+.. automodule:: dips.SetStatisticsSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

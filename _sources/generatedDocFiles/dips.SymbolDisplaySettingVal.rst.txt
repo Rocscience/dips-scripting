@@ -1,0 +1,7 @@
+dips.SymbolDisplaySettingVal module
+===================================
+
+.. automodule:: dips.SymbolDisplaySettingVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

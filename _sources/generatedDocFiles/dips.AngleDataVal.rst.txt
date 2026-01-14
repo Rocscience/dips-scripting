@@ -1,0 +1,7 @@
+dips.AngleDataVal module
+========================
+
+.. automodule:: dips.AngleDataVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

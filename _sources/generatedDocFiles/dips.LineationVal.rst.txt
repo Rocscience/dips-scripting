@@ -1,0 +1,7 @@
+dips.LineationVal module
+========================
+
+.. automodule:: dips.LineationVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

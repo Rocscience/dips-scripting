@@ -1,0 +1,7 @@
+dips.HistogramChartViewVal module
+=================================
+
+.. automodule:: dips.HistogramChartViewVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

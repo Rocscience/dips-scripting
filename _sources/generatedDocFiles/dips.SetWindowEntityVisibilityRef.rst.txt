@@ -1,0 +1,7 @@
+dips.SetWindowEntityVisibilityRef module
+========================================
+
+.. automodule:: dips.SetWindowEntityVisibilityRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

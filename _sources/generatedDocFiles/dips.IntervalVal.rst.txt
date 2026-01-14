@@ -1,0 +1,7 @@
+dips.IntervalVal module
+=======================
+
+.. automodule:: dips.IntervalVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

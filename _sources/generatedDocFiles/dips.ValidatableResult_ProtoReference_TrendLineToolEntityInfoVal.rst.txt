@@ -1,0 +1,7 @@
+dips.ValidatableResult\_ProtoReference\_TrendLineToolEntityInfoVal module
+=========================================================================
+
+.. automodule:: dips.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

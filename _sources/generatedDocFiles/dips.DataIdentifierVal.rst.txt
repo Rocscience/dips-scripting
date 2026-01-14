@@ -1,0 +1,7 @@
+dips.DataIdentifierVal module
+=============================
+
+.. automodule:: dips.DataIdentifierVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

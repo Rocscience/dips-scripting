@@ -1,0 +1,7 @@
+dips.TrendLineToolEntityInfoRef module
+======================================
+
+.. automodule:: dips.TrendLineToolEntityInfoRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

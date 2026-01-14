@@ -1,0 +1,7 @@
+dips.LineToolEntityInfoRef module
+=================================
+
+.. automodule:: dips.LineToolEntityInfoRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

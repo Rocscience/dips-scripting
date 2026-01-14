@@ -1,0 +1,7 @@
+dips.VectorDensityContourSettingsVal module
+===========================================
+
+.. automodule:: dips.VectorDensityContourSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

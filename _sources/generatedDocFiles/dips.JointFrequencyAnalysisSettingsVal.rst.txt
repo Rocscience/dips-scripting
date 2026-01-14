@@ -1,0 +1,7 @@
+dips.JointFrequencyAnalysisSettingsVal module
+=============================================
+
+.. automodule:: dips.JointFrequencyAnalysisSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

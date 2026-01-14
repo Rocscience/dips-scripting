@@ -1,0 +1,7 @@
+dips.LineIntersectionCalculatorToolEntityInfoRef module
+=======================================================
+
+.. automodule:: dips.LineIntersectionCalculatorToolEntityInfoRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

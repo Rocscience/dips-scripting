@@ -1,0 +1,7 @@
+dips.ConeToolEntityInfoRef module
+=================================
+
+.. automodule:: dips.ConeToolEntityInfoRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

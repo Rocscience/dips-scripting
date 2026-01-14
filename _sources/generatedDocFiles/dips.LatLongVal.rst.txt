@@ -1,0 +1,7 @@
+dips.LatLongVal module
+======================
+
+.. automodule:: dips.LatLongVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

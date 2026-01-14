@@ -1,0 +1,7 @@
+dips.JointSpacingAnalysisSettingsVal module
+===========================================
+
+.. automodule:: dips.JointSpacingAnalysisSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

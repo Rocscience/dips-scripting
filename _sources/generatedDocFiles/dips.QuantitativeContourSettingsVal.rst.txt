@@ -1,0 +1,7 @@
+dips.QuantitativeContourSettingsVal module
+==========================================
+
+.. automodule:: dips.QuantitativeContourSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

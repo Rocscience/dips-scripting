@@ -1,0 +1,7 @@
+dips.ContourOptionsVal module
+=============================
+
+.. automodule:: dips.ContourOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

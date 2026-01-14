@@ -1,0 +1,7 @@
+dips.HistogramPlotSettingsVal module
+====================================
+
+.. automodule:: dips.HistogramPlotSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+dips.PolygonToolEntityInfoVal module
+====================================
+
+.. automodule:: dips.PolygonToolEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

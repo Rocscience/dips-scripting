@@ -1,0 +1,7 @@
+dips.SymbolicSettingsVal module
+===============================
+
+.. automodule:: dips.SymbolicSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:
