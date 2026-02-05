@@ -1,0 +1,7 @@
+dips.ValidatableResult\_KinematicSensitivitySettingsVal module
+==============================================================
+
+.. automodule:: dips.ValidatableResult_KinematicSensitivitySettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

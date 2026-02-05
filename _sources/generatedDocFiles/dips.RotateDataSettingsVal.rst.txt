@@ -1,0 +1,7 @@
+dips.RotateDataSettingsVal module
+=================================
+
+.. automodule:: dips.RotateDataSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

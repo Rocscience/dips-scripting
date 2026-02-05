@@ -1,0 +1,7 @@
+dips.AngleSensitivityRangeVal module
+====================================
+
+.. automodule:: dips.AngleSensitivityRangeVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

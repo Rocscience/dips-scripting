@@ -1,0 +1,7 @@
+dips.DisplayOptionsVal module
+=============================
+
+.. automodule:: dips.DisplayOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+dips.ValidatableResult\_ProtoReference\_ScatterChartViewVal module
+==================================================================
+
+.. automodule:: dips.ValidatableResult_ProtoReference_ScatterChartViewVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

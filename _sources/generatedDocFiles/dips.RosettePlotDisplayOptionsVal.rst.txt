@@ -1,0 +1,7 @@
+dips.RosettePlotDisplayOptionsVal module
+========================================
+
+.. automodule:: dips.RosettePlotDisplayOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

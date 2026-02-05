@@ -1,0 +1,7 @@
+dips.Stereonet3DDisplayOptionsVal module
+========================================
+
+.. automodule:: dips.Stereonet3DDisplayOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

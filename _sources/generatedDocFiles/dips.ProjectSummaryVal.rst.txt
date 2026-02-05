@@ -1,0 +1,7 @@
+dips.ProjectSummaryVal module
+=============================
+
+.. automodule:: dips.ProjectSummaryVal
+   :members:
+   :show-inheritance:
+   :undoc-members:
