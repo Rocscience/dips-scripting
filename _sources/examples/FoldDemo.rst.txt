@@ -1,0 +1,14 @@
+Fold Demo
+==================================================================================
+
+Demonstration of Fold services in Dips Python API.
+
+This script demonstrates IFoldServices methods including:
+- AddFoldWindow: Create a new fold window
+- GetFoldList: List all folds
+- DeleteFold: Remove a fold
+
+.. _FoldDemo:
+.. literalinclude:: ../../Examples/FoldDemo.py
+   :language: python
+   :caption: Code Snippet: FoldDemo.py

@@ -1,0 +1,21 @@
+Stereonet 2D Demo
+==================================================================================
+
+Comprehensive demonstration of Stereonet2D functionality in Dips Python API.
+
+This script demonstrates Stereonet2D services including:
+- View Management: Create, Get, Close views
+- Entity Visibility: Poles, Intersections, Contours, Kinematic Analysis, Global Planes, Overlay
+- Entity Options: Pole options, Symbolic settings, Intersection options, Contour settings
+- Kinematic Analysis: Settings and visibility
+- Group Visibility: Sets, Planes, Traverses, Folds
+- Legend and Display Settings: Weighted, VectorMode, ProjectionMode
+- Entity References: Get and set individual entity visibility/options
+- Data Filters: Get and set active filter
+
+Note: Tool demonstrations are in Stereonet2DToolsDemo.py
+
+.. _Stereonet2DDemo:
+.. literalinclude:: ../../Examples/Stereonet2DDemo.py
+   :language: python
+   :caption: Code Snippet: Stereonet2DDemo.py

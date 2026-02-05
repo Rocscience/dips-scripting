@@ -1,0 +1,9 @@
+Data Filter Demo
+==================================================================================
+
+A simple example for working with filters through the dips scripting API.
+
+.. _DataFilterDemo:
+.. literalinclude:: ../../Examples/DataFilterDemo.py
+   :language: python
+   :caption: Code Snippet: DataFilterDemo.py

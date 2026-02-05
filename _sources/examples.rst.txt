@@ -1,0 +1,20 @@
+Python Script Examples
+======================
+
+.. toctree::
+   :maxdepth: 1
+
+   examples/Tutorial
+   examples/ChartTypesDemo
+   examples/DataFilterDemo
+   examples/FoldDemo
+   examples/LaunchTest
+   examples/ProjectDemo
+   examples/RosetteDemo
+   examples/RosetteToolsDemo
+   examples/SetDemo
+   examples/Stereonet2DDemo
+   examples/Stereonet2DToolsDemo
+   examples/Stereonet3DDemo
+   examples/TraverseDemo
+   examples/UserPlaneDemo

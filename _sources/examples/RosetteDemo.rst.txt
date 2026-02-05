@@ -1,0 +1,18 @@
+Rosette Demo
+==================================================================================
+
+Comprehensive demonstration of Rosette functionality in Dips Python API.
+
+This script demonstrates Rosette services including:
+- View Management: Create, Get, Close views
+- Legend and Settings: Visibility, Weighting, Rosette settings, Projection mode
+- Group Visibility: User planes
+- Entity References: Get and set user plane entity visibility
+- Data Filters: Get and set active filter
+
+Note: Tool demonstrations are in RosetteToolsDemo.py
+
+.. _RosetteDemo:
+.. literalinclude:: ../../Examples/RosetteDemo.py
+   :language: python
+   :caption: Code Snippet: RosetteDemo.py

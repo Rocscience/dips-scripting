@@ -28,3 +28,4 @@ There are two methods to run a script, which differ in the Python environment us
    :caption: Dips API Reference:
 
    generatedDocFiles/modules
+   examples

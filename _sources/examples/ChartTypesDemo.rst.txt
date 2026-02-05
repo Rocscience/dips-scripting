@@ -1,0 +1,23 @@
+Chart Types Demo
+==================================================================================
+
+Dips API Chart Types Demo
+
+This script demonstrates how to create and interact with all chart types
+available in the Dips scripting API. It creates sample traverse data and
+shows how to use GetDefault methods for easy settings initialization.
+
+Chart types demonstrated:
+- Histogram Chart
+- Scatter Chart
+- Cumulative Chart
+- Qualitative/Quantitative Analysis Chart
+- Joint Spacing Analysis Chart
+- Joint Frequency Analysis Chart
+- RQD Analysis Chart
+- Kinematic Sensitivity Analysis Chart
+
+.. _ChartTypesDemo:
+.. literalinclude:: ../../Examples/ChartTypesDemo.py
+   :language: python
+   :caption: Code Snippet: ChartTypesDemo.py

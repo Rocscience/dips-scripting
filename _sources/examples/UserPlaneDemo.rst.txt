@@ -1,0 +1,14 @@
+User Plane Demo
+==================================================================================
+
+Demonstration of User Plane services in Dips Python API.
+
+This script demonstrates IUserPlaneServices methods including:
+- AddUserPlane: Create a new user-defined plane
+- GetUserPlaneList: List all user planes
+- DeleteUserPlane: Remove a user plane
+
+.. _UserPlaneDemo:
+.. literalinclude:: ../../Examples/UserPlaneDemo.py
+   :language: python
+   :caption: Code Snippet: UserPlaneDemo.py

@@ -1,0 +1,9 @@
+Launch Test
+==================================================================================
+
+A simple example demonstrating how to launch a Dips application and open a project file.
+
+.. _LaunchTest:
+.. literalinclude:: ../../Examples/LaunchTest.py
+   :language: python
+   :caption: Code Snippet: LaunchTest.py
