@@ -1,0 +1,1241 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stereonet 3D Demo &#8212; dips  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/Stereonet3DDemo';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Traverse Demo" href="TraverseDemo.html" />
+    <link rel="prev" title="Stereonet 2D Tools Demo" href="Stereonet2DToolsDemo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="dips  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="dips  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../generatedDocFiles/modules.html">
+    dips
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Python Script Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../generatedDocFiles/modules.html">
+    dips
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Python Script Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChartTypesDemo.html">Chart Types Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataFilterDemo.html">Data Filter Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FoldDemo.html">Fold Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LaunchTest.html">Launch Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ProjectDemo.html">Project Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RosetteDemo.html">Rosette Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RosetteToolsDemo.html">Rosette Tools Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetDemo.html">Set Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stereonet2DDemo.html">Stereonet 2D Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stereonet2DToolsDemo.html">Stereonet 2D Tools Demo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Stereonet 3D Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TraverseDemo.html">Traverse Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserPlaneDemo.html">User Plane Demo</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../examples.html" class="nav-link">Python Script Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Stereonet 3D Demo</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="stereonet-3d-demo">
+<h1>Stereonet 3D Demo<a class="headerlink" href="#stereonet-3d-demo" title="Link to this heading">#</a></h1>
+<p>Comprehensive demonstration of Stereonet3D functionality in Dips Python API.</p>
+<p>This script demonstrates Stereonet3D services including:
+- View Management: Create, Get, Close views
+- Entity Visibility: Poles, Intersections, Contours, Global Planes, Overlay
+- Entity Options: Pole options, Intersection options, Contour settings
+- Group Visibility: Sets, Planes, Traverses, Folds
+- Legend and Display Settings: Weighted, VectorMode
+- Entity References: Get and set individual entity visibility/options
+- Data Filters: Get and set active filter</p>
+<p>Note: Stereonet3D does not have Kinematic Analysis or Projection Mode settings.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<span id="stereonet3ddemo"></span><div class="code-block-caption"><span class="caption-text">Code Snippet: Stereonet3DDemo.py</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Comprehensive demonstration of Stereonet3D functionality in Dips Python API.</span>
+
+<span class="sd">This script demonstrates Stereonet3D services including:</span>
+<span class="sd">- View Management: Create, Get, Close views</span>
+<span class="sd">- Entity Visibility: Poles, Intersections, Contours, Global Planes, Overlay</span>
+<span class="sd">- Entity Options: Pole options, Intersection options, Contour settings</span>
+<span class="sd">- Group Visibility: Sets, Planes, Traverses, Folds</span>
+<span class="sd">- Legend and Display Settings: Weighted, VectorMode</span>
+<span class="sd">- Entity References: Get and set individual entity visibility/options</span>
+<span class="sd">- Data Filters: Get and set active filter</span>
+
+<span class="sd">Note: Stereonet3D does not have Kinematic Analysis or Projection Mode settings.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuiltInDataFormatters</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
+
+<span class="c1"># Helper value wrappers</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.AngleDataVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span>
+
+<span class="c1"># Entity options and visibility wrappers</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.PoleEntityOptionsVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.IntersectionOptionsVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ContourEntityVisibilityVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ContourOptionsVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.GlobalPlaneEntityVisibilityVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.StereonetOverlayEntityVisibilityVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.StereonetOverlaySettingsVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.VectorDensityContourSettingsVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.QuantitativeContourSettingsVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.SetVersusSetVal</span>
+
+<span class="c1"># Data wrappers</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.DiscontinuityDataVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.OrientationDataSetVal</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># HELPER FUNCTIONS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_trend_plunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a TrendPlunge from degrees.&quot;&quot;&quot;</span>
+    <span class="n">tp</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="p">()</span>
+    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
+    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">)</span>
+    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
+    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge_deg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tp</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_color</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">255</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Color from RGBA values.&quot;&quot;&quot;</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="p">()</span>
+    <span class="n">color</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="n">color</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span>
+    <span class="n">color</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">color</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># SAMPLE DATA CREATION</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_sample_traverse_with_poles</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a sample traverse with discontinuities (poles) for demonstration.&quot;&quot;&quot;</span>
+    <span class="n">ods</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultOrientationDataSet</span><span class="p">()</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Sample Traverse for Stereonet3D Demo&quot;</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationDataType</span><span class="o">.</span><span class="n">SpotMapping</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
+    
+    <span class="c1"># Use built-in unit formatters</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">traverse_elevation_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">traverse_xyz_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">traverse_depth_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">survey_distance_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_distance_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_xyz_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_persistence_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    
+    <span class="c1"># Create sample poles with different orientations</span>
+    <span class="n">sample_poles</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span> <span class="p">(</span><span class="mi">135</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">225</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span> <span class="p">(</span><span class="mi">270</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="p">(</span><span class="mi">315</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">75</span><span class="p">),</span> <span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span>
+    <span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">trend_deg</span><span class="p">,</span> <span class="n">plunge_deg</span> <span class="ow">in</span> <span class="n">sample_poles</span><span class="p">:</span>
+        <span class="n">discontinuity</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="p">()</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation1</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">)</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation2</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge_deg</span><span class="p">)</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">discontinuity</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">ods</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># VIEW MANAGEMENT DEMONSTRATIONS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_view_management</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate view creation and listing.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VIEW MANAGEMENT&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="c1"># Get existing views</span>
+    <span class="n">views</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetStereonet3DViewList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">views</span><span class="p">)</span><span class="si">}</span><span class="s2"> existing Stereonet3D view(s)&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Create a new view</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Creating new Stereonet3D view...&quot;</span><span class="p">)</span>
+    <span class="n">new_view</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">CreateStereonet3DView</span><span class="p">()</span>
+    <span class="n">view_value</span> <span class="o">=</span> <span class="n">new_view</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created view: &#39;</span><span class="si">{</span><span class="n">view_value</span><span class="o">.</span><span class="n">view_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">new_view</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># ENTITY VISIBILITY DEMONSTRATIONS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_entity_visibility</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate all entity visibility settings.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ENTITY VISIBILITY&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetPoleEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetPoleEntityVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetPoleEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetIntersectionEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetIntersectionEntityVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetIntersectionEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetContourEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetContourEntityVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetContourEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetGlobalMeanPlaneEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetGlobalMeanPlaneEntityVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetGlobalMeanPlaneEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetGlobalBestFitPlaneEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetGlobalBestFitPlaneEntityVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetGlobalBestFitPlaneEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetStereonetOverlayEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetStereonetOverlayEntityVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetStereonetOverlayEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># ENTITY OPTIONS DEMONSTRATIONS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_pole_options</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate pole entity options.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;POLE OPTIONS&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pole_options</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">PoleEntityOptionsVal</span><span class="o">.</span><span class="n">PoleEntityOptionsVal</span><span class="p">()</span>
+        <span class="n">pole_options</span><span class="o">.</span><span class="n">pole_mode</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">ePoleMode</span><span class="o">.</span><span class="n">Vector</span>
+        <span class="n">pole_options</span><span class="o">.</span><span class="n">show_pole_planes</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">pole_options</span><span class="o">.</span><span class="n">show_pole_vector_lines</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetPoleEntityOptions</span><span class="p">(</span><span class="n">pole_options</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetPoleEntityOptions (Vector mode)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetPoleEntityOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_intersection_options</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate intersection entity options.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INTERSECTION OPTIONS&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">intersection_options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultIntersectionOptions</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetIntersectionEntityOptions</span><span class="p">(</span><span class="n">intersection_options</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetIntersectionEntityOptions&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetIntersectionEntityOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetIntersectionType</span><span class="p">(</span><span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eIntersectionType</span><span class="o">.</span><span class="n">AllPoleIntersections</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetIntersectionType (AllPoleIntersections)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetIntersectionType: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">sets</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetSetList</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sets</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">set_vs_set</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">SetVersusSetVal</span><span class="o">.</span><span class="n">SetVersusSetVal</span><span class="p">()</span>
+            <span class="n">set_vs_set</span><span class="o">.</span><span class="n">set_a</span> <span class="o">=</span> <span class="n">sets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">set_vs_set</span><span class="o">.</span><span class="n">set_b</span> <span class="o">=</span> <span class="n">sets</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">SetSetVersusSet</span><span class="p">(</span><span class="n">set_vs_set</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetSetVersusSet&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetSetVersusSet (needs 2+ sets)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetSetVersusSet: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_contour_options</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate contour entity options and settings.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CONTOUR OPTIONS&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">contour_visibility</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">ContourEntityVisibilityVal</span><span class="o">.</span><span class="n">ContourEntityVisibilityVal</span><span class="p">()</span>
+        <span class="n">contour_visibility</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetContourEntityOptions</span><span class="p">(</span><span class="n">contour_visibility</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetContourEntityOptions&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetContourEntityOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetContourType</span><span class="p">(</span><span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eContourType</span><span class="o">.</span><span class="n">PoleVectorDensity</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetContourType (PoleVectorDensity)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetContourType: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">density_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultVectorDensityContourSettings</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetPoleVectorDensityContourSettings</span><span class="p">(</span><span class="n">density_settings</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetPoleVectorDensityContourSettings&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetPoleVectorDensityContourSettings: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">density_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultVectorDensityContourSettings</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetIntersectionVectorDensityContourSettings</span><span class="p">(</span><span class="n">density_settings</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetIntersectionVectorDensityContourSettings&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetIntersectionVectorDensityContourSettings: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">quant_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultQuantitativeContourSettings</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetQuantitativeContourSettings</span><span class="p">(</span><span class="n">quant_settings</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetQuantitativeContourSettings&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetQuantitativeContourSettings: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">contour_options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultContourOptions</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetPoleVectorContourOptions</span><span class="p">(</span><span class="n">contour_options</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetPoleVectorContourOptions&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetPoleVectorContourOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">contour_options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultContourOptions</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetIntersectionVectorContourOptions</span><span class="p">(</span><span class="n">contour_options</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetIntersectionVectorContourOptions&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetIntersectionVectorContourOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">contour_options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultContourOptions</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetQuantitativeContourOptions</span><span class="p">(</span><span class="n">contour_options</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetQuantitativeContourOptions&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetQuantitativeContourOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_global_plane_options</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate global plane options.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GLOBAL PLANE OPTIONS&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">global_mean</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">GlobalPlaneEntityVisibilityVal</span><span class="o">.</span><span class="n">GlobalPlaneEntityVisibilityVal</span><span class="p">()</span>
+        <span class="n">global_mean</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetGlobalMeanPlaneEntityOptions</span><span class="p">(</span><span class="n">global_mean</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetGlobalMeanPlaneEntityOptions&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetGlobalMeanPlaneEntityOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">global_best_fit</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">GlobalPlaneEntityVisibilityVal</span><span class="o">.</span><span class="n">GlobalPlaneEntityVisibilityVal</span><span class="p">()</span>
+        <span class="n">global_best_fit</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetGlobalBestFitPlaneEntityOptions</span><span class="p">(</span><span class="n">global_best_fit</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetGlobalBestFitPlaneEntityOptions&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetGlobalBestFitPlaneEntityOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_stereonet_overlay</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate stereonet overlay options.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STEREONET OVERLAY&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">overlay_visibility</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">StereonetOverlayEntityVisibilityVal</span><span class="o">.</span><span class="n">StereonetOverlayEntityVisibilityVal</span><span class="p">()</span>
+        <span class="n">overlay_visibility</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">overlay_settings</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">StereonetOverlaySettingsVal</span><span class="o">.</span><span class="n">StereonetOverlaySettingsVal</span><span class="p">()</span>
+        <span class="n">overlay_settings</span><span class="o">.</span><span class="n">option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eStereonetOverlayOption</span><span class="o">.</span><span class="n">Polar</span>
+        <span class="n">overlay_settings</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+        <span class="n">overlay_visibility</span><span class="o">.</span><span class="n">stereonet_overlay_settings</span> <span class="o">=</span> <span class="n">overlay_settings</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetStereonetOverlayEntityOptions</span><span class="p">(</span><span class="n">overlay_visibility</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetStereonetOverlayEntityOptions (Polar)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetStereonetOverlayEntityOptions (Polar): </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">overlay_visibility</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">StereonetOverlayEntityVisibilityVal</span><span class="o">.</span><span class="n">StereonetOverlayEntityVisibilityVal</span><span class="p">()</span>
+        <span class="n">overlay_visibility</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">overlay_settings</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">StereonetOverlaySettingsVal</span><span class="o">.</span><span class="n">StereonetOverlaySettingsVal</span><span class="p">()</span>
+        <span class="n">overlay_settings</span><span class="o">.</span><span class="n">option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eStereonetOverlayOption</span><span class="o">.</span><span class="n">Equatorial</span>
+        <span class="n">overlay_settings</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+        <span class="n">overlay_visibility</span><span class="o">.</span><span class="n">stereonet_overlay_settings</span> <span class="o">=</span> <span class="n">overlay_settings</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetStereonetOverlayEntityOptions</span><span class="p">(</span><span class="n">overlay_visibility</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetStereonetOverlayEntityOptions (Equatorial)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetStereonetOverlayEntityOptions (Equatorial): </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">overlay_visibility</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">StereonetOverlayEntityVisibilityVal</span><span class="o">.</span><span class="n">StereonetOverlayEntityVisibilityVal</span><span class="p">()</span>
+        <span class="n">overlay_visibility</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">overlay_settings</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">StereonetOverlaySettingsVal</span><span class="o">.</span><span class="n">StereonetOverlaySettingsVal</span><span class="p">()</span>
+        <span class="n">overlay_settings</span><span class="o">.</span><span class="n">option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eStereonetOverlayOption</span><span class="o">.</span><span class="n">CustomOverlay</span>
+        <span class="n">overlay_settings</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+        <span class="n">overlay_settings</span><span class="o">.</span><span class="n">custom_orientation</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="n">overlay_visibility</span><span class="o">.</span><span class="n">stereonet_overlay_settings</span> <span class="o">=</span> <span class="n">overlay_settings</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetStereonetOverlayEntityOptions</span><span class="p">(</span><span class="n">overlay_visibility</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetStereonetOverlayEntityOptions (Custom)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetStereonetOverlayEntityOptions (Custom): </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># GROUP VISIBILITY DEMONSTRATIONS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_group_visibility</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate all group visibility settings.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GROUP VISIBILITY&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetSetWindowEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetSetWindowEntityGroupVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetSetWindowEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetMeanSetPlaneEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetMeanSetPlaneEntityGroupVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetMeanSetPlaneEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetUserPlaneEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetUserPlaneEntityGroupVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetUserPlaneEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetTraverseEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetTraverseEntityGroupVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetTraverseEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetFoldWindowEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetFoldWindowEntityGroupVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetFoldWindowEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetBestFitFoldPlaneEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetBestFitFoldPlaneEntityGroupVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetBestFitFoldPlaneEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># LEGEND AND DISPLAY SETTINGS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_legend_and_settings</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate legend and display settings.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LEGEND AND DISPLAY SETTINGS&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetLegendVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetLegendVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetLegendVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetIsWeighted: False&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetIsWeighted: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetVectorMode</span><span class="p">(</span><span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eVectorMode</span><span class="o">.</span><span class="n">Pole</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetVectorMode: Pole&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetVectorMode: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># ENTITY REFERENCE DEMONSTRATIONS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_entity_references</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate getting and setting entity references.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ENTITY REFERENCES&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetSetWindowEntityVisibilityList</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetSetWindowEntityVisibilityList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetSetWindowEntityVisibilityList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetMeanSetPlaneEntityVisibilityList</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetMeanSetPlaneEntityVisibilityList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetMeanSetPlaneEntityVisibilityList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetUserPlaneEntityVisibilityList</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetUserPlaneEntityVisibilityList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetUserPlaneEntityVisibilityList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetTraverseEntityVisibilityList</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetTraverseEntityVisibilityList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetTraverseEntityVisibilityList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetFoldWindowEntityVisibilityList</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetFoldWindowEntityVisibilityList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetFoldWindowEntityVisibilityList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetBestFitFoldPlaneEntityVisibilityList</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetBestFitFoldPlaneEntityVisibilityList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetBestFitFoldPlaneEntityVisibilityList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_individual_entity_visibility</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate setting visibility and options for individual entities.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INDIVIDUAL ENTITY VISIBILITY/OPTIONS&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetSetWindowEntityVisibilityList</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">entities</span><span class="p">:</span>
+            <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetSetWindowEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetSetWindowEntityVisibility: True&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetSetWindowEntityVisibility: No set windows available&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetSetWindowEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetMeanSetPlaneEntityVisibilityList</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">entities</span><span class="p">:</span>
+            <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetMeanSetPlaneEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetMeanSetPlaneEntityVisibility: True&quot;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="kn">import</span><span class="w"> </span><span class="nn">dips.SetEntityOptionsVal</span>
+                <span class="n">opts</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">SetEntityOptionsVal</span><span class="o">.</span><span class="n">SetEntityOptionsVal</span><span class="p">()</span>
+                <span class="n">opts</span><span class="o">.</span><span class="n">show_label</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetMeanSetPlaneEntityOptions</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetMeanSetPlaneEntityOptions&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetMeanSetPlaneEntityOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetMeanSetPlaneEntityVisibility: No mean set planes available&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetMeanSetPlaneEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetUserPlaneEntityVisibilityList</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">entities</span><span class="p">:</span>
+            <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetUserPlaneEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetUserPlaneEntityVisibility: True&quot;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="kn">import</span><span class="w"> </span><span class="nn">dips.UserPlaneEntityOptionsVal</span>
+                <span class="n">opts</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">UserPlaneEntityOptionsVal</span><span class="o">.</span><span class="n">UserPlaneEntityOptionsVal</span><span class="p">()</span>
+                <span class="n">opts</span><span class="o">.</span><span class="n">show_label</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetUserPlaneEntityOptions</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetUserPlaneEntityOptions&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetUserPlaneEntityOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetUserPlaneEntityVisibility: No user planes available&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetUserPlaneEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetTraverseEntityVisibilityList</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">entities</span><span class="p">:</span>
+            <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetTraverseEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetTraverseEntityVisibility: True&quot;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="kn">import</span><span class="w"> </span><span class="nn">dips.TraverseEntityOptionsVal</span>
+                <span class="n">opts</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">TraverseEntityOptionsVal</span><span class="o">.</span><span class="n">TraverseEntityOptionsVal</span><span class="p">()</span>
+                <span class="n">opts</span><span class="o">.</span><span class="n">show_label</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetTraverseEntityOptions</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetTraverseEntityOptions&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetTraverseEntityOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetTraverseEntityVisibility: No traverses available&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetTraverseEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetFoldWindowEntityVisibilityList</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">entities</span><span class="p">:</span>
+            <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetFoldWindowEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetFoldWindowEntityVisibility: True&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetFoldWindowEntityVisibility: No fold windows available&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetFoldWindowEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetBestFitFoldPlaneEntityVisibilityList</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">entities</span><span class="p">:</span>
+            <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetFoldEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetFoldEntityVisibility: True&quot;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="kn">import</span><span class="w"> </span><span class="nn">dips.FoldEntityOptionsVal</span>
+                <span class="n">opts</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">FoldEntityOptionsVal</span><span class="o">.</span><span class="n">FoldEntityOptionsVal</span><span class="p">()</span>
+                <span class="n">opts</span><span class="o">.</span><span class="n">show_label</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetFoldEntityOptions</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetFoldEntityOptions&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetFoldEntityOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetFoldEntityVisibility: No fold entities available&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetFoldEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># DATA FILTER DEMONSTRATIONS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_active_data_filter</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate active data filter management.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVE DATA FILTER&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">active_filter</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetActiveDataFilter</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">active_filter</span><span class="p">:</span>
+            <span class="n">filter_value</span> <span class="o">=</span> <span class="n">active_filter</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetActiveDataFilter: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ GetActiveDataFilter: None (no active filter)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetActiveDataFilter: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">filters</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDataFilterList</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">filters</span><span class="p">:</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">SetActiveDataFilter</span><span class="p">(</span><span class="n">filters</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ SetActiveDataFilter: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetActiveDataFilter: No filters available&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetActiveDataFilter: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># VIEW CLOSE DEMONSTRATION</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_close_view</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate closing a view.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CLOSE VIEW&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">view_value</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">view_name</span> <span class="o">=</span> <span class="n">view_value</span><span class="o">.</span><span class="n">view_name</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">CloseStereonet3DView</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ CloseStereonet3DView: &#39;</span><span class="si">{</span><span class="n">view_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ CloseStereonet3DView: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># MAIN</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Main demonstration function.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dips API - Stereonet3D Comprehensive Demo&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="c1"># Connect to Dips</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
+    
+    <span class="c1"># Create sample data if needed</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SAMPLE DATA SETUP&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">traverses</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetTraverseList</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">traverses</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating sample traverse with poles...&quot;</span><span class="p">)</span>
+            <span class="n">ods</span> <span class="o">=</span> <span class="n">create_sample_traverse_with_poles</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">AddTraverse</span><span class="p">(</span><span class="n">ods</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created traverse with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> poles&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">traverses</span><span class="p">)</span><span class="si">}</span><span class="s2"> existing traverse(s)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Note: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Get or create a view</span>
+    <span class="n">views</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetStereonet3DViewList</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">views</span><span class="p">:</span>
+        <span class="n">view</span> <span class="o">=</span> <span class="n">views</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Using existing view: &#39;</span><span class="si">{</span><span class="n">view</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span><span class="o">.</span><span class="n">view_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">view</span> <span class="o">=</span> <span class="n">demonstrate_view_management</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Run all demonstrations</span>
+    <span class="n">demonstrate_entity_visibility</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+    <span class="n">demonstrate_pole_options</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+    <span class="n">demonstrate_intersection_options</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+    <span class="n">demonstrate_contour_options</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+    <span class="n">demonstrate_global_plane_options</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+    <span class="n">demonstrate_stereonet_overlay</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+    <span class="n">demonstrate_group_visibility</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+    <span class="n">demonstrate_legend_and_settings</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+    <span class="n">demonstrate_entity_references</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+    <span class="n">demonstrate_individual_entity_visibility</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+    <span class="n">demonstrate_active_data_filter</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Create and close a new view to demonstrate view lifecycle</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VIEW LIFECYCLE DEMO&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">new_view</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">CreateStereonet3DView</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created new view: &#39;</span><span class="si">{</span><span class="n">new_view</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span><span class="o">.</span><span class="n">view_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="n">demonstrate_close_view</span><span class="p">(</span><span class="n">new_view</span><span class="p">)</span>
+    
+    <span class="c1"># Show the application</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
+    
+    <span class="c1"># Summary</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DEMONSTRATION COMPLETE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Stereonet3D services demonstrated (47 methods):</span>
+
+<span class="s2">VIEW MANAGEMENT (3 methods):</span>
+<span class="s2">  - GetStereonet3DViewList</span>
+<span class="s2">  - CreateStereonet3DView</span>
+<span class="s2">  - CloseStereonet3DView</span>
+
+<span class="s2">ENTITY VISIBILITY (6 methods):</span>
+<span class="s2">  - SetPoleEntityVisibility</span>
+<span class="s2">  - SetIntersectionEntityVisibility</span>
+<span class="s2">  - SetContourEntityVisibility</span>
+<span class="s2">  - SetGlobalMeanPlaneEntityVisibility</span>
+<span class="s2">  - SetGlobalBestFitPlaneEntityVisibility</span>
+<span class="s2">  - SetStereonetOverlayEntityVisibility</span>
+
+<span class="s2">ENTITY OPTIONS (12 methods):</span>
+<span class="s2">  - SetPoleEntityOptions</span>
+<span class="s2">  - SetIntersectionEntityOptions</span>
+<span class="s2">  - SetIntersectionType</span>
+<span class="s2">  - SetSetVersusSet</span>
+<span class="s2">  - SetContourEntityOptions</span>
+<span class="s2">  - SetContourType</span>
+<span class="s2">  - SetPoleVectorDensityContourSettings</span>
+<span class="s2">  - SetIntersectionVectorDensityContourSettings</span>
+<span class="s2">  - SetQuantitativeContourSettings</span>
+<span class="s2">  - SetPoleVectorContourOptions</span>
+<span class="s2">  - SetIntersectionVectorContourOptions</span>
+<span class="s2">  - SetQuantitativeContourOptions</span>
+<span class="s2">  - SetGlobalMeanPlaneEntityOptions</span>
+<span class="s2">  - SetGlobalBestFitPlaneEntityOptions</span>
+<span class="s2">  - SetStereonetOverlayEntityOptions</span>
+
+<span class="s2">GROUP VISIBILITY (6 methods):</span>
+<span class="s2">  - SetSetWindowEntityGroupVisibility</span>
+<span class="s2">  - SetMeanSetPlaneEntityGroupVisibility</span>
+<span class="s2">  - SetUserPlaneEntityGroupVisibility</span>
+<span class="s2">  - SetTraverseEntityGroupVisibility</span>
+<span class="s2">  - SetFoldWindowEntityGroupVisibility</span>
+<span class="s2">  - SetBestFitFoldPlaneEntityGroupVisibility</span>
+
+<span class="s2">LEGEND AND SETTINGS (3 methods):</span>
+<span class="s2">  - SetLegendVisibility</span>
+<span class="s2">  - SetIsWeighted</span>
+<span class="s2">  - SetVectorMode</span>
+
+<span class="s2">ENTITY REFERENCE LISTS (6 methods):</span>
+<span class="s2">  - GetSetWindowEntityVisibilityList</span>
+<span class="s2">  - GetMeanSetPlaneEntityVisibilityList</span>
+<span class="s2">  - GetUserPlaneEntityVisibilityList</span>
+<span class="s2">  - GetTraverseEntityVisibilityList</span>
+<span class="s2">  - GetFoldWindowEntityVisibilityList</span>
+<span class="s2">  - GetBestFitFoldPlaneEntityVisibilityList</span>
+
+<span class="s2">INDIVIDUAL ENTITY VISIBILITY/OPTIONS (10 methods):</span>
+<span class="s2">  - SetSetWindowEntityVisibility</span>
+<span class="s2">  - SetMeanSetPlaneEntityVisibility</span>
+<span class="s2">  - SetMeanSetPlaneEntityOptions</span>
+<span class="s2">  - SetUserPlaneEntityVisibility</span>
+<span class="s2">  - SetUserPlaneEntityOptions</span>
+<span class="s2">  - SetTraverseEntityVisibility</span>
+<span class="s2">  - SetTraverseEntityOptions</span>
+<span class="s2">  - SetFoldWindowEntityVisibility</span>
+<span class="s2">  - SetFoldEntityVisibility</span>
+<span class="s2">  - SetFoldEntityOptions</span>
+
+<span class="s2">DATA FILTER (2 methods):</span>
+<span class="s2">  - GetActiveDataFilter</span>
+<span class="s2">  - SetActiveDataFilter</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Stereonet2DToolsDemo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Stereonet 2D Tools Demo</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="TraverseDemo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Traverse Demo</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/Stereonet3DDemo.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Rocscience.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

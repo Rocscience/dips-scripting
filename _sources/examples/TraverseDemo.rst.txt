@@ -1,0 +1,14 @@
+Traverse Demo
+==================================================================================
+
+Demonstration of Traverse services in Dips Python API.
+
+This script demonstrates ITraverseServices methods including:
+- AddTraverse: Create a new traverse with discontinuity data
+- GetTraverseList: List all traverses
+- DeleteTraverse: Remove a traverse
+
+.. _TraverseDemo:
+.. literalinclude:: ../../Examples/TraverseDemo.py
+   :language: python
+   :caption: Code Snippet: TraverseDemo.py

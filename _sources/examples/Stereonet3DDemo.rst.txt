@@ -1,0 +1,20 @@
+Stereonet 3D Demo
+==================================================================================
+
+Comprehensive demonstration of Stereonet3D functionality in Dips Python API.
+
+This script demonstrates Stereonet3D services including:
+- View Management: Create, Get, Close views
+- Entity Visibility: Poles, Intersections, Contours, Global Planes, Overlay
+- Entity Options: Pole options, Intersection options, Contour settings
+- Group Visibility: Sets, Planes, Traverses, Folds
+- Legend and Display Settings: Weighted, VectorMode
+- Entity References: Get and set individual entity visibility/options
+- Data Filters: Get and set active filter
+
+Note: Stereonet3D does not have Kinematic Analysis or Projection Mode settings.
+
+.. _Stereonet3DDemo:
+.. literalinclude:: ../../Examples/Stereonet3DDemo.py
+   :language: python
+   :caption: Code Snippet: Stereonet3DDemo.py

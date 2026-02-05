@@ -1,0 +1,20 @@
+Set Demo
+==================================================================================
+
+Demonstration of Set services in Dips Python API.
+
+This script demonstrates ISetServices methods including:
+- AddSetWindow: Create a new set window (Circular, Curved, or Freehand)
+- GetSetList: List all sets
+- DeleteSet: Remove a set
+
+Available Set Window Types:
+- Circular: Defined by center (trend/plunge) and cone angle
+- Curved: Defined by two corner points (trend/plunge)
+- WrappedFreehand: Defined by polygon boundaries
+- Cluster: Created by automatic cluster analysis (not manually created)
+
+.. _SetDemo:
+.. literalinclude:: ../../Examples/SetDemo.py
+   :language: python
+   :caption: Code Snippet: SetDemo.py

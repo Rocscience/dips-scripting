@@ -1,0 +1,31 @@
+Stereonet 2D Tools Demo
+==================================================================================
+
+Comprehensive demonstration of Stereonet2D Tool functionality in Dips Python API.
+
+This script demonstrates ALL 13 tool types with their full CRUD operations:
+- Text Tool
+- Arrow Tool
+- Line Tool
+- Polyline Tool
+- Polygon Tool
+- Rectangle Tool
+- Ellipse Tool
+- Cone Tool
+- TrendLine Tool
+- PitchGrid Tool
+- MeasureAngle Tool
+- LineIntersectionCalculator Tool
+- PlaneIntersectionCalculator Tool
+
+For each tool type, demonstrates:
+- Add (create)
+- Get (retrieve)
+- Update (modify)
+- Delete (remove)
+- SetVisibility (show/hide)
+
+.. _Stereonet2DToolsDemo:
+.. literalinclude:: ../../Examples/Stereonet2DToolsDemo.py
+   :language: python
+   :caption: Code Snippet: Stereonet2DToolsDemo.py

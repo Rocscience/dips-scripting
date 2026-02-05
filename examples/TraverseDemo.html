@@ -1,0 +1,895 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Traverse Demo &#8212; dips  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/TraverseDemo';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User Plane Demo" href="UserPlaneDemo.html" />
+    <link rel="prev" title="Stereonet 3D Demo" href="Stereonet3DDemo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="dips  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="dips  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../generatedDocFiles/modules.html">
+    dips
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Python Script Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../generatedDocFiles/modules.html">
+    dips
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Python Script Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChartTypesDemo.html">Chart Types Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataFilterDemo.html">Data Filter Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FoldDemo.html">Fold Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LaunchTest.html">Launch Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ProjectDemo.html">Project Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RosetteDemo.html">Rosette Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RosetteToolsDemo.html">Rosette Tools Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetDemo.html">Set Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stereonet2DDemo.html">Stereonet 2D Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stereonet2DToolsDemo.html">Stereonet 2D Tools Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stereonet3DDemo.html">Stereonet 3D Demo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Traverse Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserPlaneDemo.html">User Plane Demo</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../examples.html" class="nav-link">Python Script Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Traverse Demo</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="traverse-demo">
+<h1>Traverse Demo<a class="headerlink" href="#traverse-demo" title="Link to this heading">#</a></h1>
+<p>Demonstration of Traverse services in Dips Python API.</p>
+<p>This script demonstrates ITraverseServices methods including:
+- AddTraverse: Create a new traverse with discontinuity data
+- GetTraverseList: List all traverses
+- DeleteTraverse: Remove a traverse</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<span id="traversedemo"></span><div class="code-block-caption"><span class="caption-text">Code Snippet: TraverseDemo.py</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Demonstration of Traverse services in Dips Python API.</span>
+
+<span class="sd">This script demonstrates ITraverseServices methods including:</span>
+<span class="sd">- AddTraverse: Create a new traverse with discontinuity data</span>
+<span class="sd">- GetTraverseList: List all traverses</span>
+<span class="sd">- DeleteTraverse: Remove a traverse</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuiltInDataFormatters</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.OrientationDataSetVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.DiscontinuityDataVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.SurveyDataVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.AngleDataVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.CustomColumnCollectionVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.FullDataFormatVal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.CustomRowRawDataVal</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># TRAVERSE CREATION HELPERS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_spot_mapping_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">num_poles</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a spot mapping traverse with random poles.&quot;&quot;&quot;</span>
+    <span class="n">ods</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultOrientationDataSet</span><span class="p">()</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationDataType</span><span class="o">.</span><span class="n">SpotMapping</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
+    
+    <span class="c1"># Set units</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">traverse_elevation_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">traverse_xyz_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_xyz_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_persistence_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    
+    <span class="c1"># Generate random poles</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_poles</span><span class="p">):</span>
+        <span class="n">discontinuity</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="p">()</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation1</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">))</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation2</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">))</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">discontinuity</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">ods</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_linear_scanline_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">trend</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">depth</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">num_discontinuities</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a linear scanline traverse.&quot;&quot;&quot;</span>
+    <span class="n">ods</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultOrientationDataSet</span><span class="p">()</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationDataType</span><span class="o">.</span><span class="n">LinearScanline</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
+    
+    <span class="c1"># Set traverse orientation</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orient1</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend</span><span class="p">)</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orient2</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge</span><span class="p">)</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">depth</span> <span class="o">=</span> <span class="n">depth</span>
+
+    <span class="c1"># Set collar location</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">local_position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">local_position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">local_position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Set units</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">traverse_elevation_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">traverse_xyz_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">traverse_depth_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_distance_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_xyz_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_persistence_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    
+    <span class="c1"># Generate discontinuities along the traverse</span>
+    <span class="n">cumulative_distance</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_discontinuities</span><span class="p">):</span>
+        <span class="n">discontinuity</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="p">()</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation1</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">))</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation2</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">))</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+        
+        <span class="n">cumulative_distance</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">cumulative_distance</span>
+        
+        <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">discontinuity</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">ods</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_curved_borehole_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">collar_trend</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">collar_plunge</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> 
+                                     <span class="n">depth</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">num_discontinuities</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a curved borehole traverse with survey data.</span>
+<span class="sd">    </span>
+<span class="sd">    Survey data defines how the borehole curves along its length.</span>
+<span class="sd">    Each survey point specifies the orientation at a given distance down the hole.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ods</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultOrientationDataSet</span><span class="p">()</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationDataType</span><span class="o">.</span><span class="n">CurvedBoreholeOrientedCore</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orient1</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">AlphaBetaOrientation</span>
+
+    <span class="c1"># Set collar location</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">local_position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">local_position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">local_position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Set units</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">traverse_elevation_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">traverse_xyz_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">survey_distance_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_distance_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_xyz_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_persistence_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
+    
+    <span class="c1"># Create survey data points that define how the borehole curves</span>
+    <span class="c1"># The borehole starts at collar_trend/collar_plunge and gradually changes</span>
+    <span class="n">num_surveys</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">survey_interval</span> <span class="o">=</span> <span class="n">depth</span> <span class="o">/</span> <span class="n">num_surveys</span>
+    
+    <span class="n">current_trend</span> <span class="o">=</span> <span class="n">collar_trend</span>
+    <span class="n">current_plunge</span> <span class="o">=</span> <span class="n">collar_plunge</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_surveys</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">survey</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">SurveyDataVal</span><span class="o">.</span><span class="n">SurveyDataVal</span><span class="p">()</span>
+        <span class="n">survey</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">survey_interval</span>
+        <span class="n">survey</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="n">current_trend</span><span class="p">,</span> <span class="n">current_plunge</span><span class="p">)</span>
+        <span class="n">ods</span><span class="o">.</span><span class="n">survey_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span>
+        
+        <span class="c1"># Gradually curve the borehole (simulate deviation)</span>
+        <span class="n">current_trend</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Small trend deviation</span>
+        <span class="n">current_plunge</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Tends to steepen slightly</span>
+        <span class="n">current_plunge</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">current_plunge</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>  <span class="c1"># Cap at vertical</span>
+    
+    <span class="c1"># Generate discontinuities along the traverse</span>
+    <span class="n">cumulative_distance</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_discontinuities</span><span class="p">):</span>
+        <span class="n">discontinuity</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="p">()</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation1</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">))</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation2</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">))</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+        
+        <span class="n">cumulative_distance</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cumulative_distance</span> <span class="o">&gt;</span> <span class="n">depth</span><span class="p">:</span>
+            <span class="n">cumulative_distance</span> <span class="o">=</span> <span class="n">depth</span> <span class="o">-</span> <span class="mf">0.1</span>
+        <span class="n">discontinuity</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">cumulative_distance</span>
+        
+        <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">discontinuity</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">ods</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_trend_plunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a TrendPlunge from degrees.&quot;&quot;&quot;</span>
+    <span class="n">tp</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="p">()</span>
+    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
+    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">)</span>
+    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
+    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge_deg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tp</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># TRAVERSE DEMONSTRATIONS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_add_spot_mapping_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate adding a spot mapping traverse.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADD SPOT MAPPING TRAVERSE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ods</span> <span class="o">=</span> <span class="n">create_spot_mapping_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Spot Mapping Demo&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddTraverse</span><span class="p">(</span><span class="n">ods</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddTraverse: &#39;</span><span class="si">{</span><span class="n">ods</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Type: Spot Mapping&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Discontinuities: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ AddTraverse: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_add_linear_scanline_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate adding a linear scanline traverse.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADD LINEAR SCANLINE TRAVERSE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ods</span> <span class="o">=</span> <span class="n">create_linear_scanline_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Linear Scanline Demo&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddTraverse</span><span class="p">(</span><span class="n">ods</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddTraverse: &#39;</span><span class="si">{</span><span class="n">ods</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Type: Linear Scanline&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Orientation: Trend=45°, Plunge=90°&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Depth: 50m&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Discontinuities: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ AddTraverse: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_add_curved_borehole_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate adding a curved borehole traverse with survey data.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADD CURVED BOREHOLE TRAVERSE (with Survey Data)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ods</span> <span class="o">=</span> <span class="n">create_curved_borehole_traverse</span><span class="p">(</span>
+            <span class="n">model</span><span class="p">,</span> 
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Curved Borehole Demo&quot;</span><span class="p">,</span> 
+            <span class="n">collar_trend</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+            <span class="n">collar_plunge</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span>
+            <span class="n">depth</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span> 
+            <span class="n">num_discontinuities</span><span class="o">=</span><span class="mi">30</span>
+        <span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddTraverse</span><span class="p">(</span><span class="n">ods</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddTraverse: &#39;</span><span class="si">{</span><span class="n">ods</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Type: Curved Borehole (Survey Data)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Collar Orientation: Trend=120°, Plunge=70°&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Depth: 100m&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Survey Points: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ods</span><span class="o">.</span><span class="n">survey_list</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Discontinuities: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ AddTraverse: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_get_traverse_list</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate listing all traverses.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GET TRAVERSE LIST&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">traverses</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetTraverseList</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetTraverseList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">traverses</span><span class="p">)</span><span class="si">}</span><span class="s2"> traverse(s) found&quot;</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">traverse_ref</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">traverses</span><span class="p">):</span>
+            <span class="n">traverse_value</span> <span class="o">=</span> <span class="n">traverse_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+            <span class="n">data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationDataType</span><span class="o">.</span><span class="n">Name</span><span class="p">(</span><span class="n">traverse_value</span><span class="o">.</span><span class="n">orientation_data_type</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    [</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">] Name: &#39;</span><span class="si">{</span><span class="n">traverse_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;        Type: </span><span class="si">{</span><span class="n">data_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;        Discontinuities: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">traverse_value</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">traverses</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetTraverseList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_delete_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">traverse_ref</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate deleting a traverse.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DELETE TRAVERSE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">traverse_ref</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - DeleteTraverse: No traverse to delete&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">traverse_value</span> <span class="o">=</span> <span class="n">traverse_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">traverse_name</span> <span class="o">=</span> <span class="n">traverse_value</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">DeleteTraverse</span><span class="p">(</span><span class="n">traverse_ref</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ DeleteTraverse: &#39;</span><span class="si">{</span><span class="n">traverse_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ DeleteTraverse: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_multiple_traverses</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate creating multiple traverses.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MULTIPLE TRAVERSE EXAMPLES&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="n">created_traverses</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># Create spot mapping traverse</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ods</span> <span class="o">=</span> <span class="n">create_spot_mapping_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Outcrop Survey&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddTraverse</span><span class="p">(</span><span class="n">ods</span><span class="p">)</span>
+        <span class="n">created_traverses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created: &#39;Outcrop Survey&#39; (Spot Mapping, 30 poles)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Create linear scanline traverses at different orientations</span>
+    <span class="n">scanlines</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;Borehole BH-1&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span>      <span class="c1"># Vertical borehole</span>
+        <span class="p">(</span><span class="s2">&quot;Scanline SL-1&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>       <span class="c1"># Horizontal E-W</span>
+        <span class="p">(</span><span class="s2">&quot;Scanline SL-2&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>        <span class="c1"># Horizontal N-S</span>
+    <span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">scanlines</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ods</span> <span class="o">=</span> <span class="n">create_linear_scanline_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddTraverse</span><span class="p">(</span><span class="n">ods</span><span class="p">)</span>
+            <span class="n">created_traverses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created: &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; (Linear, </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> discontinuities)&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Failed to create &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Create curved borehole traverses with survey data</span>
+    <span class="n">curved_boreholes</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;Curved BH-1&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mf">150.0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>    <span class="c1"># NE-trending, steep</span>
+        <span class="p">(</span><span class="s2">&quot;Curved BH-2&quot;</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mf">120.0</span><span class="p">,</span> <span class="mi">35</span><span class="p">),</span>   <span class="c1"># SW-trending, moderately steep</span>
+    <span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">curved_boreholes</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ods</span> <span class="o">=</span> <span class="n">create_curved_borehole_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddTraverse</span><span class="p">(</span><span class="n">ods</span><span class="p">)</span>
+            <span class="n">created_traverses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created: &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; (Curved, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ods</span><span class="o">.</span><span class="n">survey_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> surveys, </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> discontinuities)&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Failed to create &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">created_traverses</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_cleanup</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">traverses_to_delete</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Clean up created traverses.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CLEANUP&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">traverse_ref</span> <span class="ow">in</span> <span class="n">traverses_to_delete</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">traverse_value</span> <span class="o">=</span> <span class="n">traverse_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">DeleteTraverse</span><span class="p">(</span><span class="n">traverse_ref</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Deleted: &#39;</span><span class="si">{</span><span class="n">traverse_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Delete failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># MAIN</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Main demonstration function.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dips API - Traverse Services Demo&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="c1"># Connect to Dips</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
+    
+    <span class="c1"># Show initial state</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INITIAL STATE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">demonstrate_get_traverse_list</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Add spot mapping traverse</span>
+    <span class="n">spot_traverse</span> <span class="o">=</span> <span class="n">demonstrate_add_spot_mapping_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Add linear scanline traverse</span>
+    <span class="n">linear_traverse</span> <span class="o">=</span> <span class="n">demonstrate_add_linear_scanline_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Add curved borehole traverse with survey data</span>
+    <span class="n">curved_traverse</span> <span class="o">=</span> <span class="n">demonstrate_add_curved_borehole_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># List traverses again</span>
+    <span class="n">demonstrate_get_traverse_list</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Delete the traverses</span>
+    <span class="n">demonstrate_delete_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">spot_traverse</span><span class="p">)</span>
+    <span class="n">demonstrate_delete_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">linear_traverse</span><span class="p">)</span>
+    <span class="n">demonstrate_delete_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">curved_traverse</span><span class="p">)</span>
+    
+    <span class="c1"># Create multiple traverses</span>
+    <span class="n">created_traverses</span> <span class="o">=</span> <span class="n">demonstrate_multiple_traverses</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># List all traverses</span>
+    <span class="n">demonstrate_get_traverse_list</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Cleanup (commented out to keep traverses visible)</span>
+    <span class="c1"># demonstrate_cleanup(model, created_traverses)</span>
+    
+    <span class="c1"># Show final state</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">demonstrate_get_traverse_list</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Show the application</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
+    
+    <span class="c1"># Summary</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DEMONSTRATION COMPLETE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Traverse services demonstrated (3 methods):</span>
+
+<span class="s2">  - AddTraverse: Create a new traverse with discontinuity data</span>
+<span class="s2">  - GetTraverseList: List all traverses in the project</span>
+<span class="s2">  - DeleteTraverse: Remove a traverse from the project</span>
+
+<span class="s2">Traverse Types (eOrientationDataType):</span>
+<span class="s2">  - SpotMapping: Scattered point observations</span>
+<span class="s2">  - LinearScanline: Linear measurement line (straight borehole, scanline)</span>
+<span class="s2">  - PlanarMapping: Planar surface mapping</span>
+<span class="s2">  - LinearBoreholeOrientedCore: Straight borehole with oriented core</span>
+<span class="s2">  - LinearBoreholeTeleviewer: Straight borehole with televiewer</span>
+<span class="s2">  - CurvedBoreholeOrientedCore: Curved borehole with oriented core (uses survey data)</span>
+<span class="s2">  - CurvedBoreholeTeleviewer: Curved borehole with televiewer (uses survey data)</span>
+<span class="s2">  - Clinorule: Clinorule measurements</span>
+
+<span class="s2">Traverse Properties:</span>
+<span class="s2">  - name: Traverse identifier</span>
+<span class="s2">  - orientation_data_type: Type of traverse</span>
+<span class="s2">  - orientation_convention: How orientations are specified</span>
+<span class="s2">  - discontinuity_list: List of discontinuity measurements</span>
+<span class="s2">  - Various unit settings for measurements</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Stereonet3DDemo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Stereonet 3D Demo</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="UserPlaneDemo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">User Plane Demo</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/TraverseDemo.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Rocscience.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

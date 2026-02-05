@@ -1,0 +1,794 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Filter Demo &#8212; dips  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/DataFilterDemo';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fold Demo" href="FoldDemo.html" />
+    <link rel="prev" title="Chart Types Demo" href="ChartTypesDemo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="dips  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="dips  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../generatedDocFiles/modules.html">
+    dips
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Python Script Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../generatedDocFiles/modules.html">
+    dips
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Python Script Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChartTypesDemo.html">Chart Types Demo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Filter Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FoldDemo.html">Fold Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LaunchTest.html">Launch Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ProjectDemo.html">Project Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RosetteDemo.html">Rosette Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RosetteToolsDemo.html">Rosette Tools Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SetDemo.html">Set Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stereonet2DDemo.html">Stereonet 2D Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stereonet2DToolsDemo.html">Stereonet 2D Tools Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stereonet3DDemo.html">Stereonet 3D Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TraverseDemo.html">Traverse Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UserPlaneDemo.html">User Plane Demo</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../examples.html" class="nav-link">Python Script Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Data Filter Demo</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="data-filter-demo">
+<h1>Data Filter Demo<a class="headerlink" href="#data-filter-demo" title="Link to this heading">#</a></h1>
+<p>A simple example for working with filters through the dips scripting API.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<span id="datafilterdemo"></span><div class="code-block-caption"><span class="caption-text">Code Snippet: DataFilterDemo.py</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Demonstration of Data Filter services in Dips Python API.</span>
+
+<span class="sd">This script demonstrates IDataFilterServices methods including:</span>
+<span class="sd">- AddDataFilter: Create a new data filter</span>
+<span class="sd">- GetDataFilterList: List all data filters</span>
+<span class="sd">- DeleteDataFilter: Remove a data filter</span>
+
+<span class="sd">Available Filter Operators in Dips:</span>
+<span class="sd">- =        Equals</span>
+<span class="sd">- &lt;&gt;       Does not equal</span>
+<span class="sd">- &gt;        Is greater than</span>
+<span class="sd">- &gt;=       Is greater than or equal to</span>
+<span class="sd">- &lt;        Is less than</span>
+<span class="sd">- &lt;=       Is less than or equal to</span>
+<span class="sd">- Between  Is between</span>
+<span class="sd">- Not Between  Is not between</span>
+<span class="sd">- In       Is any of</span>
+<span class="sd">- Not In   Is none of</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dips.DataFilterVal</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># DATA FILTER DEMONSTRATIONS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_add_data_filter</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate adding a data filter.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADD DATA FILTER&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Create a filter that filters by Dip angle &gt; 45</span>
+        <span class="n">data_filter</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
+        <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;High Dip Filter&quot;</span>
+        <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="s2">&quot;[Dip] &gt; 45&quot;</span>
+        
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddDataFilter: &#39;</span><span class="si">{</span><span class="n">data_filter</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ AddDataFilter: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_get_data_filter_list</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate listing all data filters.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GET DATA FILTER LIST&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">filters</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDataFilterList</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetDataFilterList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span><span class="si">}</span><span class="s2"> filter(s) found&quot;</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filter_ref</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">filters</span><span class="p">):</span>
+            <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filter_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    [</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">] Name: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;        Filter: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">filters</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetDataFilterList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_delete_data_filter</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">filter_ref</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate deleting a data filter.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DELETE DATA FILTER&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">filter_ref</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - DeleteDataFilter: No filter to delete&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filter_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">filter_name</span> <span class="o">=</span> <span class="n">filter_value</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">DeleteDataFilter</span><span class="p">(</span><span class="n">filter_ref</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ DeleteDataFilter: &#39;</span><span class="si">{</span><span class="n">filter_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ DeleteDataFilter: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_comparison_operators</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate filters using comparison operators.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;COMPARISON OPERATORS&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="c1"># Comparison operators: =, &lt;&gt;, &gt;, &gt;=, &lt;, &lt;=</span>
+    <span class="n">filter_examples</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;Dip Equals 45&quot;</span><span class="p">,</span> <span class="s2">&quot;[Dip] = 45&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Dip Not Equals 45&quot;</span><span class="p">,</span> <span class="s2">&quot;[Dip] &lt;&gt; 45&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Dip Greater Than 60&quot;</span><span class="p">,</span> <span class="s2">&quot;[Dip] &gt; 60&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Dip Greater Or Equal 30&quot;</span><span class="p">,</span> <span class="s2">&quot;[Dip] &gt;= 30&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Dip Less Than 30&quot;</span><span class="p">,</span> <span class="s2">&quot;[Dip] &lt; 30&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Dip Less Or Equal 45&quot;</span><span class="p">,</span> <span class="s2">&quot;[Dip] &lt;= 45&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    
+    <span class="n">created_filters</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">filter_string</span> <span class="ow">in</span> <span class="n">filter_examples</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data_filter</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
+            <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
+            <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">created_filters</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_range_operators</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate filters using range operators (Between).&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RANGE OPERATORS (Is between / Is not between)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="c1"># Between and Not Between operators</span>
+    <span class="n">filter_examples</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;Dip Between 30 and 60&quot;</span><span class="p">,</span> <span class="s2">&quot;[Dip] Between (30, 60)&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Dip Not Between 30 and 60&quot;</span><span class="p">,</span> <span class="s2">&quot;Not [Dip] Between (30, 60)&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;DipDirection Between 0 and 90&quot;</span><span class="p">,</span> <span class="s2">&quot;[DipDirection] Between (0, 90)&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    
+    <span class="n">created_filters</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">filter_string</span> <span class="ow">in</span> <span class="n">filter_examples</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data_filter</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
+            <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
+            <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">created_filters</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_list_operators</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate filters using list operators (Is any of / Is none of).&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LIST OPERATORS (Is any of / Is none of)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="c1"># In (Is any of) and Not In (Is none of) operators</span>
+    <span class="c1"># Note: String values must be enclosed in single quotes</span>
+    <span class="n">filter_examples</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;Is Any Of (strings)&quot;</span><span class="p">,</span> <span class="s2">&quot;[Traverse] In (&#39;Traverse1&#39;, &#39;Traverse2&#39;, &#39;Traverse3&#39;)&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Is None Of (strings)&quot;</span><span class="p">,</span> <span class="s2">&quot;Not [Traverse] In (&#39;Excluded1&#39;, &#39;Excluded2&#39;)&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Is Any Of (numbers)&quot;</span><span class="p">,</span> <span class="s2">&quot;[Dip] In (30, 45, 60, 90)&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Is None Of (numbers)&quot;</span><span class="p">,</span> <span class="s2">&quot;Not [Dip] In (0, 90)&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    
+    <span class="n">created_filters</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">filter_string</span> <span class="ow">in</span> <span class="n">filter_examples</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data_filter</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
+            <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
+            <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">created_filters</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_logical_operators</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate filters using logical operators (AND, OR).&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LOGICAL OPERATORS (AND, OR)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="c1"># Combining conditions with AND, OR</span>
+    <span class="n">filter_examples</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;AND Condition&quot;</span><span class="p">,</span> <span class="s2">&quot;[Dip] &gt; 30 AND [Dip] &lt; 60&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;OR Condition&quot;</span><span class="p">,</span> <span class="s2">&quot;[DipDirection] &lt; 45 OR [DipDirection] &gt; 315&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Complex Condition&quot;</span><span class="p">,</span> <span class="s2">&quot;([Dip] &gt;= 30 AND [Dip] &lt;= 60) AND ([DipDirection] &gt;= 0 AND [DipDirection] &lt;= 90)&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Mixed AND/OR&quot;</span><span class="p">,</span> <span class="s2">&quot;[Dip] &gt; 45 AND ([DipDirection] &lt; 90 OR [DipDirection] &gt; 270)&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    
+    <span class="n">created_filters</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">filter_string</span> <span class="ow">in</span> <span class="n">filter_examples</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data_filter</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
+            <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
+            <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">created_filters</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_cleanup</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">filters_to_delete</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Clean up created filters.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CLEANUP&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">filter_ref</span> <span class="ow">in</span> <span class="n">filters_to_delete</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filter_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">DeleteDataFilter</span><span class="p">(</span><span class="n">filter_ref</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Deleted: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Delete failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># MAIN</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Main demonstration function.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dips API - Data Filter Services Demo&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="c1"># Connect to Dips</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
+    
+    <span class="c1"># Show initial state</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INITIAL STATE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">demonstrate_get_data_filter_list</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Add a single filter</span>
+    <span class="n">new_filter</span> <span class="o">=</span> <span class="n">demonstrate_add_data_filter</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Delete the filter</span>
+    <span class="n">demonstrate_delete_data_filter</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">new_filter</span><span class="p">)</span>
+    
+    <span class="c1"># Demonstrate all filter operator types</span>
+    <span class="n">all_created_filters</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="n">comparison_filters</span> <span class="o">=</span> <span class="n">demonstrate_comparison_operators</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">all_created_filters</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">comparison_filters</span><span class="p">)</span>
+    
+    <span class="n">range_filters</span> <span class="o">=</span> <span class="n">demonstrate_range_operators</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">all_created_filters</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">range_filters</span><span class="p">)</span>
+    
+    <span class="n">list_filters</span> <span class="o">=</span> <span class="n">demonstrate_list_operators</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">all_created_filters</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">list_filters</span><span class="p">)</span>
+    
+    <span class="n">logical_filters</span> <span class="o">=</span> <span class="n">demonstrate_logical_operators</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">all_created_filters</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">logical_filters</span><span class="p">)</span>
+    
+    <span class="c1"># List all filters</span>
+    <span class="n">demonstrate_get_data_filter_list</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Cleanup</span>
+    <span class="n">demonstrate_cleanup</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">all_created_filters</span><span class="p">)</span>
+    
+    <span class="c1"># Show final state</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">demonstrate_get_data_filter_list</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="c1"># Show the application</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
+    
+    <span class="c1"># Summary</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DEMONSTRATION COMPLETE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Data Filter services demonstrated (3 methods):</span>
+
+<span class="s2">  - AddDataFilter: Create a new data filter with a filter expression</span>
+<span class="s2">  - GetDataFilterList: List all data filters in the project</span>
+<span class="s2">  - DeleteDataFilter: Remove a data filter from the project</span>
+
+<span class="s2">AVAILABLE FILTER OPERATORS IN DIPS:</span>
+
+<span class="s2">COMPARISON OPERATORS:</span>
+<span class="s2">  [Column] = value          Equals</span>
+<span class="s2">  [Column] &lt;&gt; value         Does not equal</span>
+<span class="s2">  [Column] &gt; value          Is greater than</span>
+<span class="s2">  [Column] &gt;= value         Is greater than or equal to</span>
+<span class="s2">  [Column] &lt; value          Is less than</span>
+<span class="s2">  [Column] &lt;= value         Is less than or equal to</span>
+
+<span class="s2">RANGE OPERATORS:</span>
+<span class="s2">  [Column] Between (a, b)       Is between a and b</span>
+<span class="s2">  Not [Column] Between (a, b)   Is not between a and b</span>
+
+<span class="s2">LIST OPERATORS:</span>
+<span class="s2">  [Column] In (val1, val2, ...)      Is any of (matches any value in list)</span>
+<span class="s2">  Not [Column] In (val1, val2, ...)  Is none of (matches none in list)</span>
+
+<span class="s2">LOGICAL OPERATORS:</span>
+<span class="s2">  condition1 AND condition2   Both conditions must be true</span>
+<span class="s2">  condition1 OR condition2    Either condition can be true</span>
+<span class="s2">  (cond1) AND (cond2 OR cond3)   Use parentheses for grouping</span>
+
+<span class="s2">SYNTAX NOTES:</span>
+<span class="s2">  - Column names must be wrapped in brackets: [ColumnName]</span>
+<span class="s2">  - String values must be enclosed in single quotes: &#39;text&#39;</span>
+<span class="s2">  - Numeric values are used directly: 45, 30.5</span>
+<span class="s2">  - Use parentheses for list values: (val1, val2, val3)</span>
+
+<span class="s2">EXAMPLE FILTERS:</span>
+<span class="s2">  &quot;[Dip] &gt; 45&quot;                              High dip angles</span>
+<span class="s2">  &quot;[Dip] &gt;= 30 AND [Dip] &lt;= 60&quot;             Medium dip range</span>
+<span class="s2">  &quot;[DipDirection] &lt; 45 OR [DipDirection] &gt; 315&quot;   North-facing</span>
+<span class="s2">  &quot;[Dip] Between (30, 60)&quot;                  Dip between 30 and 60</span>
+<span class="s2">  &quot;[Traverse] In (&#39;BH1&#39;, &#39;BH2&#39;, &#39;BH3&#39;)&quot;     Specific traverses only</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ChartTypesDemo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chart Types Demo</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="FoldDemo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fold Demo</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/DataFilterDemo.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Rocscience.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

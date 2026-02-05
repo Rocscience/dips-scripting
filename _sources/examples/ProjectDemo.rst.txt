@@ -1,0 +1,17 @@
+Project Demo
+==================================================================================
+
+Demonstration of Project-level services in Dips Python API.
+
+This script demonstrates IProjStubService methods including:
+- Project Management: Save project
+- Unit System: Get/Set unit system
+- Reporting Convention: Get/Set reporting convention
+- Weighting Options: Get/Set weighting settings
+- Project Summary: Get/Set project summary
+- Display Options: Kinematic, Stereonet2D, Stereonet3D, General Symbol, Entity Color, Rosette
+
+.. _ProjectDemo:
+.. literalinclude:: ../../Examples/ProjectDemo.py
+   :language: python
+   :caption: Code Snippet: ProjectDemo.py

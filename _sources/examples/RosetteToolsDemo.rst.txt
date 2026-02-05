@@ -1,0 +1,18 @@
+Rosette Tools Demo
+==================================================================================
+
+Demonstration of Rosette Tool functionality in Dips Python API.
+
+This script demonstrates all Rosette tool services including:
+- Tool Group Visibility: All tools, Text, Arrow, Line, Polyline, Polygon, Rectangle, Ellipse, TrendLine
+- Tool CRUD operations: Add, Get, Update, Delete, SetVisibility for 8 tool types
+
+Rosette supports 8 tool types (fewer than Stereonet2D which has 13):
+- Text, Arrow, Line, Polyline, Polygon, Rectangle, Ellipse, TrendLine
+
+Note: General Rosette functionality is demonstrated in RosetteDemo.py
+
+.. _RosetteToolsDemo:
+.. literalinclude:: ../../Examples/RosetteToolsDemo.py
+   :language: python
+   :caption: Code Snippet: RosetteToolsDemo.py

@@ -1,0 +1,9 @@
+Tutorial
+==================================================================================
+
+Code asciciated with `Dips Scripting Tutorial <https://www.rocscience.com/help/dips/v9/tutorials/tutorials-overview/10-scripting>`_.
+
+.. _Tutorial:
+.. literalinclude:: ../../Examples/Tutorial.py
+   :language: python
+   :caption: Code Snippet: Tutorial
