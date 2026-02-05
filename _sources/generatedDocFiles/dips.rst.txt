@@ -9,6 +9,7 @@ Submodules
 
    dips.AnchorPointVal
    dips.AngleDataVal
+   dips.AngleSensitivityRangeVal
    dips.AnnotativeTools2DVal
    dips.ApplicationManager
    dips.ArrowToolEntityInfoRef
@@ -41,8 +42,10 @@ Submodules
    dips.DipsAPI_pb2_grpc
    dips.DipsApp
    dips.DiscontinuityDataVal
+   dips.DisplayOptionsVal
    dips.EllipseToolEntityInfoRef
    dips.EllipseToolEntityInfoVal
+   dips.EntityColorOptionsVal
    dips.FillFormatVal
    dips.FoldEntityInfoRef
    dips.FoldEntityInfoVal
@@ -52,8 +55,10 @@ Submodules
    dips.FoldWindowEntityInfoVal
    dips.FoldWindowEntityVisibilityRef
    dips.FoldWindowEntityVisibilityVal
+   dips.FontOptionsVal
    dips.FreehandWindowVal
    dips.FullDataFormatVal
+   dips.GeneralSymbolDisplayOptionsVal
    dips.GlobalPlaneEntityVisibilityVal
    dips.HistogramChartViewRef
    dips.HistogramChartViewVal
@@ -67,8 +72,12 @@ Submodules
    dips.JointSpacingAnalysisSettingsVal
    dips.JointSpacingChartViewRef
    dips.JointSpacingChartViewVal
+   dips.KinematicAnalysisDisplayOptionsVal
    dips.KinematicAnalysisEntityVisibilityVal
    dips.KinematicAnalysisSettingsVal
+   dips.KinematicSensitivityChartViewRef
+   dips.KinematicSensitivityChartViewVal
+   dips.KinematicSensitivitySettingsVal
    dips.LatLongVal
    dips.LengthDataVal
    dips.LineFormatVal
@@ -77,6 +86,7 @@ Submodules
    dips.LineToolEntityInfoRef
    dips.LineToolEntityInfoVal
    dips.LineationVal
+   dips.ManualClusterAnalysisSettingsVal
    dips.MeasureAngleToolEntityInfoRef
    dips.MeasureAngleToolEntityInfoVal
    dips.OrientationDataSetRef
@@ -100,6 +110,8 @@ Submodules
    dips.ProcessedDataVal
    dips.ProjStubRef
    dips.ProjStubVal
+   dips.ProjectSettingsVal
+   dips.ProjectSummaryVal
    dips.ProtobufCollectionWrappers
    dips.QualitativeQuantitativeAnalysisSettingsVal
    dips.QualitativeQuantitativeChartViewRef
@@ -111,10 +123,12 @@ Submodules
    dips.RectangleToolEntityInfoRef
    dips.RectangleToolEntityInfoVal
    dips.ReportingConventionResultVal
+   dips.RosettePlotDisplayOptionsVal
    dips.RosettePresetOptionsVal
    dips.RosetteSettingsVal
    dips.RosetteViewRef
    dips.RosetteViewVal
+   dips.RotateDataSettingsVal
    dips.ScatterChartViewRef
    dips.ScatterChartViewVal
    dips.ScatterPlotSettingsVal
@@ -129,9 +143,11 @@ Submodules
    dips.SetWindowEntityVisibilityRef
    dips.SetWindowEntityVisibilityVal
    dips.StatisticalDistributionFilterVal
+   dips.Stereonet2DDisplayOptionsVal
    dips.Stereonet2DPresetOptionsVal
    dips.Stereonet2DViewRef
    dips.Stereonet2DViewVal
+   dips.Stereonet3DDisplayOptionsVal
    dips.Stereonet3DPresetOptionsVal
    dips.Stereonet3DViewRef
    dips.Stereonet3DViewVal
@@ -141,6 +157,8 @@ Submodules
    dips.SurveyDataVal
    dips.SymbolDisplaySettingVal
    dips.SymbolicSettingsVal
+   dips.SyntheticJointSetVal
+   dips.SyntheticJointsSettingsVal
    dips.TextFormatVal
    dips.TextToolEntityInfoRef
    dips.TextToolEntityInfoVal
@@ -153,10 +171,17 @@ Submodules
    dips.UnitSystemResultVal
    dips.UserPlaneEntityOptionsVal
    dips.ValidatableResultVal
+   dips.ValidatableResult_KinematicSensitivitySettingsVal
    dips.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal
    dips.ValidatableResult_ProtoReference_ConeToolEntityInfoVal
+   dips.ValidatableResult_ProtoReference_CumulativeChartViewVal
+   dips.ValidatableResult_ProtoReference_DataFilterVal
    dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal
    dips.ValidatableResult_ProtoReference_FoldEntityInfoVal
+   dips.ValidatableResult_ProtoReference_HistogramChartViewVal
+   dips.ValidatableResult_ProtoReference_JointFrequencyChartViewVal
+   dips.ValidatableResult_ProtoReference_JointSpacingChartViewVal
+   dips.ValidatableResult_ProtoReference_KinematicSensitivityChartViewVal
    dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal
    dips.ValidatableResult_ProtoReference_LineToolEntityInfoVal
    dips.ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal
@@ -166,7 +191,10 @@ Submodules
    dips.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal
    dips.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal
    dips.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal
+   dips.ValidatableResult_ProtoReference_QualitativeQuantitativeChartViewVal
+   dips.ValidatableResult_ProtoReference_RQDAnalysisChartViewVal
    dips.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal
+   dips.ValidatableResult_ProtoReference_ScatterChartViewVal
    dips.ValidatableResult_ProtoReference_SetEntityInfoVal
    dips.ValidatableResult_ProtoReference_TextToolEntityInfoVal
    dips.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal

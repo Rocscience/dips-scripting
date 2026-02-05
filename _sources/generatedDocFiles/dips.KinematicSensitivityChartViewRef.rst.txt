@@ -1,0 +1,7 @@
+dips.KinematicSensitivityChartViewRef module
+============================================
+
+.. automodule:: dips.KinematicSensitivityChartViewRef
+   :members:
+   :show-inheritance:
+   :undoc-members:

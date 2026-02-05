@@ -1,0 +1,7 @@
+dips.KinematicSensitivitySettingsVal module
+===========================================
+
+.. automodule:: dips.KinematicSensitivitySettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

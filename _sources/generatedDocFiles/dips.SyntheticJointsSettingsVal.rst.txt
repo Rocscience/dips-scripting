@@ -1,0 +1,7 @@
+dips.SyntheticJointsSettingsVal module
+======================================
+
+.. automodule:: dips.SyntheticJointsSettingsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

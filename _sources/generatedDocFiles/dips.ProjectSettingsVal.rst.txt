@@ -1,7 +1,7 @@
-dips.DipsAPI\_pb2\_grpc module
+dips.ProjectSettingsVal module
 ==============================
 
-.. automodule:: dips.DipsAPI_pb2_grpc
+.. automodule:: dips.ProjectSettingsVal
    :members:
    :show-inheritance:
    :undoc-members:

@@ -1,0 +1,7 @@
+dips.FontOptionsVal module
+==========================
+
+.. automodule:: dips.FontOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

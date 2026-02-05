@@ -1,0 +1,7 @@
+dips.EntityColorOptionsVal module
+=================================
+
+.. automodule:: dips.EntityColorOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

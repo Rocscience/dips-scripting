@@ -1,0 +1,7 @@
+dips.ValidatableResult\_ProtoReference\_QualitativeQuantitativeChartViewVal module
+==================================================================================
+
+.. automodule:: dips.ValidatableResult_ProtoReference_QualitativeQuantitativeChartViewVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

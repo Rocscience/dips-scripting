@@ -1,0 +1,7 @@
+dips.Stereonet2DDisplayOptionsVal module
+========================================
+
+.. automodule:: dips.Stereonet2DDisplayOptionsVal
+   :members:
+   :show-inheritance:
+   :undoc-members:
