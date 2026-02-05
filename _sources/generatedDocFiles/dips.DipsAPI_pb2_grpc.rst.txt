@@ -1,7 +1,0 @@
-dips.DipsAPI\_pb2\_grpc module
-==============================
-
-.. automodule:: dips.DipsAPI_pb2_grpc
-   :members:
-   :show-inheritance:
-   :undoc-members:
