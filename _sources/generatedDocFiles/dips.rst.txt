@@ -20,6 +20,7 @@ Submodules
    dips.CircularWindowVal
    dips.ClusterWindowVal
    dips.ColorSurrogateVal
+   dips.ColorSurrogateValExtension
    dips.ConeToolEntityInfoRef
    dips.ConeToolEntityInfoVal
    dips.ConeVal
@@ -38,6 +39,7 @@ Submodules
    dips.DataFilterVal
    dips.DataFormatterVal
    dips.DataIdentifierVal
+   dips.DipsAPI_enums
    dips.DipsAPI_pb2
    dips.DipsAPI_pb2_grpc
    dips.DipsApp
@@ -109,12 +111,14 @@ Submodules
    dips.PolylineToolEntityInfoVal
    dips.ProcessedDataVal
    dips.ProjStubRef
+   dips.ProjStubRefExtension
    dips.ProjStubVal
    dips.ProjectSettingsVal
    dips.ProjectSummaryVal
    dips.ProtobufCollectionWrappers
    dips.QualitativeQuantitativeAnalysisSettingsVal
    dips.QualitativeQuantitativeChartViewRef
+   dips.QualitativeQuantitativeChartViewRefExtension
    dips.QualitativeQuantitativeChartViewVal
    dips.QuantitativeContourSettingsVal
    dips.RQDAnalysisChartViewRef
@@ -133,6 +137,7 @@ Submodules
    dips.ScatterChartViewVal
    dips.ScatterPlotSettingsVal
    dips.SetEntityInfoRef
+   dips.SetEntityInfoRefExtension
    dips.SetEntityInfoVal
    dips.SetEntityOptionsVal
    dips.SetEntityVisibilityRef
@@ -168,10 +173,12 @@ Submodules
    dips.TrendLineToolEntityInfoRef
    dips.TrendLineToolEntityInfoVal
    dips.TrendPlungeVal
+   dips.TrendPlungeValExtension
    dips.UnitSystemResultVal
    dips.UserPlaneEntityOptionsVal
    dips.ValidatableResultVal
    dips.ValidatableResult_KinematicSensitivitySettingsVal
+   dips.ValidatableResult_List_ProtoReference_SetEntityInfoVal
    dips.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal
    dips.ValidatableResult_ProtoReference_ConeToolEntityInfoVal
    dips.ValidatableResult_ProtoReference_CumulativeChartViewVal

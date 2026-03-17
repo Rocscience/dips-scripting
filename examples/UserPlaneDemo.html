@@ -353,37 +353,11 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.PlaneEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.PlaneVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.AngleDataVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span>
-
-
-<span class="c1"># =============================================================================</span>
-<span class="c1"># HELPER FUNCTIONS</span>
-<span class="c1"># =============================================================================</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">create_trend_plunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a TrendPlunge from degrees.&quot;&quot;&quot;</span>
-    <span class="n">tp</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">)</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge_deg</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">tp</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">create_color</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">255</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Color from RGBA values.&quot;&quot;&quot;</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="p">()</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
-    <span class="k">return</span> <span class="n">color</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.PlaneEntityInfoVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlaneEntityInfoVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.PlaneVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlaneVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrendPlungeVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSurrogateVal</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -396,25 +370,21 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADD USER PLANE&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Create the Plane object with orientation data</span>
-        <span class="n">plane_data</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">PlaneVal</span><span class="o">.</span><span class="n">PlaneVal</span><span class="p">()</span>
-        <span class="n">plane_data</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;Slope Face&quot;</span>
-        <span class="n">plane_data</span><span class="o">.</span><span class="n">pole</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>  <span class="c1"># 45° dip to the south</span>
-        
-        <span class="c1"># Create the PlaneEntityInfo wrapper with color</span>
-        <span class="n">plane_info</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">PlaneEntityInfoVal</span><span class="o">.</span><span class="n">PlaneEntityInfoVal</span><span class="p">()</span>
-        <span class="n">plane_info</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Red</span>
-        <span class="n">plane_info</span><span class="o">.</span><span class="n">plane</span> <span class="o">=</span> <span class="n">plane_data</span>
-        
-        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddUserPlane</span><span class="p">(</span><span class="n">plane_info</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddUserPlane: &#39;</span><span class="si">{</span><span class="n">plane_data</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Orientation: Trend=180°, Plunge=45°&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    (Represents a plane dipping 45° to the south)&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ AddUserPlane: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1"># Create the Plane object with orientation data</span>
+    <span class="n">plane_data</span> <span class="o">=</span> <span class="n">PlaneVal</span><span class="p">()</span>
+    <span class="n">plane_data</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;Slope Face&quot;</span>
+    <span class="n">plane_data</span><span class="o">.</span><span class="n">pole</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>  <span class="c1"># 45° dip to the south</span>
+    
+    <span class="c1"># Create the PlaneEntityInfo wrapper with color</span>
+    <span class="n">plane_info</span> <span class="o">=</span> <span class="n">PlaneEntityInfoVal</span><span class="p">()</span>
+    <span class="n">plane_info</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Red</span>
+    <span class="n">plane_info</span><span class="o">.</span><span class="n">plane</span> <span class="o">=</span> <span class="n">plane_data</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddUserPlane</span><span class="p">(</span><span class="n">plane_info</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddUserPlane: &#39;</span><span class="si">{</span><span class="n">plane_data</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Orientation: Trend=180°, Plunge=45°&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    (Represents a plane dipping 45° to the south)&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_get_user_plane_list</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -423,22 +393,18 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GET USER PLANE LIST&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">planes</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetUserPlaneList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetUserPlaneList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">planes</span><span class="p">)</span><span class="si">}</span><span class="s2"> plane(s) found&quot;</span><span class="p">)</span>
-        
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">plane_ref</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">planes</span><span class="p">):</span>
-            <span class="n">plane_value</span> <span class="o">=</span> <span class="n">plane_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">plane_data</span> <span class="o">=</span> <span class="n">plane_value</span><span class="o">.</span><span class="n">plane</span>
-            <span class="n">trend</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">plane_data</span><span class="o">.</span><span class="n">pole</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span><span class="p">)</span>
-            <span class="n">plunge</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">plane_data</span><span class="o">.</span><span class="n">pole</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    [</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">] ID: &#39;</span><span class="si">{</span><span class="n">plane_data</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;        Pole: Trend=</span><span class="si">{</span><span class="n">trend</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°, Plunge=</span><span class="si">{</span><span class="n">plunge</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">)</span>
-        
-        <span class="k">return</span> <span class="n">planes</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetUserPlaneList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">planes</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetUserPlaneList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetUserPlaneList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">planes</span><span class="p">)</span><span class="si">}</span><span class="s2"> plane(s) found&quot;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">plane_ref</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">planes</span><span class="p">):</span>
+        <span class="n">plane_value</span> <span class="o">=</span> <span class="n">plane_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">plane_data</span> <span class="o">=</span> <span class="n">plane_value</span><span class="o">.</span><span class="n">plane</span>
+        <span class="n">trend</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">plane_data</span><span class="o">.</span><span class="n">pole</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span><span class="p">)</span>
+        <span class="n">plunge</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">plane_data</span><span class="o">.</span><span class="n">pole</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    [</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">] ID: &#39;</span><span class="si">{</span><span class="n">plane_data</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;        Pole: Trend=</span><span class="si">{</span><span class="n">trend</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°, Plunge=</span><span class="si">{</span><span class="n">plunge</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">planes</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_delete_user_plane</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">plane_ref</span><span class="p">):</span>
@@ -451,13 +417,10 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - DeleteUserPlane: No plane to delete&quot;</span><span class="p">)</span>
         <span class="k">return</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">plane_value</span> <span class="o">=</span> <span class="n">plane_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-        <span class="n">plane_id</span> <span class="o">=</span> <span class="n">plane_value</span><span class="o">.</span><span class="n">plane</span><span class="o">.</span><span class="n">id</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">DeleteUserPlane</span><span class="p">(</span><span class="n">plane_ref</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ DeleteUserPlane: &#39;</span><span class="si">{</span><span class="n">plane_id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ DeleteUserPlane: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plane_value</span> <span class="o">=</span> <span class="n">plane_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+    <span class="n">plane_id</span> <span class="o">=</span> <span class="n">plane_value</span><span class="o">.</span><span class="n">plane</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">DeleteUserPlane</span><span class="p">(</span><span class="n">plane_ref</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ DeleteUserPlane: &#39;</span><span class="si">{</span><span class="n">plane_id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_multiple_user_planes</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -479,22 +442,19 @@
     <span class="n">created_planes</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="k">for</span> <span class="n">plane_id</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">color_rgb</span> <span class="ow">in</span> <span class="n">plane_examples</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># Create the Plane object with orientation data</span>
-            <span class="n">plane_data</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">PlaneVal</span><span class="o">.</span><span class="n">PlaneVal</span><span class="p">()</span>
-            <span class="n">plane_data</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">plane_id</span>
-            <span class="n">plane_data</span><span class="o">.</span><span class="n">pole</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="n">trend</span><span class="p">,</span> <span class="n">plunge</span><span class="p">)</span>
-            
-            <span class="c1"># Create the PlaneEntityInfo wrapper with color</span>
-            <span class="n">plane_info</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">PlaneEntityInfoVal</span><span class="o">.</span><span class="n">PlaneEntityInfoVal</span><span class="p">()</span>
-            <span class="n">plane_info</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="o">*</span><span class="n">color_rgb</span><span class="p">)</span>
-            <span class="n">plane_info</span><span class="o">.</span><span class="n">plane</span> <span class="o">=</span> <span class="n">plane_data</span>
-            
-            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddUserPlane</span><span class="p">(</span><span class="n">plane_info</span><span class="p">)</span>
-            <span class="n">created_planes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created: &#39;</span><span class="si">{</span><span class="n">plane_id</span><span class="si">}</span><span class="s2">&#39; (Pole: </span><span class="si">{</span><span class="n">trend</span><span class="si">}</span><span class="s2">°/</span><span class="si">{</span><span class="n">plunge</span><span class="si">}</span><span class="s2">°)&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Failed to create &#39;</span><span class="si">{</span><span class="n">plane_id</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># Create the Plane object with orientation data</span>
+        <span class="n">plane_data</span> <span class="o">=</span> <span class="n">PlaneVal</span><span class="p">()</span>
+        <span class="n">plane_data</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">plane_id</span>
+        <span class="n">plane_data</span><span class="o">.</span><span class="n">pole</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="n">trend</span><span class="p">,</span> <span class="n">plunge</span><span class="p">)</span>
+        
+        <span class="c1"># Create the PlaneEntityInfo wrapper with color</span>
+        <span class="n">plane_info</span> <span class="o">=</span> <span class="n">PlaneEntityInfoVal</span><span class="p">()</span>
+        <span class="n">plane_info</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="o">*</span><span class="n">color_rgb</span><span class="p">)</span>
+        <span class="n">plane_info</span><span class="o">.</span><span class="n">plane</span> <span class="o">=</span> <span class="n">plane_data</span>
+        
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddUserPlane</span><span class="p">(</span><span class="n">plane_info</span><span class="p">)</span>
+        <span class="n">created_planes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created: &#39;</span><span class="si">{</span><span class="n">plane_id</span><span class="si">}</span><span class="s2">&#39; (Pole: </span><span class="si">{</span><span class="n">trend</span><span class="si">}</span><span class="s2">°/</span><span class="si">{</span><span class="n">plunge</span><span class="si">}</span><span class="s2">°)&quot;</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">created_planes</span>
 
@@ -506,12 +466,9 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="k">for</span> <span class="n">plane_ref</span> <span class="ow">in</span> <span class="n">planes_to_delete</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">plane_value</span> <span class="o">=</span> <span class="n">plane_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">model</span><span class="o">.</span><span class="n">DeleteUserPlane</span><span class="p">(</span><span class="n">plane_ref</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Deleted: &#39;</span><span class="si">{</span><span class="n">plane_value</span><span class="o">.</span><span class="n">plane</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Delete failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">plane_value</span> <span class="o">=</span> <span class="n">plane_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">DeleteUserPlane</span><span class="p">(</span><span class="n">plane_ref</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Deleted: &#39;</span><span class="si">{</span><span class="n">plane_value</span><span class="o">.</span><span class="n">plane</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -526,14 +483,8 @@
     
     <span class="c1"># Connect to Dips</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
-    
+    <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
     
     <span class="c1"># Show initial state</span>

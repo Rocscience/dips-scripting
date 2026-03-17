@@ -361,8 +361,7 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.DataFilterVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.DataFilterVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataFilterVal</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -375,18 +374,14 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADD DATA FILTER&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Create a filter that filters by Dip angle &gt; 45</span>
-        <span class="n">data_filter</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
-        <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;High Dip Filter&quot;</span>
-        <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="s2">&quot;[Dip] &gt; 45&quot;</span>
-        
-        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddDataFilter: &#39;</span><span class="si">{</span><span class="n">data_filter</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ AddDataFilter: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1"># Create a filter that filters by Dip angle &gt; 45</span>
+    <span class="n">data_filter</span> <span class="o">=</span> <span class="n">DataFilterVal</span><span class="p">()</span>
+    <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;High Dip Filter&quot;</span>
+    <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="s2">&quot;[Dip] &gt; 45&quot;</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddDataFilter: &#39;</span><span class="si">{</span><span class="n">data_filter</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_get_data_filter_list</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -395,19 +390,15 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GET DATA FILTER LIST&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">filters</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDataFilterList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetDataFilterList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span><span class="si">}</span><span class="s2"> filter(s) found&quot;</span><span class="p">)</span>
-        
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filter_ref</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">filters</span><span class="p">):</span>
-            <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filter_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    [</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">] Name: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;        Filter: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        
-        <span class="k">return</span> <span class="n">filters</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetDataFilterList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">filters</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDataFilterList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetDataFilterList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span><span class="si">}</span><span class="s2"> filter(s) found&quot;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filter_ref</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">filters</span><span class="p">):</span>
+        <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filter_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    [</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">] Name: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;        Filter: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">filters</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_delete_data_filter</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">filter_ref</span><span class="p">):</span>
@@ -420,13 +411,10 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - DeleteDataFilter: No filter to delete&quot;</span><span class="p">)</span>
         <span class="k">return</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filter_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-        <span class="n">filter_name</span> <span class="o">=</span> <span class="n">filter_value</span><span class="o">.</span><span class="n">name</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">DeleteDataFilter</span><span class="p">(</span><span class="n">filter_ref</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ DeleteDataFilter: &#39;</span><span class="si">{</span><span class="n">filter_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ DeleteDataFilter: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filter_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+    <span class="n">filter_name</span> <span class="o">=</span> <span class="n">filter_value</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">DeleteDataFilter</span><span class="p">(</span><span class="n">filter_ref</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ DeleteDataFilter: &#39;</span><span class="si">{</span><span class="n">filter_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_comparison_operators</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -447,16 +435,13 @@
     
     <span class="n">created_filters</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">filter_string</span> <span class="ow">in</span> <span class="n">filter_examples</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">data_filter</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
-            <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-            <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
-            <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">data_filter</span> <span class="o">=</span> <span class="n">DataFilterVal</span><span class="p">()</span>
+        <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
+        <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">created_filters</span>
 
@@ -476,16 +461,13 @@
     
     <span class="n">created_filters</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">filter_string</span> <span class="ow">in</span> <span class="n">filter_examples</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">data_filter</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
-            <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-            <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
-            <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">data_filter</span> <span class="o">=</span> <span class="n">DataFilterVal</span><span class="p">()</span>
+        <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
+        <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">created_filters</span>
 
@@ -507,16 +489,13 @@
     
     <span class="n">created_filters</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">filter_string</span> <span class="ow">in</span> <span class="n">filter_examples</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">data_filter</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
-            <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-            <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
-            <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">data_filter</span> <span class="o">=</span> <span class="n">DataFilterVal</span><span class="p">()</span>
+        <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
+        <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">created_filters</span>
 
@@ -537,16 +516,13 @@
     
     <span class="n">created_filters</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">filter_string</span> <span class="ow">in</span> <span class="n">filter_examples</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">data_filter</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
-            <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-            <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
-            <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">data_filter</span> <span class="o">=</span> <span class="n">DataFilterVal</span><span class="p">()</span>
+        <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="n">filter_string</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddDataFilter</span><span class="p">(</span><span class="n">data_filter</span><span class="p">)</span>
+        <span class="n">created_filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">filter_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">created_filters</span>
 
@@ -558,12 +534,9 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="k">for</span> <span class="n">filter_ref</span> <span class="ow">in</span> <span class="n">filters_to_delete</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filter_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">model</span><span class="o">.</span><span class="n">DeleteDataFilter</span><span class="p">(</span><span class="n">filter_ref</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Deleted: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Delete failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filter_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">DeleteDataFilter</span><span class="p">(</span><span class="n">filter_ref</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Deleted: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -578,14 +551,8 @@
     
     <span class="c1"># Connect to Dips</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
-    
+    <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
     
     <span class="c1"># Show initial state</span>

@@ -1,0 +1,1621 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dips.DipsAPI_enums module &#8212; dips  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'generatedDocFiles/dips.DipsAPI_enums';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dips.DipsApp module" href="dips.DipsApp.html" />
+    <link rel="prev" title="dips.DataIdentifierVal module" href="dips.DataIdentifierVal.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="dips  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="dips  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="modules.html">
+    dips
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Python Script Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="modules.html">
+    dips
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Python Script Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dips.html">dips package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dips.AnchorPointVal.html">dips.AnchorPointVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.AngleDataVal.html">dips.AngleDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.AngleSensitivityRangeVal.html">dips.AngleSensitivityRangeVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.AnnotativeTools2DVal.html">dips.AnnotativeTools2DVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ApplicationManager.html">dips.ApplicationManager module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ArrowToolEntityInfoRef.html">dips.ArrowToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ArrowToolEntityInfoVal.html">dips.ArrowToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.AutomaticClusterAnalysisSettingsVal.html">dips.AutomaticClusterAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.BuiltInDataDescriptors.html">dips.BuiltInDataDescriptors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.BuiltInDataFormatters.html">dips.BuiltInDataFormatters module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CircularWindowVal.html">dips.CircularWindowVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ClusterWindowVal.html">dips.ClusterWindowVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ColorSurrogateVal.html">dips.ColorSurrogateVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ColorSurrogateValExtension.html">dips.ColorSurrogateValExtension module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ConeToolEntityInfoRef.html">dips.ConeToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ConeToolEntityInfoVal.html">dips.ConeToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ConeVal.html">dips.ConeVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ContourEntityVisibilityVal.html">dips.ContourEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ContourOptionsVal.html">dips.ContourOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CumulativeChartViewRef.html">dips.CumulativeChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CumulativeChartViewVal.html">dips.CumulativeChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CumulativePlotSettingsVal.html">dips.CumulativePlotSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CurvedWindowVal.html">dips.CurvedWindowVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CustomColumnCollectionVal.html">dips.CustomColumnCollectionVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CustomHistogramOptionsVal.html">dips.CustomHistogramOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CustomRangeVal.html">dips.CustomRangeVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.CustomRowRawDataVal.html">dips.CustomRowRawDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DataDescriptorVal.html">dips.DataDescriptorVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DataFilterRef.html">dips.DataFilterRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DataFilterVal.html">dips.DataFilterVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DataFormatterVal.html">dips.DataFormatterVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DataIdentifierVal.html">dips.DataIdentifierVal module</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">dips.DipsAPI_enums module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DipsApp.html">dips.DipsApp module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DiscontinuityDataVal.html">dips.DiscontinuityDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.DisplayOptionsVal.html">dips.DisplayOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.EllipseToolEntityInfoRef.html">dips.EllipseToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.EllipseToolEntityInfoVal.html">dips.EllipseToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.EntityColorOptionsVal.html">dips.EntityColorOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FillFormatVal.html">dips.FillFormatVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldEntityInfoRef.html">dips.FoldEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldEntityInfoVal.html">dips.FoldEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldEntityOptionsVal.html">dips.FoldEntityOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldEntityVisibilityRef.html">dips.FoldEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldEntityVisibilityVal.html">dips.FoldEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldWindowEntityInfoVal.html">dips.FoldWindowEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldWindowEntityVisibilityRef.html">dips.FoldWindowEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FoldWindowEntityVisibilityVal.html">dips.FoldWindowEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FontOptionsVal.html">dips.FontOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FreehandWindowVal.html">dips.FreehandWindowVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.FullDataFormatVal.html">dips.FullDataFormatVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.GeneralSymbolDisplayOptionsVal.html">dips.GeneralSymbolDisplayOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.GlobalPlaneEntityVisibilityVal.html">dips.GlobalPlaneEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.HistogramChartViewRef.html">dips.HistogramChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.HistogramChartViewVal.html">dips.HistogramChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.HistogramPlotSettingsVal.html">dips.HistogramPlotSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.IntersectionEntityVisibilityVal.html">dips.IntersectionEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.IntersectionOptionsVal.html">dips.IntersectionOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.IntervalVal.html">dips.IntervalVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointFrequencyAnalysisSettingsVal.html">dips.JointFrequencyAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointFrequencyChartViewRef.html">dips.JointFrequencyChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointFrequencyChartViewVal.html">dips.JointFrequencyChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointSpacingAnalysisSettingsVal.html">dips.JointSpacingAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointSpacingChartViewRef.html">dips.JointSpacingChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.JointSpacingChartViewVal.html">dips.JointSpacingChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.KinematicAnalysisDisplayOptionsVal.html">dips.KinematicAnalysisDisplayOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.KinematicAnalysisEntityVisibilityVal.html">dips.KinematicAnalysisEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.KinematicAnalysisSettingsVal.html">dips.KinematicAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.KinematicSensitivityChartViewRef.html">dips.KinematicSensitivityChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.KinematicSensitivityChartViewVal.html">dips.KinematicSensitivityChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.KinematicSensitivitySettingsVal.html">dips.KinematicSensitivitySettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LatLongVal.html">dips.LatLongVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LengthDataVal.html">dips.LengthDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineFormatVal.html">dips.LineFormatVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineIntersectionCalculatorToolEntityInfoRef.html">dips.LineIntersectionCalculatorToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineIntersectionCalculatorToolEntityInfoVal.html">dips.LineIntersectionCalculatorToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineToolEntityInfoRef.html">dips.LineToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineToolEntityInfoVal.html">dips.LineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.LineationVal.html">dips.LineationVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ManualClusterAnalysisSettingsVal.html">dips.ManualClusterAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.MeasureAngleToolEntityInfoRef.html">dips.MeasureAngleToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.MeasureAngleToolEntityInfoVal.html">dips.MeasureAngleToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.OrientationDataSetRef.html">dips.OrientationDataSetRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.OrientationDataSetVal.html">dips.OrientationDataSetVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PitchGridToolEntityInfoRef.html">dips.PitchGridToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PitchGridToolEntityInfoVal.html">dips.PitchGridToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneEntityInfoRef.html">dips.PlaneEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneEntityInfoVal.html">dips.PlaneEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneEntityVisibilityRef.html">dips.PlaneEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneEntityVisibilityVal.html">dips.PlaneEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneIntersectionCalculatorToolEntityInfoRef.html">dips.PlaneIntersectionCalculatorToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneIntersectionCalculatorToolEntityInfoVal.html">dips.PlaneIntersectionCalculatorToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneOptionsVal.html">dips.PlaneOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PlaneVal.html">dips.PlaneVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PoleEntityOptionsVal.html">dips.PoleEntityOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PoleEntityVisibilityVal.html">dips.PoleEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PolygonToolEntityInfoRef.html">dips.PolygonToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PolygonToolEntityInfoVal.html">dips.PolygonToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PolylineToolEntityInfoRef.html">dips.PolylineToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.PolylineToolEntityInfoVal.html">dips.PolylineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProcessedDataVal.html">dips.ProcessedDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProjStubRef.html">dips.ProjStubRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProjStubRefExtension.html">dips.ProjStubRefExtension module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProjStubVal.html">dips.ProjStubVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProjectSettingsVal.html">dips.ProjectSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProjectSummaryVal.html">dips.ProjectSummaryVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ProtobufCollectionWrappers.html">dips.ProtobufCollectionWrappers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.QualitativeQuantitativeAnalysisSettingsVal.html">dips.QualitativeQuantitativeAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.QualitativeQuantitativeChartViewRef.html">dips.QualitativeQuantitativeChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.QualitativeQuantitativeChartViewRefExtension.html">dips.QualitativeQuantitativeChartViewRefExtension module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.QualitativeQuantitativeChartViewVal.html">dips.QualitativeQuantitativeChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.QuantitativeContourSettingsVal.html">dips.QuantitativeContourSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RQDAnalysisChartViewRef.html">dips.RQDAnalysisChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RQDAnalysisChartViewVal.html">dips.RQDAnalysisChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RQDAnalysisSettingsVal.html">dips.RQDAnalysisSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RectangleToolEntityInfoRef.html">dips.RectangleToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RectangleToolEntityInfoVal.html">dips.RectangleToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ReportingConventionResultVal.html">dips.ReportingConventionResultVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RosettePlotDisplayOptionsVal.html">dips.RosettePlotDisplayOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RosettePresetOptionsVal.html">dips.RosettePresetOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RosetteSettingsVal.html">dips.RosetteSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RosetteViewRef.html">dips.RosetteViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RosetteViewVal.html">dips.RosetteViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.RotateDataSettingsVal.html">dips.RotateDataSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ScatterChartViewRef.html">dips.ScatterChartViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ScatterChartViewVal.html">dips.ScatterChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ScatterPlotSettingsVal.html">dips.ScatterPlotSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityInfoRef.html">dips.SetEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityInfoRefExtension.html">dips.SetEntityInfoRefExtension module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityInfoVal.html">dips.SetEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityOptionsVal.html">dips.SetEntityOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityVisibilityRef.html">dips.SetEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetEntityVisibilityVal.html">dips.SetEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetStatisticsSettingsVal.html">dips.SetStatisticsSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetVersusSetVal.html">dips.SetVersusSetVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetWindowEntityInfoVal.html">dips.SetWindowEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetWindowEntityVisibilityRef.html">dips.SetWindowEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SetWindowEntityVisibilityVal.html">dips.SetWindowEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.StatisticalDistributionFilterVal.html">dips.StatisticalDistributionFilterVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet2DDisplayOptionsVal.html">dips.Stereonet2DDisplayOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet2DPresetOptionsVal.html">dips.Stereonet2DPresetOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet2DViewRef.html">dips.Stereonet2DViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet2DViewVal.html">dips.Stereonet2DViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet3DDisplayOptionsVal.html">dips.Stereonet3DDisplayOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet3DPresetOptionsVal.html">dips.Stereonet3DPresetOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet3DViewRef.html">dips.Stereonet3DViewRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Stereonet3DViewVal.html">dips.Stereonet3DViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.StereonetOverlayEntityVisibilityVal.html">dips.StereonetOverlayEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.StereonetOverlaySettingsVal.html">dips.StereonetOverlaySettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.StereonetProjectionModeVal.html">dips.StereonetProjectionModeVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SurveyDataVal.html">dips.SurveyDataVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SymbolDisplaySettingVal.html">dips.SymbolDisplaySettingVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SymbolicSettingsVal.html">dips.SymbolicSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SyntheticJointSetVal.html">dips.SyntheticJointSetVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.SyntheticJointsSettingsVal.html">dips.SyntheticJointsSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TextFormatVal.html">dips.TextFormatVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TextToolEntityInfoRef.html">dips.TextToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TextToolEntityInfoVal.html">dips.TextToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TraverseEntityOptionsVal.html">dips.TraverseEntityOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TraverseEntityVisibilityRef.html">dips.TraverseEntityVisibilityRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TraverseEntityVisibilityVal.html">dips.TraverseEntityVisibilityVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TrendLineToolEntityInfoRef.html">dips.TrendLineToolEntityInfoRef module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TrendLineToolEntityInfoVal.html">dips.TrendLineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TrendPlungeVal.html">dips.TrendPlungeVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.TrendPlungeValExtension.html">dips.TrendPlungeValExtension module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.UnitSystemResultVal.html">dips.UnitSystemResultVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.UserPlaneEntityOptionsVal.html">dips.UserPlaneEntityOptionsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResultVal.html">dips.ValidatableResultVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_KinematicSensitivitySettingsVal.html">dips.ValidatableResult_KinematicSensitivitySettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_List_ProtoReference_SetEntityInfoVal.html">dips.ValidatableResult_List_ProtoReference_SetEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_ArrowToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_ConeToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_ConeToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_CumulativeChartViewVal.html">dips.ValidatableResult_ProtoReference_CumulativeChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_DataFilterVal.html">dips.ValidatableResult_ProtoReference_DataFilterVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_EllipseToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_FoldEntityInfoVal.html">dips.ValidatableResult_ProtoReference_FoldEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_HistogramChartViewVal.html">dips.ValidatableResult_ProtoReference_HistogramChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_JointFrequencyChartViewVal.html">dips.ValidatableResult_ProtoReference_JointFrequencyChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_JointSpacingChartViewVal.html">dips.ValidatableResult_ProtoReference_JointSpacingChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_KinematicSensitivityChartViewVal.html">dips.ValidatableResult_ProtoReference_KinematicSensitivityChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_LineIntersectionCalculatorToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_LineToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_LineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_MeasureAngleToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_OrientationDataSetVal.html">dips.ValidatableResult_ProtoReference_OrientationDataSetVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PitchGridToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_PlaneEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PlaneEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PlaneIntersectionCalculatorToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PolygonToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_PolylineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_QualitativeQuantitativeChartViewVal.html">dips.ValidatableResult_ProtoReference_QualitativeQuantitativeChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_RQDAnalysisChartViewVal.html">dips.ValidatableResult_ProtoReference_RQDAnalysisChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_RectangleToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_ScatterChartViewVal.html">dips.ValidatableResult_ProtoReference_ScatterChartViewVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_SetEntityInfoVal.html">dips.ValidatableResult_ProtoReference_SetEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_TextToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_TextToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal.html">dips.ValidatableResult_ProtoReference_TrendLineToolEntityInfoVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.ValidationErrorVal.html">dips.ValidationErrorVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Vector2DVal.html">dips.Vector2DVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.Vector3Val.html">dips.Vector3Val module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.VectorDensityContourSettingsVal.html">dips.VectorDensityContourSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.WeightingSettingsVal.html">dips.WeightingSettingsVal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dips.WrappedFreehandWindowVal.html">dips.WrappedFreehandWindowVal module</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dips</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dips.html" class="nav-link">dips package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">dips.DipsAPI_enums module</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-dips.DipsAPI_enums">
+<span id="dips-dipsapi-enums-module"></span><h1>dips.DipsAPI_enums module<a class="headerlink" href="#module-dips.DipsAPI_enums" title="Link to this heading">#</a></h1>
+<p>Shared Python IntEnum definitions for Dips API enums (single source of truth).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eAnalysisType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eAnalysisType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eAnalysisType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eAnalysisType.Qualitative">
+<span class="sig-name descname"><span class="pre">Qualitative</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eAnalysisType.Qualitative" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eAnalysisType.Quantitative">
+<span class="sig-name descname"><span class="pre">Quantitative</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eAnalysisType.Quantitative" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eAnchorCoordinateOption">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eAnchorCoordinateOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eAnchorCoordinateOption" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eAnchorCoordinateOption.Logical">
+<span class="sig-name descname"><span class="pre">Logical</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eAnchorCoordinateOption.Logical" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eAnchorCoordinateOption.Spherical">
+<span class="sig-name descname"><span class="pre">Spherical</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eAnchorCoordinateOption.Spherical" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eColorInterpolationMethod">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eColorInterpolationMethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eColorInterpolationMethod" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eColorInterpolationMethod.HSLAcute">
+<span class="sig-name descname"><span class="pre">HSLAcute</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eColorInterpolationMethod.HSLAcute" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eColorInterpolationMethod.HSLObtuse">
+<span class="sig-name descname"><span class="pre">HSLObtuse</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eColorInterpolationMethod.HSLObtuse" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eColorInterpolationMethod.HSLSaturated">
+<span class="sig-name descname"><span class="pre">HSLSaturated</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eColorInterpolationMethod.HSLSaturated" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eColorInterpolationMethod.RGBLinear">
+<span class="sig-name descname"><span class="pre">RGBLinear</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eColorInterpolationMethod.RGBLinear" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourColorTableMethod">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eContourColorTableMethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eContourColorTableMethod" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourColorTableMethod.Custom">
+<span class="sig-name descname"><span class="pre">Custom</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eContourColorTableMethod.Custom" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourColorTableMethod.Interpolate">
+<span class="sig-name descname"><span class="pre">Interpolate</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eContourColorTableMethod.Interpolate" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourMode">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eContourMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eContourMode" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourMode.Filled">
+<span class="sig-name descname"><span class="pre">Filled</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eContourMode.Filled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourMode.FilledWithLines">
+<span class="sig-name descname"><span class="pre">FilledWithLines</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eContourMode.FilledWithLines" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourMode.Lines">
+<span class="sig-name descname"><span class="pre">Lines</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eContourMode.Lines" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eContourType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eContourType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourType.IntersectionVectorDensity">
+<span class="sig-name descname"><span class="pre">IntersectionVectorDensity</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eContourType.IntersectionVectorDensity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourType.PoleVectorDensity">
+<span class="sig-name descname"><span class="pre">PoleVectorDensity</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eContourType.PoleVectorDensity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eContourType.QuantitativeContour">
+<span class="sig-name descname"><span class="pre">QuantitativeContour</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eContourType.QuantitativeContour" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eCriticalType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eCriticalType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eCriticalType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eCriticalType.NumberCritical">
+<span class="sig-name descname"><span class="pre">NumberCritical</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eCriticalType.NumberCritical" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eCriticalType.PercentCritical">
+<span class="sig-name descname"><span class="pre">PercentCritical</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eCriticalType.PercentCritical" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDataType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eDataType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eDataType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDataType.Angle">
+<span class="sig-name descname"><span class="pre">Angle</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDataType.Angle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDataType.Area">
+<span class="sig-name descname"><span class="pre">Area</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDataType.Area" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDataType.Force">
+<span class="sig-name descname"><span class="pre">Force</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDataType.Force" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDataType.Length">
+<span class="sig-name descname"><span class="pre">Length</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDataType.Length" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDataType.Pressure">
+<span class="sig-name descname"><span class="pre">Pressure</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDataType.Pressure" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDataType.Ratio">
+<span class="sig-name descname"><span class="pre">Ratio</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDataType.Ratio" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDataType.Text">
+<span class="sig-name descname"><span class="pre">Text</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDataType.Text" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDataType.UnitlessNumeric">
+<span class="sig-name descname"><span class="pre">UnitlessNumeric</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDataType.UnitlessNumeric" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDataType.Volume">
+<span class="sig-name descname"><span class="pre">Volume</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDataType.Volume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDeSurveryOption">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eDeSurveryOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eDeSurveryOption" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDeSurveryOption.LinearAtMidPoints">
+<span class="sig-name descname"><span class="pre">LinearAtMidPoints</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDeSurveryOption.LinearAtMidPoints" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDeSurveryOption.LinearAtSegmentEnds">
+<span class="sig-name descname"><span class="pre">LinearAtSegmentEnds</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDeSurveryOption.LinearAtSegmentEnds" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDensityDistribution">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eDensityDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eDensityDistribution" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDensityDistribution.Fisher">
+<span class="sig-name descname"><span class="pre">Fisher</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDensityDistribution.Fisher" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eDensityDistribution.Schmidt">
+<span class="sig-name descname"><span class="pre">Schmidt</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eDensityDistribution.Schmidt" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eFailureModeOption">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eFailureModeOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eFailureModeOption" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eFailureModeOption.DirectToppling">
+<span class="sig-name descname"><span class="pre">DirectToppling</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eFailureModeOption.DirectToppling" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eFailureModeOption.FlexuralToppling">
+<span class="sig-name descname"><span class="pre">FlexuralToppling</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eFailureModeOption.FlexuralToppling" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eFailureModeOption.PlanarSliding">
+<span class="sig-name descname"><span class="pre">PlanarSliding</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eFailureModeOption.PlanarSliding" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eFailureModeOption.PlanarSlidingNoLimits">
+<span class="sig-name descname"><span class="pre">PlanarSlidingNoLimits</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eFailureModeOption.PlanarSlidingNoLimits" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eFailureModeOption.WedgeSliding">
+<span class="sig-name descname"><span class="pre">WedgeSliding</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eFailureModeOption.WedgeSliding" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eFisherDistributionDefinition">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eFisherDistributionDefinition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eFisherDistributionDefinition" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eFisherDistributionDefinition.FisherK">
+<span class="sig-name descname"><span class="pre">FisherK</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eFisherDistributionDefinition.FisherK" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eFisherDistributionDefinition.StandardDeviation">
+<span class="sig-name descname"><span class="pre">StandardDeviation</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eFisherDistributionDefinition.StandardDeviation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eHemisphereDrawOption">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eHemisphereDrawOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eHemisphereDrawOption" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eHemisphereDrawOption.Lower">
+<span class="sig-name descname"><span class="pre">Lower</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eHemisphereDrawOption.Lower" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eHemisphereDrawOption.Upper">
+<span class="sig-name descname"><span class="pre">Upper</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eHemisphereDrawOption.Upper" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eInterpolation">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eInterpolation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eInterpolation" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eInterpolation.InverseDistance">
+<span class="sig-name descname"><span class="pre">InverseDistance</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eInterpolation.InverseDistance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eIntersectionType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eIntersectionType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eIntersectionType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eIntersectionType.AllPoleIntersections">
+<span class="sig-name descname"><span class="pre">AllPoleIntersections</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eIntersectionType.AllPoleIntersections" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eIntersectionType.AllSetVersusSetPoleIntersections">
+<span class="sig-name descname"><span class="pre">AllSetVersusSetPoleIntersections</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eIntersectionType.AllSetVersusSetPoleIntersections" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eIntersectionType.MeanSetPlaneAndUserPlaneIntersections">
+<span class="sig-name descname"><span class="pre">MeanSetPlaneAndUserPlaneIntersections</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eIntersectionType.MeanSetPlaneAndUserPlaneIntersections" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eIntersectionType.MeanSetPlaneIntersections">
+<span class="sig-name descname"><span class="pre">MeanSetPlaneIntersections</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eIntersectionType.MeanSetPlaneIntersections" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eIntersectionType.SetVersusSetPoleIntersections">
+<span class="sig-name descname"><span class="pre">SetVersusSetPoleIntersections</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eIntersectionType.SetVersusSetPoleIntersections" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eIntersectionType.UserPlaneIntersections">
+<span class="sig-name descname"><span class="pre">UserPlaneIntersections</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eIntersectionType.UserPlaneIntersections" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eIntervalOption">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eIntervalOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eIntervalOption" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eIntervalOption.Discrete">
+<span class="sig-name descname"><span class="pre">Discrete</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eIntervalOption.Discrete" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eIntervalOption.Moving">
+<span class="sig-name descname"><span class="pre">Moving</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eIntervalOption.Moving" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eKinematicSensitivityChartType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eKinematicSensitivityChartType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eKinematicSensitivityChartType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eKinematicSensitivityChartType.CartesianChart">
+<span class="sig-name descname"><span class="pre">CartesianChart</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eKinematicSensitivityChartType.CartesianChart" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eKinematicSensitivityChartType.PolarChart">
+<span class="sig-name descname"><span class="pre">PolarChart</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eKinematicSensitivityChartType.PolarChart" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eLineationDirection">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eLineationDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eLineationDirection" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eLineationDirection.Down">
+<span class="sig-name descname"><span class="pre">Down</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eLineationDirection.Down" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eLineationDirection.Up">
+<span class="sig-name descname"><span class="pre">Up</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eLineationDirection.Up" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationConvention">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eOrientationConvention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationConvention" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationConvention.AlphaBetaOrientation">
+<span class="sig-name descname"><span class="pre">AlphaBetaOrientation</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationConvention.AlphaBetaOrientation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationConvention.DipDipDirectionOrientation">
+<span class="sig-name descname"><span class="pre">DipDipDirectionOrientation</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationConvention.DipDipDirectionOrientation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationConvention.Orient123Orientation">
+<span class="sig-name descname"><span class="pre">Orient123Orientation</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationConvention.Orient123Orientation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationConvention.Orient1SurveyDataOrientation">
+<span class="sig-name descname"><span class="pre">Orient1SurveyDataOrientation</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationConvention.Orient1SurveyDataOrientation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationConvention.StrikeLeftDipOrientation">
+<span class="sig-name descname"><span class="pre">StrikeLeftDipOrientation</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationConvention.StrikeLeftDipOrientation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationConvention.StrikeRightDipOrientation">
+<span class="sig-name descname"><span class="pre">StrikeRightDipOrientation</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationConvention.StrikeRightDipOrientation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationConvention.SurveyDataOrientation">
+<span class="sig-name descname"><span class="pre">SurveyDataOrientation</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationConvention.SurveyDataOrientation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationConvention.TrendPlungeOrientation">
+<span class="sig-name descname"><span class="pre">TrendPlungeOrientation</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationConvention.TrendPlungeOrientation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationDataType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eOrientationDataType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationDataType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationDataType.Clinorule">
+<span class="sig-name descname"><span class="pre">Clinorule</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationDataType.Clinorule" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationDataType.CurvedBoreholeOrientedCore">
+<span class="sig-name descname"><span class="pre">CurvedBoreholeOrientedCore</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationDataType.CurvedBoreholeOrientedCore" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationDataType.CurvedBoreholeTeleviewer">
+<span class="sig-name descname"><span class="pre">CurvedBoreholeTeleviewer</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationDataType.CurvedBoreholeTeleviewer" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationDataType.LinearBoreholeOrientedCore">
+<span class="sig-name descname"><span class="pre">LinearBoreholeOrientedCore</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationDataType.LinearBoreholeOrientedCore" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationDataType.LinearBoreholeTeleviewer">
+<span class="sig-name descname"><span class="pre">LinearBoreholeTeleviewer</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationDataType.LinearBoreholeTeleviewer" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationDataType.LinearScanline">
+<span class="sig-name descname"><span class="pre">LinearScanline</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationDataType.LinearScanline" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationDataType.PlanarMapping">
+<span class="sig-name descname"><span class="pre">PlanarMapping</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationDataType.PlanarMapping" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eOrientationDataType.SpotMapping">
+<span class="sig-name descname"><span class="pre">SpotMapping</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eOrientationDataType.SpotMapping" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.ePoleMode">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">ePoleMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.ePoleMode" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.ePoleMode.Symbolic">
+<span class="sig-name descname"><span class="pre">Symbolic</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.ePoleMode.Symbolic" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.ePoleMode.SymbolicBySet">
+<span class="sig-name descname"><span class="pre">SymbolicBySet</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.ePoleMode.SymbolicBySet" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.ePoleMode.Vector">
+<span class="sig-name descname"><span class="pre">Vector</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.ePoleMode.Vector" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eProjectionMethodDrawOption">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eProjectionMethodDrawOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eProjectionMethodDrawOption" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eProjectionMethodDrawOption.EqualAngle">
+<span class="sig-name descname"><span class="pre">EqualAngle</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eProjectionMethodDrawOption.EqualAngle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eProjectionMethodDrawOption.EqualArea">
+<span class="sig-name descname"><span class="pre">EqualArea</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eProjectionMethodDrawOption.EqualArea" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eQualitativeQuantitativeChartType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eQualitativeQuantitativeChartType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eQualitativeQuantitativeChartType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eQualitativeQuantitativeChartType.Bar">
+<span class="sig-name descname"><span class="pre">Bar</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eQualitativeQuantitativeChartType.Bar" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eQualitativeQuantitativeChartType.Line">
+<span class="sig-name descname"><span class="pre">Line</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eQualitativeQuantitativeChartType.Line" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eQualitativeQuantitativeChartType.Pie">
+<span class="sig-name descname"><span class="pre">Pie</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eQualitativeQuantitativeChartType.Pie" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSetWindowType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eSetWindowType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eSetWindowType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSetWindowType.Circular">
+<span class="sig-name descname"><span class="pre">Circular</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSetWindowType.Circular" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSetWindowType.Cluster">
+<span class="sig-name descname"><span class="pre">Cluster</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSetWindowType.Cluster" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSetWindowType.Curved">
+<span class="sig-name descname"><span class="pre">Curved</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSetWindowType.Curved" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSetWindowType.WrappedFreehand">
+<span class="sig-name descname"><span class="pre">WrappedFreehand</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSetWindowType.WrappedFreehand" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSpacingOption">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eSpacingOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eSpacingOption" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSpacingOption.ApparentSpacing">
+<span class="sig-name descname"><span class="pre">ApparentSpacing</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSpacingOption.ApparentSpacing" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSpacingOption.TrueSpacing">
+<span class="sig-name descname"><span class="pre">TrueSpacing</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSpacingOption.TrueSpacing" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eStereonetOverlayOption">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eStereonetOverlayOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eStereonetOverlayOption" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eStereonetOverlayOption.CustomOverlay">
+<span class="sig-name descname"><span class="pre">CustomOverlay</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eStereonetOverlayOption.CustomOverlay" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eStereonetOverlayOption.Equatorial">
+<span class="sig-name descname"><span class="pre">Equatorial</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eStereonetOverlayOption.Equatorial" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eStereonetOverlayOption.Polar">
+<span class="sig-name descname"><span class="pre">Polar</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eStereonetOverlayOption.Polar" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eStereonetTrendLabelMode">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eStereonetTrendLabelMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eStereonetTrendLabelMode" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eStereonetTrendLabelMode.Degrees">
+<span class="sig-name descname"><span class="pre">Degrees</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eStereonetTrendLabelMode.Degrees" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eStereonetTrendLabelMode.NSEW">
+<span class="sig-name descname"><span class="pre">NSEW</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eStereonetTrendLabelMode.NSEW" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eStereonetTrendLabelMode.NoLabel">
+<span class="sig-name descname"><span class="pre">NoLabel</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eStereonetTrendLabelMode.NoLabel" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eStereonetTrendLabelMode.North">
+<span class="sig-name descname"><span class="pre">North</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eStereonetTrendLabelMode.North" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eSymbolStyle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.Asterisk">
+<span class="sig-name descname"><span class="pre">Asterisk</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.Asterisk" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.Circle">
+<span class="sig-name descname"><span class="pre">Circle</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.Circle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.CrossDiagonal">
+<span class="sig-name descname"><span class="pre">CrossDiagonal</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.CrossDiagonal" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.CrossVertical">
+<span class="sig-name descname"><span class="pre">CrossVertical</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.CrossVertical" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.Diamond">
+<span class="sig-name descname"><span class="pre">Diamond</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.Diamond" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.NoSymbol">
+<span class="sig-name descname"><span class="pre">NoSymbol</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.NoSymbol" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.Square">
+<span class="sig-name descname"><span class="pre">Square</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.Square" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.TriangleDown">
+<span class="sig-name descname"><span class="pre">TriangleDown</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.TriangleDown" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.TriangleLeft">
+<span class="sig-name descname"><span class="pre">TriangleLeft</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.TriangleLeft" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.TriangleRight">
+<span class="sig-name descname"><span class="pre">TriangleRight</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.TriangleRight" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSymbolStyle.TriangleUp">
+<span class="sig-name descname"><span class="pre">TriangleUp</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSymbolStyle.TriangleUp" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSyntheticJointError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eSyntheticJointError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eSyntheticJointError" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSyntheticJointError.Normal">
+<span class="sig-name descname"><span class="pre">Normal</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSyntheticJointError.Normal" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSyntheticJointError.RoundOff">
+<span class="sig-name descname"><span class="pre">RoundOff</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSyntheticJointError.RoundOff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eSyntheticJointError.Uniform">
+<span class="sig-name descname"><span class="pre">Uniform</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eSyntheticJointError.Uniform" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eTextHorizontalAlignment">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eTextHorizontalAlignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eTextHorizontalAlignment" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eTextHorizontalAlignment.Center">
+<span class="sig-name descname"><span class="pre">Center</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eTextHorizontalAlignment.Center" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eTextHorizontalAlignment.Left">
+<span class="sig-name descname"><span class="pre">Left</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eTextHorizontalAlignment.Left" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eTextHorizontalAlignment.Right">
+<span class="sig-name descname"><span class="pre">Right</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eTextHorizontalAlignment.Right" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eUnitSystem">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eUnitSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eUnitSystem" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eUnitSystem.Imperial">
+<span class="sig-name descname"><span class="pre">Imperial</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eUnitSystem.Imperial" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eUnitSystem.Metric">
+<span class="sig-name descname"><span class="pre">Metric</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eUnitSystem.Metric" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eVectorMode">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eVectorMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eVectorMode" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eVectorMode.Dip">
+<span class="sig-name descname"><span class="pre">Dip</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eVectorMode.Dip" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eVectorMode.Pole">
+<span class="sig-name descname"><span class="pre">Pole</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eVectorMode.Pole" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eWeightingOption">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dips.DipsAPI_enums.</span></span><span class="sig-name descname"><span class="pre">eWeightingOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dips.DipsAPI_enums.eWeightingOption" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dips.DipsAPI_enums.eWeightingOption.TerzaghiWeighting">
+<span class="sig-name descname"><span class="pre">TerzaghiWeighting</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#dips.DipsAPI_enums.eWeightingOption.TerzaghiWeighting" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dips.DataIdentifierVal.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dips.DataIdentifierVal module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dips.DipsApp.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dips.DipsApp module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eAnalysisType"><code class="docutils literal notranslate"><span class="pre">eAnalysisType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eAnalysisType.Qualitative"><code class="docutils literal notranslate"><span class="pre">eAnalysisType.Qualitative</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eAnalysisType.Quantitative"><code class="docutils literal notranslate"><span class="pre">eAnalysisType.Quantitative</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eAnchorCoordinateOption"><code class="docutils literal notranslate"><span class="pre">eAnchorCoordinateOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eAnchorCoordinateOption.Logical"><code class="docutils literal notranslate"><span class="pre">eAnchorCoordinateOption.Logical</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eAnchorCoordinateOption.Spherical"><code class="docutils literal notranslate"><span class="pre">eAnchorCoordinateOption.Spherical</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eColorInterpolationMethod"><code class="docutils literal notranslate"><span class="pre">eColorInterpolationMethod</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eColorInterpolationMethod.HSLAcute"><code class="docutils literal notranslate"><span class="pre">eColorInterpolationMethod.HSLAcute</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eColorInterpolationMethod.HSLObtuse"><code class="docutils literal notranslate"><span class="pre">eColorInterpolationMethod.HSLObtuse</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eColorInterpolationMethod.HSLSaturated"><code class="docutils literal notranslate"><span class="pre">eColorInterpolationMethod.HSLSaturated</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eColorInterpolationMethod.RGBLinear"><code class="docutils literal notranslate"><span class="pre">eColorInterpolationMethod.RGBLinear</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourColorTableMethod"><code class="docutils literal notranslate"><span class="pre">eContourColorTableMethod</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourColorTableMethod.Custom"><code class="docutils literal notranslate"><span class="pre">eContourColorTableMethod.Custom</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourColorTableMethod.Interpolate"><code class="docutils literal notranslate"><span class="pre">eContourColorTableMethod.Interpolate</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourMode"><code class="docutils literal notranslate"><span class="pre">eContourMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourMode.Filled"><code class="docutils literal notranslate"><span class="pre">eContourMode.Filled</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourMode.FilledWithLines"><code class="docutils literal notranslate"><span class="pre">eContourMode.FilledWithLines</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourMode.Lines"><code class="docutils literal notranslate"><span class="pre">eContourMode.Lines</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourType"><code class="docutils literal notranslate"><span class="pre">eContourType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourType.IntersectionVectorDensity"><code class="docutils literal notranslate"><span class="pre">eContourType.IntersectionVectorDensity</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourType.PoleVectorDensity"><code class="docutils literal notranslate"><span class="pre">eContourType.PoleVectorDensity</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eContourType.QuantitativeContour"><code class="docutils literal notranslate"><span class="pre">eContourType.QuantitativeContour</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eCriticalType"><code class="docutils literal notranslate"><span class="pre">eCriticalType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eCriticalType.NumberCritical"><code class="docutils literal notranslate"><span class="pre">eCriticalType.NumberCritical</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eCriticalType.PercentCritical"><code class="docutils literal notranslate"><span class="pre">eCriticalType.PercentCritical</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDataType"><code class="docutils literal notranslate"><span class="pre">eDataType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDataType.Angle"><code class="docutils literal notranslate"><span class="pre">eDataType.Angle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDataType.Area"><code class="docutils literal notranslate"><span class="pre">eDataType.Area</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDataType.Force"><code class="docutils literal notranslate"><span class="pre">eDataType.Force</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDataType.Length"><code class="docutils literal notranslate"><span class="pre">eDataType.Length</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDataType.Pressure"><code class="docutils literal notranslate"><span class="pre">eDataType.Pressure</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDataType.Ratio"><code class="docutils literal notranslate"><span class="pre">eDataType.Ratio</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDataType.Text"><code class="docutils literal notranslate"><span class="pre">eDataType.Text</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDataType.UnitlessNumeric"><code class="docutils literal notranslate"><span class="pre">eDataType.UnitlessNumeric</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDataType.Volume"><code class="docutils literal notranslate"><span class="pre">eDataType.Volume</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDeSurveryOption"><code class="docutils literal notranslate"><span class="pre">eDeSurveryOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDeSurveryOption.LinearAtMidPoints"><code class="docutils literal notranslate"><span class="pre">eDeSurveryOption.LinearAtMidPoints</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDeSurveryOption.LinearAtSegmentEnds"><code class="docutils literal notranslate"><span class="pre">eDeSurveryOption.LinearAtSegmentEnds</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDensityDistribution"><code class="docutils literal notranslate"><span class="pre">eDensityDistribution</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDensityDistribution.Fisher"><code class="docutils literal notranslate"><span class="pre">eDensityDistribution.Fisher</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eDensityDistribution.Schmidt"><code class="docutils literal notranslate"><span class="pre">eDensityDistribution.Schmidt</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eFailureModeOption"><code class="docutils literal notranslate"><span class="pre">eFailureModeOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eFailureModeOption.DirectToppling"><code class="docutils literal notranslate"><span class="pre">eFailureModeOption.DirectToppling</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eFailureModeOption.FlexuralToppling"><code class="docutils literal notranslate"><span class="pre">eFailureModeOption.FlexuralToppling</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eFailureModeOption.PlanarSliding"><code class="docutils literal notranslate"><span class="pre">eFailureModeOption.PlanarSliding</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eFailureModeOption.PlanarSlidingNoLimits"><code class="docutils literal notranslate"><span class="pre">eFailureModeOption.PlanarSlidingNoLimits</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eFailureModeOption.WedgeSliding"><code class="docutils literal notranslate"><span class="pre">eFailureModeOption.WedgeSliding</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eFisherDistributionDefinition"><code class="docutils literal notranslate"><span class="pre">eFisherDistributionDefinition</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eFisherDistributionDefinition.FisherK"><code class="docutils literal notranslate"><span class="pre">eFisherDistributionDefinition.FisherK</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eFisherDistributionDefinition.StandardDeviation"><code class="docutils literal notranslate"><span class="pre">eFisherDistributionDefinition.StandardDeviation</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eHemisphereDrawOption"><code class="docutils literal notranslate"><span class="pre">eHemisphereDrawOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eHemisphereDrawOption.Lower"><code class="docutils literal notranslate"><span class="pre">eHemisphereDrawOption.Lower</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eHemisphereDrawOption.Upper"><code class="docutils literal notranslate"><span class="pre">eHemisphereDrawOption.Upper</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eInterpolation"><code class="docutils literal notranslate"><span class="pre">eInterpolation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eInterpolation.InverseDistance"><code class="docutils literal notranslate"><span class="pre">eInterpolation.InverseDistance</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eIntersectionType"><code class="docutils literal notranslate"><span class="pre">eIntersectionType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eIntersectionType.AllPoleIntersections"><code class="docutils literal notranslate"><span class="pre">eIntersectionType.AllPoleIntersections</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eIntersectionType.AllSetVersusSetPoleIntersections"><code class="docutils literal notranslate"><span class="pre">eIntersectionType.AllSetVersusSetPoleIntersections</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eIntersectionType.MeanSetPlaneAndUserPlaneIntersections"><code class="docutils literal notranslate"><span class="pre">eIntersectionType.MeanSetPlaneAndUserPlaneIntersections</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eIntersectionType.MeanSetPlaneIntersections"><code class="docutils literal notranslate"><span class="pre">eIntersectionType.MeanSetPlaneIntersections</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eIntersectionType.SetVersusSetPoleIntersections"><code class="docutils literal notranslate"><span class="pre">eIntersectionType.SetVersusSetPoleIntersections</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eIntersectionType.UserPlaneIntersections"><code class="docutils literal notranslate"><span class="pre">eIntersectionType.UserPlaneIntersections</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eIntervalOption"><code class="docutils literal notranslate"><span class="pre">eIntervalOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eIntervalOption.Discrete"><code class="docutils literal notranslate"><span class="pre">eIntervalOption.Discrete</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eIntervalOption.Moving"><code class="docutils literal notranslate"><span class="pre">eIntervalOption.Moving</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eKinematicSensitivityChartType"><code class="docutils literal notranslate"><span class="pre">eKinematicSensitivityChartType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eKinematicSensitivityChartType.CartesianChart"><code class="docutils literal notranslate"><span class="pre">eKinematicSensitivityChartType.CartesianChart</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eKinematicSensitivityChartType.PolarChart"><code class="docutils literal notranslate"><span class="pre">eKinematicSensitivityChartType.PolarChart</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eLineationDirection"><code class="docutils literal notranslate"><span class="pre">eLineationDirection</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eLineationDirection.Down"><code class="docutils literal notranslate"><span class="pre">eLineationDirection.Down</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eLineationDirection.Up"><code class="docutils literal notranslate"><span class="pre">eLineationDirection.Up</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationConvention"><code class="docutils literal notranslate"><span class="pre">eOrientationConvention</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationConvention.AlphaBetaOrientation"><code class="docutils literal notranslate"><span class="pre">eOrientationConvention.AlphaBetaOrientation</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationConvention.DipDipDirectionOrientation"><code class="docutils literal notranslate"><span class="pre">eOrientationConvention.DipDipDirectionOrientation</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationConvention.Orient123Orientation"><code class="docutils literal notranslate"><span class="pre">eOrientationConvention.Orient123Orientation</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationConvention.Orient1SurveyDataOrientation"><code class="docutils literal notranslate"><span class="pre">eOrientationConvention.Orient1SurveyDataOrientation</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationConvention.StrikeLeftDipOrientation"><code class="docutils literal notranslate"><span class="pre">eOrientationConvention.StrikeLeftDipOrientation</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationConvention.StrikeRightDipOrientation"><code class="docutils literal notranslate"><span class="pre">eOrientationConvention.StrikeRightDipOrientation</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationConvention.SurveyDataOrientation"><code class="docutils literal notranslate"><span class="pre">eOrientationConvention.SurveyDataOrientation</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationConvention.TrendPlungeOrientation"><code class="docutils literal notranslate"><span class="pre">eOrientationConvention.TrendPlungeOrientation</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationDataType"><code class="docutils literal notranslate"><span class="pre">eOrientationDataType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationDataType.Clinorule"><code class="docutils literal notranslate"><span class="pre">eOrientationDataType.Clinorule</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationDataType.CurvedBoreholeOrientedCore"><code class="docutils literal notranslate"><span class="pre">eOrientationDataType.CurvedBoreholeOrientedCore</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationDataType.CurvedBoreholeTeleviewer"><code class="docutils literal notranslate"><span class="pre">eOrientationDataType.CurvedBoreholeTeleviewer</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationDataType.LinearBoreholeOrientedCore"><code class="docutils literal notranslate"><span class="pre">eOrientationDataType.LinearBoreholeOrientedCore</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationDataType.LinearBoreholeTeleviewer"><code class="docutils literal notranslate"><span class="pre">eOrientationDataType.LinearBoreholeTeleviewer</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationDataType.LinearScanline"><code class="docutils literal notranslate"><span class="pre">eOrientationDataType.LinearScanline</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationDataType.PlanarMapping"><code class="docutils literal notranslate"><span class="pre">eOrientationDataType.PlanarMapping</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eOrientationDataType.SpotMapping"><code class="docutils literal notranslate"><span class="pre">eOrientationDataType.SpotMapping</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.ePoleMode"><code class="docutils literal notranslate"><span class="pre">ePoleMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.ePoleMode.Symbolic"><code class="docutils literal notranslate"><span class="pre">ePoleMode.Symbolic</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.ePoleMode.SymbolicBySet"><code class="docutils literal notranslate"><span class="pre">ePoleMode.SymbolicBySet</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.ePoleMode.Vector"><code class="docutils literal notranslate"><span class="pre">ePoleMode.Vector</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eProjectionMethodDrawOption"><code class="docutils literal notranslate"><span class="pre">eProjectionMethodDrawOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eProjectionMethodDrawOption.EqualAngle"><code class="docutils literal notranslate"><span class="pre">eProjectionMethodDrawOption.EqualAngle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eProjectionMethodDrawOption.EqualArea"><code class="docutils literal notranslate"><span class="pre">eProjectionMethodDrawOption.EqualArea</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eQualitativeQuantitativeChartType"><code class="docutils literal notranslate"><span class="pre">eQualitativeQuantitativeChartType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eQualitativeQuantitativeChartType.Bar"><code class="docutils literal notranslate"><span class="pre">eQualitativeQuantitativeChartType.Bar</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eQualitativeQuantitativeChartType.Line"><code class="docutils literal notranslate"><span class="pre">eQualitativeQuantitativeChartType.Line</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eQualitativeQuantitativeChartType.Pie"><code class="docutils literal notranslate"><span class="pre">eQualitativeQuantitativeChartType.Pie</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSetWindowType"><code class="docutils literal notranslate"><span class="pre">eSetWindowType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSetWindowType.Circular"><code class="docutils literal notranslate"><span class="pre">eSetWindowType.Circular</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSetWindowType.Cluster"><code class="docutils literal notranslate"><span class="pre">eSetWindowType.Cluster</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSetWindowType.Curved"><code class="docutils literal notranslate"><span class="pre">eSetWindowType.Curved</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSetWindowType.WrappedFreehand"><code class="docutils literal notranslate"><span class="pre">eSetWindowType.WrappedFreehand</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSpacingOption"><code class="docutils literal notranslate"><span class="pre">eSpacingOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSpacingOption.ApparentSpacing"><code class="docutils literal notranslate"><span class="pre">eSpacingOption.ApparentSpacing</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSpacingOption.TrueSpacing"><code class="docutils literal notranslate"><span class="pre">eSpacingOption.TrueSpacing</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eStereonetOverlayOption"><code class="docutils literal notranslate"><span class="pre">eStereonetOverlayOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eStereonetOverlayOption.CustomOverlay"><code class="docutils literal notranslate"><span class="pre">eStereonetOverlayOption.CustomOverlay</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eStereonetOverlayOption.Equatorial"><code class="docutils literal notranslate"><span class="pre">eStereonetOverlayOption.Equatorial</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eStereonetOverlayOption.Polar"><code class="docutils literal notranslate"><span class="pre">eStereonetOverlayOption.Polar</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eStereonetTrendLabelMode"><code class="docutils literal notranslate"><span class="pre">eStereonetTrendLabelMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eStereonetTrendLabelMode.Degrees"><code class="docutils literal notranslate"><span class="pre">eStereonetTrendLabelMode.Degrees</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eStereonetTrendLabelMode.NSEW"><code class="docutils literal notranslate"><span class="pre">eStereonetTrendLabelMode.NSEW</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eStereonetTrendLabelMode.NoLabel"><code class="docutils literal notranslate"><span class="pre">eStereonetTrendLabelMode.NoLabel</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eStereonetTrendLabelMode.North"><code class="docutils literal notranslate"><span class="pre">eStereonetTrendLabelMode.North</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.Asterisk"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.Asterisk</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.Circle"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.Circle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.CrossDiagonal"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.CrossDiagonal</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.CrossVertical"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.CrossVertical</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.Diamond"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.Diamond</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.NoSymbol"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.NoSymbol</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.Square"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.Square</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.TriangleDown"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.TriangleDown</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.TriangleLeft"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.TriangleLeft</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.TriangleRight"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.TriangleRight</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSymbolStyle.TriangleUp"><code class="docutils literal notranslate"><span class="pre">eSymbolStyle.TriangleUp</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSyntheticJointError"><code class="docutils literal notranslate"><span class="pre">eSyntheticJointError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSyntheticJointError.Normal"><code class="docutils literal notranslate"><span class="pre">eSyntheticJointError.Normal</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSyntheticJointError.RoundOff"><code class="docutils literal notranslate"><span class="pre">eSyntheticJointError.RoundOff</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eSyntheticJointError.Uniform"><code class="docutils literal notranslate"><span class="pre">eSyntheticJointError.Uniform</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eTextHorizontalAlignment"><code class="docutils literal notranslate"><span class="pre">eTextHorizontalAlignment</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eTextHorizontalAlignment.Center"><code class="docutils literal notranslate"><span class="pre">eTextHorizontalAlignment.Center</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eTextHorizontalAlignment.Left"><code class="docutils literal notranslate"><span class="pre">eTextHorizontalAlignment.Left</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eTextHorizontalAlignment.Right"><code class="docutils literal notranslate"><span class="pre">eTextHorizontalAlignment.Right</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eUnitSystem"><code class="docutils literal notranslate"><span class="pre">eUnitSystem</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eUnitSystem.Imperial"><code class="docutils literal notranslate"><span class="pre">eUnitSystem.Imperial</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eUnitSystem.Metric"><code class="docutils literal notranslate"><span class="pre">eUnitSystem.Metric</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eVectorMode"><code class="docutils literal notranslate"><span class="pre">eVectorMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eVectorMode.Dip"><code class="docutils literal notranslate"><span class="pre">eVectorMode.Dip</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eVectorMode.Pole"><code class="docutils literal notranslate"><span class="pre">eVectorMode.Pole</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eWeightingOption"><code class="docutils literal notranslate"><span class="pre">eWeightingOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dips.DipsAPI_enums.eWeightingOption.TerzaghiWeighting"><code class="docutils literal notranslate"><span class="pre">eWeightingOption.TerzaghiWeighting</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generatedDocFiles/dips.DipsAPI_enums.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Rocscience.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

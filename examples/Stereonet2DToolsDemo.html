@@ -387,68 +387,31 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
-
-<span class="c1"># Value wrappers for tools</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TextToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ArrowToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.LineToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.PolylineToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.PolygonToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.RectangleToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.EllipseToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ConeToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TrendLineToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.PitchGridToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.MeasureAngleToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.LineIntersectionCalculatorToolEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.PlaneIntersectionCalculatorToolEntityInfoVal</span>
 
 <span class="c1"># Helper value wrappers</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.AnchorPointVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.AngleDataVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.Vector2DVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.LineFormatVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ConeVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.AnchorPointVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnchorPointVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrendPlungeVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.Vector2DVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vector2DVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSurrogateVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.LineFormatVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">LineFormatVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.ConeVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConeVal</span>
 
 
 <span class="c1"># =============================================================================</span>
 <span class="c1"># HELPER FUNCTIONS</span>
 <span class="c1"># =============================================================================</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">create_trend_plunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a TrendPlunge from degrees.&quot;&quot;&quot;</span>
-    <span class="n">tp</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">)</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge_deg</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">tp</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">create_color</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">255</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Color from RGBA values.&quot;&quot;&quot;</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="p">()</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
-    <span class="k">return</span> <span class="n">color</span>
-
-
 <span class="k">def</span><span class="w"> </span><span class="nf">create_anchor_point</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an AnchorPoint with spherical coordinates.&quot;&quot;&quot;</span>
-    <span class="n">anchor</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AnchorPointVal</span><span class="o">.</span><span class="n">AnchorPointVal</span><span class="p">()</span>
-    <span class="n">anchor</span><span class="o">.</span><span class="n">coordinate_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eAnchorCoordinateOption</span><span class="o">.</span><span class="n">Spherical</span>
-    <span class="n">anchor</span><span class="o">.</span><span class="n">spherical_point</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">)</span>
+    <span class="n">anchor</span> <span class="o">=</span> <span class="n">AnchorPointVal</span><span class="p">()</span>
+    <span class="n">anchor</span><span class="o">.</span><span class="n">coordinate_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eAnchorCoordinateOption</span><span class="o">.</span><span class="n">Spherical</span>
+    <span class="n">anchor</span><span class="o">.</span><span class="n">spherical_point</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">anchor</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">create_vector2d</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Vector2D.&quot;&quot;&quot;</span>
-    <span class="n">vec</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">Vector2DVal</span><span class="o">.</span><span class="n">Vector2DVal</span><span class="p">()</span>
+    <span class="n">vec</span> <span class="o">=</span> <span class="n">Vector2DVal</span><span class="p">()</span>
     <span class="n">vec</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
     <span class="n">vec</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
     <span class="k">return</span> <span class="n">vec</span>
@@ -456,8 +419,8 @@
 
 <span class="k">def</span><span class="w"> </span><span class="nf">create_line_format</span><span class="p">(</span><span class="n">color_rgb</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a LineFormat.&quot;&quot;&quot;</span>
-    <span class="n">line_format</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">LineFormatVal</span><span class="o">.</span><span class="n">LineFormatVal</span><span class="p">()</span>
-    <span class="n">line_format</span><span class="o">.</span><span class="n">line_color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="o">*</span><span class="n">color_rgb</span><span class="p">)</span>
+    <span class="n">line_format</span> <span class="o">=</span> <span class="n">LineFormatVal</span><span class="p">()</span>
+    <span class="n">line_format</span><span class="o">.</span><span class="n">line_color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="o">*</span><span class="n">color_rgb</span><span class="p">)</span>
     <span class="n">line_format</span><span class="o">.</span><span class="n">line_width</span> <span class="o">=</span> <span class="n">width</span>
     <span class="k">return</span> <span class="n">line_format</span>
 
@@ -503,11 +466,10 @@
     <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultConeToolEntityInfo</span><span class="p">()</span>
     <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
     <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">tool</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     
-    <span class="n">cone</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">ConeVal</span><span class="o">.</span><span class="n">ConeVal</span><span class="p">()</span>
-    <span class="n">cone</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="n">center_trend_deg</span><span class="p">,</span> <span class="n">center_plunge_deg</span><span class="p">)</span>
-    <span class="n">cone</span><span class="o">.</span><span class="n">cone_angle</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
+    <span class="n">cone</span> <span class="o">=</span> <span class="n">ConeVal</span><span class="p">()</span>
+    <span class="n">cone</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="n">center_trend_deg</span><span class="p">,</span> <span class="n">center_plunge_deg</span><span class="p">)</span>
     <span class="n">cone</span><span class="o">.</span><span class="n">cone_angle</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">cone_angle_deg</span><span class="p">)</span>
     <span class="n">tool</span><span class="o">.</span><span class="n">cone</span> <span class="o">=</span> <span class="n">cone</span>
     
@@ -542,11 +504,8 @@
     <span class="p">]</span>
     
     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">setter</span> <span class="ow">in</span> <span class="n">tool_group_settings</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">setter</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: True&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">setter</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: True&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -559,43 +518,28 @@
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
     <span class="c1"># Add</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">create_text_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Text&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello Dips!&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DTextTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DTextTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DTextTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">create_text_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Text&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello Dips!&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DTextTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DTextTool&quot;</span><span class="p">)</span>
     
     <span class="c1"># Get list</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DTextToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DTextToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DTextToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DTextToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DTextToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
         <span class="c1"># Set visibility</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DTextToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DTextToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DTextToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DTextToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DTextToolVisibility&quot;</span><span class="p">)</span>
         
         <span class="c1"># Update</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Updated Text!&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DTextTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DTextTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DTextTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Updated Text!&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DTextTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DTextTool&quot;</span><span class="p">)</span>
         
         <span class="c1"># Delete</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DTextTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DTextTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DTextTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DTextTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DTextTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_arrow_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -603,39 +547,24 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  ARROW TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">create_arrow_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Arrow&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DArrowTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DArrowTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DArrowTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">create_arrow_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Arrow&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DArrowTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DArrowTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DArrowToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DArrowToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DArrowToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DArrowToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DArrowToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DArrowToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DArrowToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DArrowToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DArrowToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DArrowToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Arrow&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DArrowTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DArrowTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DArrowTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Arrow&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DArrowTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DArrowTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DArrowTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DArrowTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DArrowTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DArrowTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DArrowTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_line_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -643,39 +572,24 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  LINE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">create_line_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Line&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DLineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DLineTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">create_line_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Line&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DLineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DLineTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DLineToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DLineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DLineToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DLineToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DLineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DLineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DLineToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DLineToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DLineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DLineToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Line&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DLineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DLineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Line&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DLineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DLineTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DLineTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DLineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DLineTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DLineTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_polyline_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -683,45 +597,30 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  POLYLINE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPolylineToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Polyline&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">))</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DPolylineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DPolylineTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DPolylineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPolylineToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Polyline&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">))</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DPolylineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DPolylineTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DPolylineToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DPolylineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DPolylineToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DPolylineToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DPolylineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DPolylineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DPolylineToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DPolylineToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DPolylineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DPolylineToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Polyline&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DPolylineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DPolylineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DPolylineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Polyline&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DPolylineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DPolylineTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DPolylineTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DPolylineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DPolylineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DPolylineTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DPolylineTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_polygon_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -729,45 +628,30 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  POLYGON TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPolygonToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Polygon&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DPolygonTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DPolygonTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DPolygonTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPolygonToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Polygon&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DPolygonTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DPolygonTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DPolygonToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DPolygonToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DPolygonToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DPolygonToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DPolygonToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DPolygonToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DPolygonToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DPolygonToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DPolygonToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DPolygonToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Polygon&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DPolygonTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DPolygonTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DPolygonTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Polygon&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DPolygonTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DPolygonTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DPolygonTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DPolygonTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DPolygonTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DPolygonTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DPolygonTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_rectangle_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -775,44 +659,29 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  RECTANGLE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultRectangleToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Rectangle&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DRectangleTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DRectangleTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DRectangleTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultRectangleToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Rectangle&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DRectangleTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DRectangleTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DRectangleToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DRectangleToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DRectangleToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DRectangleToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DRectangleToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DRectangleToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DRectangleToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DRectangleToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DRectangleToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DRectangleToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Rectangle&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DRectangleTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DRectangleTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DRectangleTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Rectangle&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DRectangleTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DRectangleTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DRectangleTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DRectangleTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DRectangleTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DRectangleTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DRectangleTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_ellipse_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -820,44 +689,29 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  ELLIPSE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultEllipseToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Ellipse&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DEllipseTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DEllipseTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DEllipseTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultEllipseToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Ellipse&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DEllipseTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DEllipseTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DEllipseToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DEllipseToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DEllipseToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DEllipseToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DEllipseToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DEllipseToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DEllipseToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DEllipseToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DEllipseToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DEllipseToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Ellipse&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DEllipseTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DEllipseTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DEllipseTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Ellipse&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DEllipseTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DEllipseTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DEllipseTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DEllipseTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DEllipseTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DEllipseTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DEllipseTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_cone_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -865,39 +719,24 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  CONE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">create_cone_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Cone&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DConeTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DConeTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DConeTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">create_cone_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Cone&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DConeTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DConeTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DConeToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DConeToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DConeToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DConeToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DConeToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DConeToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DConeToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DConeToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DConeToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DConeToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Cone&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DConeTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DConeTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DConeTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Cone&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DConeTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DConeTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DConeTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DConeTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DConeTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DConeTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DConeTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_trendline_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -905,42 +744,27 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  TREND LINE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultTrendLineToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo TrendLine&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DTrendLineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DTrendLineTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DTrendLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultTrendLineToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo TrendLine&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DTrendLineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DTrendLineTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DTrendLineToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DTrendLineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DTrendLineToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DTrendLineToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DTrendLineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DTrendLineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DTrendLineToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DTrendLineToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DTrendLineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DTrendLineToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated TrendLine&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DTrendLineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DTrendLineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DTrendLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated TrendLine&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DTrendLineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DTrendLineTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DTrendLineTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DTrendLineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DTrendLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DTrendLineTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DTrendLineTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_pitchgrid_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -948,42 +772,27 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  PITCH GRID TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPitchGridToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo PitchGrid&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">pole</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DPitchGridTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DPitchGridTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DPitchGridTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPitchGridToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo PitchGrid&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">pole</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DPitchGridTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DPitchGridTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DPitchGridToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DPitchGridToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DPitchGridToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DPitchGridToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DPitchGridToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DPitchGridToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DPitchGridToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DPitchGridToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DPitchGridToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DPitchGridToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated PitchGrid&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DPitchGridTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DPitchGridTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DPitchGridTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated PitchGrid&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DPitchGridTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DPitchGridTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DPitchGridTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DPitchGridTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DPitchGridTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DPitchGridTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DPitchGridTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_measureangle_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -991,43 +800,28 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  MEASURE ANGLE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultMeasureAngleToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo MeasureAngle&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">pole1</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">pole2</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">135</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DMeasureAngleTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DMeasureAngleTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DMeasureAngleTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultMeasureAngleToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo MeasureAngle&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">pole1</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">pole2</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">135</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DMeasureAngleTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DMeasureAngleTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DMeasureAngleToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DMeasureAngleToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DMeasureAngleToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DMeasureAngleToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DMeasureAngleToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DMeasureAngleToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DMeasureAngleToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DMeasureAngleToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DMeasureAngleToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DMeasureAngleToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated MeasureAngle&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DMeasureAngleTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DMeasureAngleTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DMeasureAngleTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated MeasureAngle&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DMeasureAngleTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DMeasureAngleTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DMeasureAngleTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DMeasureAngleTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DMeasureAngleTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DMeasureAngleTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DMeasureAngleTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_lineintersectioncalculator_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -1035,43 +829,28 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  LINE INTERSECTION CALCULATOR TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultLineIntersectionCalculatorToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo LineIntersectionCalc&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">pole1</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">pole2</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DLineIntersectionCalculatorTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DLineIntersectionCalculatorTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DLineIntersectionCalculatorTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultLineIntersectionCalculatorToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo LineIntersectionCalc&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">pole1</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">pole2</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DLineIntersectionCalculatorTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DLineIntersectionCalculatorTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DLineIntersectionCalculatorToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DLineIntersectionCalculatorToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DLineIntersectionCalculatorToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DLineIntersectionCalculatorToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DLineIntersectionCalculatorToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DLineIntersectionCalculatorToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DLineIntersectionCalculatorToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DLineIntersectionCalculatorToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DLineIntersectionCalculatorToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DLineIntersectionCalculatorToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated LineIntersectionCalc&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DLineIntersectionCalculatorTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DLineIntersectionCalculatorTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DLineIntersectionCalculatorTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated LineIntersectionCalc&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DLineIntersectionCalculatorTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DLineIntersectionCalculatorTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DLineIntersectionCalculatorTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DLineIntersectionCalculatorTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DLineIntersectionCalculatorTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DLineIntersectionCalculatorTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DLineIntersectionCalculatorTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_planeintersectioncalculator_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -1079,43 +858,28 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  PLANE INTERSECTION CALCULATOR TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPlaneIntersectionCalculatorToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo PlaneIntersectionCalc&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">pole1</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">pole2</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">225</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DPlaneIntersectionCalculatorTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DPlaneIntersectionCalculatorTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddStereonet2DPlaneIntersectionCalculatorTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPlaneIntersectionCalculatorToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo PlaneIntersectionCalc&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">pole1</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">pole2</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">225</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddStereonet2DPlaneIntersectionCalculatorTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddStereonet2DPlaneIntersectionCalculatorTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DPlaneIntersectionCalculatorToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DPlaneIntersectionCalculatorToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetStereonet2DPlaneIntersectionCalculatorToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetStereonet2DPlaneIntersectionCalculatorToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetStereonet2DPlaneIntersectionCalculatorToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DPlaneIntersectionCalculatorToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DPlaneIntersectionCalculatorToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetStereonet2DPlaneIntersectionCalculatorToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetStereonet2DPlaneIntersectionCalculatorToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetStereonet2DPlaneIntersectionCalculatorToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated PlaneIntersectionCalc&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DPlaneIntersectionCalculatorTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DPlaneIntersectionCalculatorTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateStereonet2DPlaneIntersectionCalculatorTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated PlaneIntersectionCalc&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateStereonet2DPlaneIntersectionCalculatorTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateStereonet2DPlaneIntersectionCalculatorTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DPlaneIntersectionCalculatorTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DPlaneIntersectionCalculatorTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteStereonet2DPlaneIntersectionCalculatorTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteStereonet2DPlaneIntersectionCalculatorTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteStereonet2DPlaneIntersectionCalculatorTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_all_tools</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -1151,13 +915,8 @@
     
     <span class="c1"># Connect to Dips</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
     
     <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
     

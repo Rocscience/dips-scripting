@@ -1,0 +1,7 @@
+dips.ProjStubRefExtension module
+================================
+
+.. automodule:: dips.ProjStubRefExtension
+   :members:
+   :show-inheritance:
+   :undoc-members:

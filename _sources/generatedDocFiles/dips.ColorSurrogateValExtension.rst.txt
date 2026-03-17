@@ -1,0 +1,7 @@
+dips.ColorSurrogateValExtension module
+======================================
+
+.. automodule:: dips.ColorSurrogateValExtension
+   :members:
+   :show-inheritance:
+   :undoc-members:
