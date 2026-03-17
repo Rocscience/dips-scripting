@@ -365,40 +365,14 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.SetWindowEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.CircularWindowVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.CurvedWindowVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.WrappedFreehandWindowVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.FreehandWindowVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.AngleDataVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span>
-
-
-<span class="c1"># =============================================================================</span>
-<span class="c1"># HELPER FUNCTIONS</span>
-<span class="c1"># =============================================================================</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">create_trend_plunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a TrendPlunge from degrees.&quot;&quot;&quot;</span>
-    <span class="n">tp</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">)</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge_deg</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">tp</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">create_color</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">255</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Color from RGBA values.&quot;&quot;&quot;</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="p">()</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
-    <span class="k">return</span> <span class="n">color</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.SetWindowEntityInfoVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">SetWindowEntityInfoVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.CircularWindowVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">CircularWindowVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.CurvedWindowVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">CurvedWindowVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.WrappedFreehandWindowVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">WrappedFreehandWindowVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.FreehandWindowVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">FreehandWindowVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrendPlungeVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSurrogateVal</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -411,30 +385,25 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADD CIRCULAR SET WINDOW&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">set_window</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Circular</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># Blue</span>
-        
-        <span class="c1"># Get default statistics settings</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
-        
-        <span class="c1"># Configure circular window</span>
-        <span class="n">circular</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">CircularWindowVal</span><span class="o">.</span><span class="n">CircularWindowVal</span><span class="p">()</span>
-        <span class="n">circular</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;CircularSet1&quot;</span>
-        <span class="n">circular</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
-        <span class="n">circular</span><span class="o">.</span><span class="n">cone_angle</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-        <span class="n">circular</span><span class="o">.</span><span class="n">cone_angle</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">circular_set_window</span> <span class="o">=</span> <span class="n">circular</span>
-        
-        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddSetWindow (Circular): &#39;</span><span class="si">{</span><span class="n">circular</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Center: Trend=180°, Plunge=45°&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Cone Angle: 30°&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ AddSetWindow (Circular): </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">set_window</span> <span class="o">=</span> <span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Circular</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># Blue</span>
+    
+    <span class="c1"># Get default statistics settings</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
+    
+    <span class="c1"># Configure circular window</span>
+    <span class="n">circular</span> <span class="o">=</span> <span class="n">CircularWindowVal</span><span class="p">()</span>
+    <span class="n">circular</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;CircularSet1&quot;</span>
+    <span class="n">circular</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+    <span class="n">circular</span><span class="o">.</span><span class="n">cone_angle</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">circular_set_window</span> <span class="o">=</span> <span class="n">circular</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddSetWindow (Circular): &#39;</span><span class="si">{</span><span class="n">circular</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Center: Trend=180°, Plunge=45°&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Cone Angle: 30°&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -447,29 +416,25 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADD CURVED SET WINDOW&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">set_window</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Curved</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Orange</span>
-        
-        <span class="c1"># Get default statistics settings</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
-        
-        <span class="c1"># Configure curved window with two corner points</span>
-        <span class="n">curved</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">CurvedWindowVal</span><span class="o">.</span><span class="n">CurvedWindowVal</span><span class="p">()</span>
-        <span class="n">curved</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;CurvedSet1&quot;</span>
-        <span class="n">curved</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-        <span class="n">curved</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">curved_set_window</span> <span class="o">=</span> <span class="n">curved</span>
-        
-        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddSetWindow (Curved): &#39;</span><span class="si">{</span><span class="n">curved</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    First Corner: Trend=60°, Plunge=30°&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Second Corner: Trend=120°, Plunge=60°&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ AddSetWindow (Curved): </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">set_window</span> <span class="o">=</span> <span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Curved</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Orange</span>
+    
+    <span class="c1"># Get default statistics settings</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
+    
+    <span class="c1"># Configure curved window with two corner points</span>
+    <span class="n">curved</span> <span class="o">=</span> <span class="n">CurvedWindowVal</span><span class="p">()</span>
+    <span class="n">curved</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;CurvedSet1&quot;</span>
+    <span class="n">curved</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="n">curved</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">curved_set_window</span> <span class="o">=</span> <span class="n">curved</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddSetWindow (Curved): &#39;</span><span class="si">{</span><span class="n">curved</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    First Corner: Trend=60°, Plunge=30°&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Second Corner: Trend=120°, Plunge=60°&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -482,44 +447,40 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADD FREEHAND SET WINDOW&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">set_window</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">WrappedFreehand</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Green</span>
-        
-        <span class="c1"># Get default statistics settings</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
-        
-        <span class="c1"># Configure freehand window with polygon points</span>
-        <span class="n">freehand</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">WrappedFreehandWindowVal</span><span class="o">.</span><span class="n">WrappedFreehandWindowVal</span><span class="p">()</span>
-        <span class="n">freehand</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;FreehandSet1&quot;</span>
-        
-        <span class="c1"># Primary window - define a polygon of points</span>
-        <span class="n">primary</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="p">()</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">is_wrapped</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="c1"># Create a roughly pentagonal region</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">35</span><span class="p">))</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
-        <span class="n">freehand</span><span class="o">.</span><span class="n">primary_window</span> <span class="o">=</span> <span class="n">primary</span>
-        
-        <span class="c1"># Secondary window (can be empty or used for wrapped sets)</span>
-        <span class="n">secondary</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="p">()</span>
-        <span class="n">secondary</span><span class="o">.</span><span class="n">is_wrapped</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">freehand</span><span class="o">.</span><span class="n">secondary_window</span> <span class="o">=</span> <span class="n">secondary</span>
-        
-        <span class="n">set_window</span><span class="o">.</span><span class="n">wrapped_freehand_set_window</span> <span class="o">=</span> <span class="n">freehand</span>
-        
-        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddSetWindow (Freehand): &#39;</span><span class="si">{</span><span class="n">freehand</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Polygon points: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Points: (200°/40°), (220°/50°), (240°/45°), (230°/35°), (210°/30°)&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ AddSetWindow (Freehand): </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">set_window</span> <span class="o">=</span> <span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">WrappedFreehand</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Green</span>
+    
+    <span class="c1"># Get default statistics settings</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
+    
+    <span class="c1"># Configure freehand window with polygon points</span>
+    <span class="n">freehand</span> <span class="o">=</span> <span class="n">WrappedFreehandWindowVal</span><span class="p">()</span>
+    <span class="n">freehand</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;FreehandSet1&quot;</span>
+    
+    <span class="c1"># Primary window - define a polygon of points</span>
+    <span class="n">primary</span> <span class="o">=</span> <span class="n">FreehandWindowVal</span><span class="p">()</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">is_wrapped</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1"># Create a roughly pentagonal region</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">35</span><span class="p">))</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+    <span class="n">freehand</span><span class="o">.</span><span class="n">primary_window</span> <span class="o">=</span> <span class="n">primary</span>
+    
+    <span class="c1"># Secondary window (can be empty or used for wrapped sets)</span>
+    <span class="n">secondary</span> <span class="o">=</span> <span class="n">FreehandWindowVal</span><span class="p">()</span>
+    <span class="n">secondary</span><span class="o">.</span><span class="n">is_wrapped</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">freehand</span><span class="o">.</span><span class="n">secondary_window</span> <span class="o">=</span> <span class="n">secondary</span>
+    
+    <span class="n">set_window</span><span class="o">.</span><span class="n">wrapped_freehand_set_window</span> <span class="o">=</span> <span class="n">freehand</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddSetWindow (Freehand): &#39;</span><span class="si">{</span><span class="n">freehand</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Polygon points: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Points: (200°/40°), (220°/50°), (240°/45°), (230°/35°), (210°/30°)&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -532,24 +493,20 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GET SET LIST&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">sets</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetSetList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetSetList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">sets</span><span class="p">)</span><span class="si">}</span><span class="s2"> set(s) found&quot;</span><span class="p">)</span>
+    <span class="n">sets</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetSetList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetSetList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">sets</span><span class="p">)</span><span class="si">}</span><span class="s2"> set(s) found&quot;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">set_ref</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sets</span><span class="p">):</span>
+        <span class="n">set_value</span> <span class="o">=</span> <span class="n">set_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="c1"># SetEntityInfo has: id, color, set_window_entity_info</span>
+        <span class="c1"># set_window_type is inside set_window_entity_info</span>
+        <span class="n">window_info</span> <span class="o">=</span> <span class="n">set_value</span><span class="o">.</span><span class="n">set_window_entity_info</span>
+        <span class="n">window_type</span> <span class="o">=</span> <span class="n">window_info</span><span class="o">.</span><span class="n">set_window_type</span>
+        <span class="n">set_id</span> <span class="o">=</span> <span class="n">set_value</span><span class="o">.</span><span class="n">id</span>
         
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">set_ref</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sets</span><span class="p">):</span>
-            <span class="n">set_value</span> <span class="o">=</span> <span class="n">set_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="c1"># SetEntityInfo has: id, color, set_window_entity_info</span>
-            <span class="c1"># set_window_type is inside set_window_entity_info</span>
-            <span class="n">window_info</span> <span class="o">=</span> <span class="n">set_value</span><span class="o">.</span><span class="n">set_window_entity_info</span>
-            <span class="n">window_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Name</span><span class="p">(</span><span class="n">window_info</span><span class="o">.</span><span class="n">set_window_type</span><span class="p">)</span>
-            <span class="n">set_id</span> <span class="o">=</span> <span class="n">set_value</span><span class="o">.</span><span class="n">id</span>
-            
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    [</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">] ID: &#39;</span><span class="si">{</span><span class="n">set_id</span><span class="si">}</span><span class="s2">&#39; (</span><span class="si">{</span><span class="n">window_type</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-        
-        <span class="k">return</span> <span class="n">sets</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetSetList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    [</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">] ID: &#39;</span><span class="si">{</span><span class="n">set_id</span><span class="si">}</span><span class="s2">&#39; (</span><span class="si">{</span><span class="n">window_type</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">sets</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_delete_set</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">set_ref</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
@@ -558,17 +515,14 @@
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - DeleteSet</span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s2">: No set to delete&quot;</span><span class="p">)</span>
         <span class="k">return</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">set_value</span> <span class="o">=</span> <span class="n">set_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-        <span class="c1"># SetEntityInfo has: id, color, set_window_entity_info</span>
-        <span class="n">window_info</span> <span class="o">=</span> <span class="n">set_value</span><span class="o">.</span><span class="n">set_window_entity_info</span>
-        <span class="n">window_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Name</span><span class="p">(</span><span class="n">window_info</span><span class="o">.</span><span class="n">set_window_type</span><span class="p">)</span>
-        <span class="n">set_id</span> <span class="o">=</span> <span class="n">set_value</span><span class="o">.</span><span class="n">id</span>
-        
-        <span class="n">model</span><span class="o">.</span><span class="n">DeleteSet</span><span class="p">(</span><span class="n">set_ref</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ DeleteSet: &#39;</span><span class="si">{</span><span class="n">set_id</span><span class="si">}</span><span class="s2">&#39; (</span><span class="si">{</span><span class="n">window_type</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ DeleteSet: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">set_value</span> <span class="o">=</span> <span class="n">set_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+    <span class="c1"># SetEntityInfo has: id, color, set_window_entity_info</span>
+    <span class="n">window_info</span> <span class="o">=</span> <span class="n">set_value</span><span class="o">.</span><span class="n">set_window_entity_info</span>
+    <span class="n">window_type</span> <span class="o">=</span> <span class="n">window_info</span><span class="o">.</span><span class="n">set_window_type</span>
+    <span class="n">set_id</span> <span class="o">=</span> <span class="n">set_value</span><span class="o">.</span><span class="n">id</span>
+    
+    <span class="n">model</span><span class="o">.</span><span class="n">DeleteSet</span><span class="p">(</span><span class="n">set_ref</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ DeleteSet: &#39;</span><span class="si">{</span><span class="n">set_id</span><span class="si">}</span><span class="s2">&#39; (</span><span class="si">{</span><span class="n">window_type</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -592,24 +546,20 @@
     <span class="p">]</span>
     
     <span class="k">for</span> <span class="n">set_id</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">cone_angle</span><span class="p">,</span> <span class="n">color_rgb</span> <span class="ow">in</span> <span class="n">circular_examples</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">set_window</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
-            <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Circular</span>
-            <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="o">*</span><span class="n">color_rgb</span><span class="p">)</span>
-            <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
-            
-            <span class="n">circular</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">CircularWindowVal</span><span class="o">.</span><span class="n">CircularWindowVal</span><span class="p">()</span>
-            <span class="n">circular</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">set_id</span>
-            <span class="n">circular</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="n">trend</span><span class="p">,</span> <span class="n">plunge</span><span class="p">)</span>
-            <span class="n">circular</span><span class="o">.</span><span class="n">cone_angle</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-            <span class="n">circular</span><span class="o">.</span><span class="n">cone_angle</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">cone_angle</span><span class="p">)</span>
-            <span class="n">set_window</span><span class="o">.</span><span class="n">circular_set_window</span> <span class="o">=</span> <span class="n">circular</span>
-            
-            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
-            <span class="n">created_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ &#39;</span><span class="si">{</span><span class="n">set_id</span><span class="si">}</span><span class="s2">&#39; (Circular: </span><span class="si">{</span><span class="n">trend</span><span class="si">}</span><span class="s2">°/</span><span class="si">{</span><span class="n">plunge</span><span class="si">}</span><span class="s2">°, Cone: </span><span class="si">{</span><span class="n">cone_angle</span><span class="si">}</span><span class="s2">°)&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ &#39;</span><span class="si">{</span><span class="n">set_id</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">set_window</span> <span class="o">=</span> <span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
+        <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Circular</span>
+        <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="o">*</span><span class="n">color_rgb</span><span class="p">)</span>
+        <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
+        
+        <span class="n">circular</span> <span class="o">=</span> <span class="n">CircularWindowVal</span><span class="p">()</span>
+        <span class="n">circular</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">set_id</span>
+        <span class="n">circular</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="n">trend</span><span class="p">,</span> <span class="n">plunge</span><span class="p">)</span>
+        <span class="n">circular</span><span class="o">.</span><span class="n">cone_angle</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">cone_angle</span><span class="p">)</span>
+        <span class="n">set_window</span><span class="o">.</span><span class="n">circular_set_window</span> <span class="o">=</span> <span class="n">circular</span>
+        
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
+        <span class="n">created_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ &#39;</span><span class="si">{</span><span class="n">set_id</span><span class="si">}</span><span class="s2">&#39; (Circular: </span><span class="si">{</span><span class="n">trend</span><span class="si">}</span><span class="s2">°/</span><span class="si">{</span><span class="n">plunge</span><span class="si">}</span><span class="s2">°, Cone: </span><span class="si">{</span><span class="n">cone_angle</span><span class="si">}</span><span class="s2">°)&quot;</span><span class="p">)</span>
     
     <span class="c1"># Create curved sets</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  Creating Curved Sets:&quot;</span><span class="p">)</span>
@@ -619,55 +569,49 @@
     <span class="p">]</span>
     
     <span class="k">for</span> <span class="n">set_id</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">color_rgb</span> <span class="ow">in</span> <span class="n">curved_examples</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">set_window</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
-            <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Curved</span>
-            <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="o">*</span><span class="n">color_rgb</span><span class="p">)</span>
-            <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
-            
-            <span class="n">curved</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">CurvedWindowVal</span><span class="o">.</span><span class="n">CurvedWindowVal</span><span class="p">()</span>
-            <span class="n">curved</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">set_id</span>
-            <span class="n">curved</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
-            <span class="n">curved</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
-            <span class="n">set_window</span><span class="o">.</span><span class="n">curved_set_window</span> <span class="o">=</span> <span class="n">curved</span>
-            
-            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
-            <span class="n">created_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ &#39;</span><span class="si">{</span><span class="n">set_id</span><span class="si">}</span><span class="s2">&#39; (Curved: </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s2">°/</span><span class="si">{</span><span class="n">p1</span><span class="si">}</span><span class="s2">° to </span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s2">°/</span><span class="si">{</span><span class="n">p2</span><span class="si">}</span><span class="s2">°)&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ &#39;</span><span class="si">{</span><span class="n">set_id</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    
-    <span class="c1"># Create freehand set</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  Creating Freehand Sets:&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">set_window</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">WrappedFreehand</span>
-        <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="n">set_window</span> <span class="o">=</span> <span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
+        <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Curved</span>
+        <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="o">*</span><span class="n">color_rgb</span><span class="p">)</span>
         <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
         
-        <span class="n">freehand</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">WrappedFreehandWindowVal</span><span class="o">.</span><span class="n">WrappedFreehandWindowVal</span><span class="p">()</span>
-        <span class="n">freehand</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;Freehand_Custom&quot;</span>
-        
-        <span class="n">primary</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="p">()</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">is_wrapped</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="c1"># Create a custom region</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">35</span><span class="p">))</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
-        <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_trend_plunge</span><span class="p">(</span><span class="mi">330</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
-        <span class="n">freehand</span><span class="o">.</span><span class="n">primary_window</span> <span class="o">=</span> <span class="n">primary</span>
-        
-        <span class="n">secondary</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="p">()</span>
-        <span class="n">secondary</span><span class="o">.</span><span class="n">is_wrapped</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">freehand</span><span class="o">.</span><span class="n">secondary_window</span> <span class="o">=</span> <span class="n">secondary</span>
-        
-        <span class="n">set_window</span><span class="o">.</span><span class="n">wrapped_freehand_set_window</span> <span class="o">=</span> <span class="n">freehand</span>
+        <span class="n">curved</span> <span class="o">=</span> <span class="n">CurvedWindowVal</span><span class="p">()</span>
+        <span class="n">curved</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">set_id</span>
+        <span class="n">curved</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+        <span class="n">curved</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
+        <span class="n">set_window</span><span class="o">.</span><span class="n">curved_set_window</span> <span class="o">=</span> <span class="n">curved</span>
         
         <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
         <span class="n">created_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ &#39;Freehand_Custom&#39; (Freehand: 4 polygon points)&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ &#39;Freehand_Custom&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ &#39;</span><span class="si">{</span><span class="n">set_id</span><span class="si">}</span><span class="s2">&#39; (Curved: </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s2">°/</span><span class="si">{</span><span class="n">p1</span><span class="si">}</span><span class="s2">° to </span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s2">°/</span><span class="si">{</span><span class="n">p2</span><span class="si">}</span><span class="s2">°)&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Create freehand set</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  Creating Freehand Sets:&quot;</span><span class="p">)</span>
+    <span class="n">set_window</span> <span class="o">=</span> <span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">WrappedFreehand</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
+    
+    <span class="n">freehand</span> <span class="o">=</span> <span class="n">WrappedFreehandWindowVal</span><span class="p">()</span>
+    <span class="n">freehand</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;Freehand_Custom&quot;</span>
+    
+    <span class="n">primary</span> <span class="o">=</span> <span class="n">FreehandWindowVal</span><span class="p">()</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">is_wrapped</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1"># Create a custom region</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">35</span><span class="p">))</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="mi">330</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+    <span class="n">freehand</span><span class="o">.</span><span class="n">primary_window</span> <span class="o">=</span> <span class="n">primary</span>
+    
+    <span class="n">secondary</span> <span class="o">=</span> <span class="n">FreehandWindowVal</span><span class="p">()</span>
+    <span class="n">secondary</span><span class="o">.</span><span class="n">is_wrapped</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">freehand</span><span class="o">.</span><span class="n">secondary_window</span> <span class="o">=</span> <span class="n">secondary</span>
+    
+    <span class="n">set_window</span><span class="o">.</span><span class="n">wrapped_freehand_set_window</span> <span class="o">=</span> <span class="n">freehand</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddSetWindow</span><span class="p">(</span><span class="n">set_window</span><span class="p">)</span>
+    <span class="n">created_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ &#39;Freehand_Custom&#39; (Freehand: 4 polygon points)&quot;</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">created_sets</span>
 
@@ -694,14 +638,8 @@
     
     <span class="c1"># Connect to Dips</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
-    
+    <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
     
     <span class="c1"># Show initial state</span>

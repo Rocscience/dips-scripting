@@ -373,32 +373,18 @@ shows how to use GetDefault methods for easy settings initialization.</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">dips</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuiltInDataDescriptors</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuiltInDataFormatters</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DiscontinuityDataVal</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">CustomColumnCollectionVal</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">FullDataFormatVal</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">CustomRowRawDataVal</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataFilterVal</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips.DataDescriptorVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataDescriptorVal</span>
-
-<span class="c1"># Settings wrappers (used in update_chart_settings for manual construction)</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.HistogramPlotSettingsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ScatterPlotSettingsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.CumulativePlotSettingsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.QualitativeQuantitativeAnalysisSettingsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.JointSpacingAnalysisSettingsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.JointFrequencyAnalysisSettingsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.RQDAnalysisSettingsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.KinematicSensitivitySettingsVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span><span class="p">,</span> <span class="n">BuiltInDataDescriptors</span><span class="p">,</span> <span class="n">BuiltInDataFormatters</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.DiscontinuityDataVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">DiscontinuityDataVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.CustomColumnCollectionVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">CustomColumnCollectionVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.FullDataFormatVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">FullDataFormatVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.CustomRowRawDataVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">CustomRowRawDataVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.DataFilterVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataFilterVal</span>
 
 <span class="c1"># Set-related wrappers</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.SetWindowEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.CircularWindowVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.SetWindowEntityInfoVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">SetWindowEntityInfoVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.CircularWindowVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">CircularWindowVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSurrogateVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrendPlungeVal</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">create_sample_traverse</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -418,9 +404,9 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="c1"># Use GetDefault to get a properly initialized OrientationDataSet</span>
     <span class="n">traverse</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultOrientationDataSet</span><span class="p">()</span>
     <span class="n">traverse</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Sample Traverse for Chart Demo&quot;</span>
-    <span class="n">traverse</span><span class="o">.</span><span class="n">orientation_data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationDataType</span><span class="o">.</span><span class="n">LinearScanline</span>
-    <span class="n">traverse</span><span class="o">.</span><span class="n">orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
-    <span class="n">traverse</span><span class="o">.</span><span class="n">discontinuity_orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
+    <span class="n">traverse</span><span class="o">.</span><span class="n">orientation_data_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eOrientationDataType</span><span class="o">.</span><span class="n">LinearScanline</span>
+    <span class="n">traverse</span><span class="o">.</span><span class="n">orientation_convention</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
+    <span class="n">traverse</span><span class="o">.</span><span class="n">discontinuity_orientation_convention</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
     
     <span class="c1"># Set traverse orientation (trend=20°, plunge=90°)</span>
     <span class="n">traverse</span><span class="o">.</span><span class="n">orient1</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
@@ -446,7 +432,7 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="c1"># Generate 50 discontinuities with random orientations</span>
     <span class="n">cumulative_distance</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
-        <span class="n">discontinuity</span> <span class="o">=</span> <span class="n">DiscontinuityDataVal</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="p">()</span>
+        <span class="n">discontinuity</span> <span class="o">=</span> <span class="n">DiscontinuityDataVal</span><span class="p">()</span>
         
         <span class="c1"># Random orientation</span>
         <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation1</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">))</span>
@@ -458,7 +444,7 @@ shows how to use GetDefault methods for easy settings initialization.</p>
         <span class="n">discontinuity</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">cumulative_distance</span>
         
         <span class="c1"># Custom data columns</span>
-        <span class="n">custom_data</span> <span class="o">=</span> <span class="n">CustomRowRawDataVal</span><span class="o">.</span><span class="n">CustomRowRawDataVal</span><span class="p">()</span>
+        <span class="n">custom_data</span> <span class="o">=</span> <span class="n">CustomRowRawDataVal</span><span class="p">()</span>
         <span class="n">custom_data</span><span class="o">.</span><span class="n">raw_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">))</span>  <span class="c1"># Aperture (mm)</span>
         <span class="n">custom_data</span><span class="o">.</span><span class="n">raw_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;Good&quot;</span><span class="p">,</span> <span class="s2">&quot;Fair&quot;</span><span class="p">,</span> <span class="s2">&quot;Poor&quot;</span><span class="p">])</span>  <span class="c1"># Quality</span>
         <span class="n">discontinuity</span><span class="o">.</span><span class="n">extra_data</span> <span class="o">=</span> <span class="n">custom_data</span>
@@ -466,17 +452,17 @@ shows how to use GetDefault methods for easy settings initialization.</p>
         <span class="n">traverse</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">discontinuity</span><span class="p">)</span>
     
     <span class="c1"># Define custom column formats</span>
-    <span class="n">custom_columns</span> <span class="o">=</span> <span class="n">CustomColumnCollectionVal</span><span class="o">.</span><span class="n">CustomColumnCollectionVal</span><span class="p">()</span>
+    <span class="n">custom_columns</span> <span class="o">=</span> <span class="n">CustomColumnCollectionVal</span><span class="p">()</span>
     
-    <span class="n">aperture_column</span> <span class="o">=</span> <span class="n">FullDataFormatVal</span><span class="o">.</span><span class="n">FullDataFormatVal</span><span class="p">()</span>
+    <span class="n">aperture_column</span> <span class="o">=</span> <span class="n">FullDataFormatVal</span><span class="p">()</span>
     <span class="n">aperture_column</span><span class="o">.</span><span class="n">descriptor</span><span class="o">.</span><span class="n">data_name</span><span class="o">.</span><span class="n">data_name</span> <span class="o">=</span> <span class="s2">&quot;Aperture&quot;</span>
-    <span class="n">aperture_column</span><span class="o">.</span><span class="n">descriptor</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eDataType</span><span class="o">.</span><span class="n">Length</span>
+    <span class="n">aperture_column</span><span class="o">.</span><span class="n">descriptor</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eDataType</span><span class="o">.</span><span class="n">Length</span>
     <span class="n">aperture_column</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMillimeterDataFormatter</span>
     <span class="n">custom_columns</span><span class="o">.</span><span class="n">custom_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">aperture_column</span><span class="p">)</span>
     
-    <span class="n">quality_column</span> <span class="o">=</span> <span class="n">FullDataFormatVal</span><span class="o">.</span><span class="n">FullDataFormatVal</span><span class="p">()</span>
+    <span class="n">quality_column</span> <span class="o">=</span> <span class="n">FullDataFormatVal</span><span class="p">()</span>
     <span class="n">quality_column</span><span class="o">.</span><span class="n">descriptor</span><span class="o">.</span><span class="n">data_name</span><span class="o">.</span><span class="n">data_name</span> <span class="o">=</span> <span class="s2">&quot;Quality&quot;</span>
-    <span class="n">quality_column</span><span class="o">.</span><span class="n">descriptor</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eDataType</span><span class="o">.</span><span class="n">Text</span>
+    <span class="n">quality_column</span><span class="o">.</span><span class="n">descriptor</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eDataType</span><span class="o">.</span><span class="n">Text</span>
     <span class="n">quality_column</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">TextDataFormatter</span>
     <span class="n">custom_columns</span><span class="o">.</span><span class="n">custom_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">quality_column</span><span class="p">)</span>
 
@@ -500,11 +486,11 @@ shows how to use GetDefault methods for easy settings initialization.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating sample set for Joint Spacing analysis...&quot;</span><span class="p">)</span>
     
-    <span class="n">set_window</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="o">.</span><span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
-    <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Circular</span>
+    <span class="n">set_window</span> <span class="o">=</span> <span class="n">SetWindowEntityInfoVal</span><span class="p">()</span>
+    <span class="n">set_window</span><span class="o">.</span><span class="n">set_window_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eSetWindowType</span><span class="o">.</span><span class="n">Circular</span>
     
     <span class="c1"># Blue color</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="p">()</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="p">()</span>
     <span class="n">color</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span>
     <span class="n">set_window</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
     
@@ -512,9 +498,9 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="n">set_window</span><span class="o">.</span><span class="n">statistics_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultSetStatisticsSettings</span><span class="p">()</span>
     
     <span class="c1"># Circular window centered at trend=180°, plunge=45° with 30° cone angle</span>
-    <span class="n">circular</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">CircularWindowVal</span><span class="o">.</span><span class="n">CircularWindowVal</span><span class="p">()</span>
+    <span class="n">circular</span> <span class="o">=</span> <span class="n">CircularWindowVal</span><span class="p">()</span>
     <span class="n">circular</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;SampleSet&quot;</span>
-    <span class="n">circular</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="p">()</span>
+    <span class="n">circular</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="p">()</span>
     <span class="n">circular</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
     <span class="n">circular</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
     <span class="n">circular</span><span class="o">.</span><span class="n">cone_angle</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
@@ -538,7 +524,7 @@ shows how to use GetDefault methods for easy settings initialization.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating sample data filter...&quot;</span><span class="p">)</span>
     
-    <span class="n">data_filter</span> <span class="o">=</span> <span class="n">DataFilterVal</span><span class="o">.</span><span class="n">DataFilterVal</span><span class="p">()</span>
+    <span class="n">data_filter</span> <span class="o">=</span> <span class="n">DataFilterVal</span><span class="p">()</span>
     <span class="n">data_filter</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;High Dip Filter&quot;</span>
     <span class="n">data_filter</span><span class="o">.</span><span class="n">filter_string</span> <span class="o">=</span> <span class="s2">&quot;[Dip] &gt; 45&quot;</span>
     
@@ -562,7 +548,7 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     
     <span class="n">settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultHistogramPlotSettings</span><span class="p">()</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">selected_column</span><span class="o">.</span><span class="n">data_name</span><span class="o">.</span><span class="n">data_name</span> <span class="o">=</span> <span class="s2">&quot;Aperture&quot;</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">selected_column</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eDataType</span><span class="o">.</span><span class="n">Length</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">selected_column</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eDataType</span><span class="o">.</span><span class="n">Length</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">num_bins</span> <span class="o">=</span> <span class="mi">15</span>
     
     <span class="n">chart</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">CreateHistogramChartView</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
@@ -625,9 +611,9 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating qualitative/quantitative analysis chart...&quot;</span><span class="p">)</span>
     
     <span class="n">settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultQualitativeQuantitativeAnalysisSettings</span><span class="p">()</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">analysis_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eAnalysisType</span><span class="o">.</span><span class="n">Qualitative</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">analysis_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eAnalysisType</span><span class="o">.</span><span class="n">Qualitative</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">selected_column</span><span class="o">.</span><span class="n">data_name</span><span class="o">.</span><span class="n">data_name</span> <span class="o">=</span> <span class="s2">&quot;Quality&quot;</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">selected_column</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eDataType</span><span class="o">.</span><span class="n">Text</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">selected_column</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eDataType</span><span class="o">.</span><span class="n">Text</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">allocated_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Good&quot;</span><span class="p">,</span> <span class="s2">&quot;Fair&quot;</span><span class="p">,</span> <span class="s2">&quot;Poor&quot;</span><span class="p">]</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">is_weighted</span> <span class="o">=</span> <span class="kc">False</span>
     
@@ -651,9 +637,9 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating joint spacing analysis chart...&quot;</span><span class="p">)</span>
     
     <span class="n">settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultJointSpacingAnalysisSettings</span><span class="p">()</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">spacing_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSpacingOption</span><span class="o">.</span><span class="n">TrueSpacing</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">spacing_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eSpacingOption</span><span class="o">.</span><span class="n">TrueSpacing</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">set</span> <span class="o">=</span> <span class="n">set_ref</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">traverses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">traverse_ref</span><span class="o">.</span><span class="n">get_model_ref</span><span class="p">())</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">traverses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">traverse_ref</span><span class="p">)</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">num_intervals</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">show_best_fit_distribution</span> <span class="o">=</span> <span class="kc">True</span>
     
@@ -676,8 +662,8 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating joint frequency analysis chart...&quot;</span><span class="p">)</span>
     
     <span class="n">settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultJointFrequencyAnalysisSettings</span><span class="p">()</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">interval_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eIntervalOption</span><span class="o">.</span><span class="n">Discrete</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">traverses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">traverse_ref</span><span class="o">.</span><span class="n">get_model_ref</span><span class="p">())</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">interval_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eIntervalOption</span><span class="o">.</span><span class="n">Discrete</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">traverses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">traverse_ref</span><span class="p">)</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">is_weighted</span> <span class="o">=</span> <span class="kc">False</span>
     
     <span class="n">chart</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">CreateJointFrequencyChartView</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
@@ -699,8 +685,8 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating RQD analysis chart...&quot;</span><span class="p">)</span>
     
     <span class="n">settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultRQDAnalysisSettings</span><span class="p">()</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">interval_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eIntervalOption</span><span class="o">.</span><span class="n">Discrete</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">traverses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">traverse_ref</span><span class="o">.</span><span class="n">get_model_ref</span><span class="p">())</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">interval_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eIntervalOption</span><span class="o">.</span><span class="n">Discrete</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">traverses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">traverse_ref</span><span class="p">)</span>
     
     <span class="n">chart</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">CreateRQDAnalysisChartView</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created RQD analysis chart: </span><span class="si">{</span><span class="n">chart</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -724,7 +710,7 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="c1"># Get default kinematic analysis settings first, then convert to sensitivity settings</span>
     <span class="n">kinematic_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultKinematicAnalysisSettings</span><span class="p">()</span>
     <span class="n">settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultKinematicSensitivitySettings</span><span class="p">(</span><span class="n">kinematic_settings</span><span class="p">)</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">failure_mode_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eFailureModeOption</span><span class="o">.</span><span class="n">PlanarSliding</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">failure_mode_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eFailureModeOption</span><span class="o">.</span><span class="n">PlanarSliding</span>
     <span class="c1"># At least 1 kinematic property must be applied</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">friction_angle</span><span class="o">.</span><span class="n">apply</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">friction_angle</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
@@ -733,8 +719,8 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="n">settings</span><span class="o">.</span><span class="n">friction_angle</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     
     <span class="c1"># Chart display options</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">chart_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eKinematicSensitivityChartType</span><span class="o">.</span><span class="n">CartesianChart</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">critical</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eCriticalType</span><span class="o">.</span><span class="n">PercentCritical</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">chart_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eKinematicSensitivityChartType</span><span class="o">.</span><span class="n">CartesianChart</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">critical</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eCriticalType</span><span class="o">.</span><span class="n">PercentCritical</span>
     <span class="n">settings</span><span class="o">.</span><span class="n">is_weighted</span> <span class="o">=</span> <span class="kc">False</span>
     
     <span class="n">chart</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">CreateKinematicSensitivityChartView</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
@@ -744,11 +730,8 @@ shows how to use GetDefault methods for easy settings initialization.</p>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">set_active_filter_for_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">chart_name</span><span class="p">,</span> <span class="n">filter_ref</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the active data filter for a single chart view.&quot;&quot;&quot;</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">chart</span><span class="o">.</span><span class="n">SetActiveDataFilter</span><span class="p">(</span><span class="n">filter_ref</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ </span><span class="si">{</span><span class="n">chart_name</span><span class="si">}</span><span class="s2">: Active filter set&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ </span><span class="si">{</span><span class="n">chart_name</span><span class="si">}</span><span class="s2">: Error - </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">SetActiveDataFilter</span><span class="p">(</span><span class="n">filter_ref</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ </span><span class="si">{</span><span class="n">chart_name</span><span class="si">}</span><span class="s2">: Active filter set&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">set_active_filter_for_all_charts</span><span class="p">(</span><span class="n">charts</span><span class="p">,</span> <span class="n">filter_ref</span><span class="p">):</span>
@@ -807,35 +790,23 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     
     <span class="c1"># Histogram Chart - supports SetIsWeighted</span>
     <span class="k">if</span> <span class="s2">&quot;Histogram Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Histogram Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Histogram Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Histogram Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Histogram Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Histogram Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="c1"># Scatter Chart - supports SetIsWeighted</span>
     <span class="k">if</span> <span class="s2">&quot;Scatter Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Scatter Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Scatter Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Scatter Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Scatter Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Scatter Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="c1"># Cumulative Chart - supports SetIsWeighted</span>
     <span class="k">if</span> <span class="s2">&quot;Cumulative Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Cumulative Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Cumulative Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Cumulative Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Cumulative Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Cumulative Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="c1"># Qualitative/Quantitative Chart - supports SetIsWeighted</span>
     <span class="k">if</span> <span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Qualitative/Quantitative Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Qualitative/Quantitative Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Qualitative/Quantitative Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="c1"># Joint Spacing Chart - does NOT support SetIsWeighted</span>
     <span class="k">if</span> <span class="s2">&quot;Joint Spacing Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
@@ -843,11 +814,8 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     
     <span class="c1"># Joint Frequency Chart - supports SetIsWeighted</span>
     <span class="k">if</span> <span class="s2">&quot;Joint Frequency Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Joint Frequency Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Joint Frequency Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Joint Frequency Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="c1"># RQD Analysis Chart - does NOT support SetIsWeighted</span>
     <span class="k">if</span> <span class="s2">&quot;RQD Analysis Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
@@ -855,11 +823,8 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     
     <span class="c1"># Kinematic Sensitivity Chart - supports SetIsWeighted</span>
     <span class="k">if</span> <span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Kinematic Sensitivity Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Kinematic Sensitivity Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="n">is_weighted</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Kinematic Sensitivity Chart: IsWeighted = </span><span class="si">{</span><span class="n">is_weighted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">update_chart_settings</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">chart_name</span><span class="p">):</span>
@@ -896,14 +861,16 @@ shows how to use GetDefault methods for easy settings initialization.</p>
         
     <span class="k">elif</span> <span class="n">chart_name</span> <span class="o">==</span> <span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">:</span>
         <span class="n">settings</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span><span class="o">.</span><span class="n">qualitative_quantitative_analysis_settings</span>
-        <span class="n">settings</span><span class="o">.</span><span class="n">analysis_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eAnalysisType</span><span class="o">.</span><span class="n">Quantitative</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">selected_column</span><span class="o">.</span><span class="n">data_name</span><span class="o">.</span><span class="n">data_name</span> <span class="o">=</span> <span class="s2">&quot;Aperture&quot;</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">selected_column</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eDataType</span><span class="o">.</span><span class="n">Length</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">analysis_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eAnalysisType</span><span class="o">.</span><span class="n">Quantitative</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">num_bins</span> <span class="o">=</span> <span class="mi">10</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">UpdateQualitativeQuantitativeAnalysisSettings</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✓ UpdateQualitativeQuantitativeAnalysisSettings() - Quantitative, num_bins=10&quot;</span><span class="p">)</span>
         
     <span class="k">elif</span> <span class="n">chart_name</span> <span class="o">==</span> <span class="s2">&quot;Joint Spacing Chart&quot;</span><span class="p">:</span>
         <span class="n">settings</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span><span class="o">.</span><span class="n">joint_spacing_analysis_settings</span>
-        <span class="n">settings</span><span class="o">.</span><span class="n">spacing_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eSpacingOption</span><span class="o">.</span><span class="n">ApparentSpacing</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">spacing_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eSpacingOption</span><span class="o">.</span><span class="n">ApparentSpacing</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">num_intervals</span> <span class="o">=</span> <span class="mi">15</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">show_best_fit_distribution</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">UpdateJointSpacingAnalysisSettings</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
@@ -911,7 +878,7 @@ shows how to use GetDefault methods for easy settings initialization.</p>
         
     <span class="k">elif</span> <span class="n">chart_name</span> <span class="o">==</span> <span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">:</span>
         <span class="n">settings</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span><span class="o">.</span><span class="n">joint_frequency_analysis_settings</span>
-        <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">interval_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eIntervalOption</span><span class="o">.</span><span class="n">Moving</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">interval_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eIntervalOption</span><span class="o">.</span><span class="n">Moving</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">distance_interval</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="mf">1.0</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">distance_interval</span><span class="o">.</span><span class="n">length_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">distance_move_increment</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="mf">0.1</span>
@@ -922,7 +889,7 @@ shows how to use GetDefault methods for easy settings initialization.</p>
         
     <span class="k">elif</span> <span class="n">chart_name</span> <span class="o">==</span> <span class="s2">&quot;RQD Analysis Chart&quot;</span><span class="p">:</span>
         <span class="n">settings</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span><span class="o">.</span><span class="n">rqd_analysis_settings</span>
-        <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">interval_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eIntervalOption</span><span class="o">.</span><span class="n">Moving</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">interval_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eIntervalOption</span><span class="o">.</span><span class="n">Moving</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">distance_interval</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="mf">1.0</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">distance_interval</span><span class="o">.</span><span class="n">length_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">distance_move_increment</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="mf">0.1</span>
@@ -932,13 +899,13 @@ shows how to use GetDefault methods for easy settings initialization.</p>
         
     <span class="k">elif</span> <span class="n">chart_name</span> <span class="o">==</span> <span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">:</span>
         <span class="n">settings</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span><span class="o">.</span><span class="n">kinematic_sensitivity_settings</span>
-        <span class="n">settings</span><span class="o">.</span><span class="n">failure_mode_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eFailureModeOption</span><span class="o">.</span><span class="n">PlanarSliding</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">failure_mode_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eFailureModeOption</span><span class="o">.</span><span class="n">PlanarSliding</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">slope_dip</span><span class="o">.</span><span class="n">apply</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">slope_dip</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">slope_dip</span><span class="o">.</span><span class="n">range_from</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">slope_dip</span><span class="o">.</span><span class="n">range_to</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">slope_dip</span><span class="o">.</span><span class="n">interval</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-        <span class="n">settings</span><span class="o">.</span><span class="n">chart_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eKinematicSensitivityChartType</span><span class="o">.</span><span class="n">PolarChart</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">chart_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eKinematicSensitivityChartType</span><span class="o">.</span><span class="n">PolarChart</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">UpdateKinematicSensitivitySettings</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✓ UpdateKinematicSensitivitySettings() - PlanarSliding, PolarChart&quot;</span><span class="p">)</span>
         
@@ -961,52 +928,28 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Histogram Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Histogram Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Histogram Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Histogram Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Histogram Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Histogram Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Scatter Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Scatter Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Scatter Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Scatter Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Scatter Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Scatter Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Cumulative Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Cumulative Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Cumulative Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Cumulative Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Cumulative Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Cumulative Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Qualitative/Quantitative Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Joint Spacing Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Spacing Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Joint Spacing Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Joint Spacing Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Spacing Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Joint Spacing Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Joint Frequency Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Joint Frequency Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;RQD Analysis Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;RQD Analysis Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;RQD Analysis Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ RQD Analysis Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;RQD Analysis Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;RQD Analysis Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Kinematic Sensitivity Chart: Error - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">update_chart_settings</span><span class="p">(</span><span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">],</span> <span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">close_all_charts</span><span class="p">(</span><span class="n">charts</span><span class="p">):</span>
@@ -1021,60 +964,36 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Histogram Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Histogram Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseHistogramChartView</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Histogram Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Error closing Histogram Chart: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Histogram Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseHistogramChartView</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Histogram Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Scatter Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Scatter Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseScatterChartView</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Scatter Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Error closing Scatter Chart: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Scatter Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseScatterChartView</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Scatter Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Cumulative Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Cumulative Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseCumulativeChartView</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Cumulative Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Error closing Cumulative Chart: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Cumulative Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseCumulativeChartView</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Cumulative Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseQualitativeQuantitativeChartView</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Qualitative/Quantitative Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Error closing Qualitative/Quantitative Chart: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseQualitativeQuantitativeChartView</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Qualitative/Quantitative Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Joint Spacing Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Spacing Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseJointSpacingChartView</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Joint Spacing Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Error closing Joint Spacing Chart: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Spacing Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseJointSpacingChartView</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Joint Spacing Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Joint Frequency Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseJointFrequencyChartView</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Joint Frequency Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Error closing Joint Frequency Chart: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseJointFrequencyChartView</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Joint Frequency Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;RQD Analysis Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;RQD Analysis Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseRQDAnalysisChartView</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed RQD Analysis Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Error closing RQD Analysis Chart: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;RQD Analysis Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseRQDAnalysisChartView</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed RQD Analysis Chart&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseKinematicSensitivityChartView</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Kinematic Sensitivity Chart&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ✗ Error closing Kinematic Sensitivity Chart: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">CloseKinematicSensitivityChartView</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✓ Closed Kinematic Sensitivity Chart&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
@@ -1089,14 +1008,8 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     
     <span class="c1"># Connect to Dips</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successfully connected to Dips&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
-    
+    <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successfully connected to Dips&quot;</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
     
     <span class="c1"># Create sample data</span>
@@ -1113,20 +1026,16 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="n">charts</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Histogram Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_histogram_chart</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Scatter Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_scatter_chart</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Cumulative Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_cumulative_chart</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_qualitative_quantitative_chart</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Spacing Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_joint_spacing_chart</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">set_ref</span><span class="p">,</span> <span class="n">traverse_ref</span><span class="p">)</span>
-        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_joint_frequency_chart</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">traverse_ref</span><span class="p">)</span>
-        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;RQD Analysis Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_rqd_analysis_chart</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">traverse_ref</span><span class="p">)</span>
-        <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_kinematic_sensitivity_chart</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-        
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Successfully created </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">charts</span><span class="p">)</span><span class="si">}</span><span class="s2"> charts!&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error creating charts: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
+    <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Histogram Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_histogram_chart</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Scatter Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_scatter_chart</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Cumulative Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_cumulative_chart</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Qualitative/Quantitative Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_qualitative_quantitative_chart</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Spacing Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_joint_spacing_chart</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">set_ref</span><span class="p">,</span> <span class="n">traverse_ref</span><span class="p">)</span>
+    <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Joint Frequency Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_joint_frequency_chart</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">traverse_ref</span><span class="p">)</span>
+    <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;RQD Analysis Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_rqd_analysis_chart</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">traverse_ref</span><span class="p">)</span>
+    <span class="n">charts</span><span class="p">[</span><span class="s2">&quot;Kinematic Sensitivity Chart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_kinematic_sensitivity_chart</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Successfully created </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">charts</span><span class="p">)</span><span class="si">}</span><span class="s2"> charts!&quot;</span><span class="p">)</span>
     
     <span class="c1"># Set active filter for all charts</span>
     <span class="n">set_active_filter_for_all_charts</span><span class="p">(</span><span class="n">charts</span><span class="p">,</span> <span class="n">filter_ref</span><span class="p">)</span>
@@ -1145,17 +1054,14 @@ shows how to use GetDefault methods for easy settings initialization.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CHART SUMMARY&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Histogram Charts:              </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetHistogramChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Scatter Charts:                </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetScatterChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Cumulative Charts:             </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetCumulativeChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Qualitative/Quantitative:      </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetQualitativeQuantitativeChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Joint Spacing Charts:          </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetJointSpacingChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Joint Frequency Charts:        </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetJointFrequencyChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  RQD Analysis Charts:           </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetRQDAnalysisChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Kinematic Sensitivity Charts:  </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetKinematicSensitivityChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error listing charts: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Histogram Charts:              </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetHistogramChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Scatter Charts:                </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetScatterChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Cumulative Charts:             </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetCumulativeChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Qualitative/Quantitative:      </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetQualitativeQuantitativeChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Joint Spacing Charts:          </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetJointSpacingChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Joint Frequency Charts:        </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetJointFrequencyChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  RQD Analysis Charts:           </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetRQDAnalysisChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Kinematic Sensitivity Charts:  </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">GetKinematicSensitivityChartViewList</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="c1"># Optional: Close all charts (uncomment to test)</span>
     <span class="c1"># input(&quot;\nPress Enter to close all charts...&quot;)</span>

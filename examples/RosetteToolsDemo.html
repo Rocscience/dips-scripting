@@ -359,56 +359,31 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuiltInDataFormatters</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span><span class="p">,</span> <span class="n">BuiltInDataFormatters</span>
 
 <span class="c1"># Helper value wrappers</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.AngleDataVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.AnchorPointVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.Vector2DVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.LineFormatVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.FillFormatVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TextFormatVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.AnchorPointVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnchorPointVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.Vector2DVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vector2DVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.LineFormatVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">LineFormatVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrendPlungeVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSurrogateVal</span>
 
 
 <span class="c1"># =============================================================================</span>
 <span class="c1"># HELPER FUNCTIONS</span>
 <span class="c1"># =============================================================================</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">create_trend_plunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a TrendPlunge from degrees.&quot;&quot;&quot;</span>
-    <span class="n">tp</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">)</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge_deg</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">tp</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">create_color</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">255</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Color from RGBA values.&quot;&quot;&quot;</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="p">()</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
-    <span class="k">return</span> <span class="n">color</span>
-
-
 <span class="k">def</span><span class="w"> </span><span class="nf">create_anchor_point</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an AnchorPoint from degrees using spherical coordinates.&quot;&quot;&quot;</span>
-    <span class="n">ap</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AnchorPointVal</span><span class="o">.</span><span class="n">AnchorPointVal</span><span class="p">()</span>
-    <span class="n">ap</span><span class="o">.</span><span class="n">coordinate_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eAnchorCoordinateOption</span><span class="o">.</span><span class="n">Spherical</span>
-    <span class="n">ap</span><span class="o">.</span><span class="n">spherical_point</span> <span class="o">=</span> <span class="n">create_trend_plunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">)</span>
+    <span class="n">ap</span> <span class="o">=</span> <span class="n">AnchorPointVal</span><span class="p">()</span>
+    <span class="n">ap</span><span class="o">.</span><span class="n">coordinate_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eAnchorCoordinateOption</span><span class="o">.</span><span class="n">Spherical</span>
+    <span class="n">ap</span><span class="o">.</span><span class="n">spherical_point</span> <span class="o">=</span> <span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ap</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">create_vector2d</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Vector2D.&quot;&quot;&quot;</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">Vector2DVal</span><span class="o">.</span><span class="n">Vector2DVal</span><span class="p">()</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">Vector2DVal</span><span class="p">()</span>
     <span class="n">v</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
     <span class="n">v</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
     <span class="k">return</span> <span class="n">v</span>
@@ -416,8 +391,8 @@
 
 <span class="k">def</span><span class="w"> </span><span class="nf">create_line_format</span><span class="p">(</span><span class="n">color_rgb</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a LineFormat with specified color and width.&quot;&quot;&quot;</span>
-    <span class="n">lf</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">LineFormatVal</span><span class="o">.</span><span class="n">LineFormatVal</span><span class="p">()</span>
-    <span class="n">lf</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="o">*</span><span class="n">color_rgb</span><span class="p">)</span>
+    <span class="n">lf</span> <span class="o">=</span> <span class="n">LineFormatVal</span><span class="p">()</span>
+    <span class="n">lf</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="o">*</span><span class="n">color_rgb</span><span class="p">)</span>
     <span class="n">lf</span><span class="o">.</span><span class="n">line_width</span> <span class="o">=</span> <span class="n">width</span>
     <span class="k">return</span> <span class="n">lf</span>
 
@@ -462,59 +437,32 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TOOL GROUP VISIBILITY&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetToolsEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetToolsEntityGroupVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetToolsEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetToolsEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetToolsEntityGroupVisibility: True&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetTextToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetTextToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetTextToolEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetTextToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetTextToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetArrowToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetArrowToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetArrowToolEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetArrowToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetArrowToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetLineToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetLineToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetLineToolEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetLineToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetLineToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetPolylineToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetPolylineToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetPolylineToolEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetPolylineToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetPolylineToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetPolygonToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetPolygonToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetPolygonToolEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetPolygonToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetPolygonToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetRectangleToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetRectangleToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetRectangleToolEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetRectangleToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetRectangleToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetEllipseToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetEllipseToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetEllipseToolEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetEllipseToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetEllipseToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetTrendLineToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetTrendLineToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetTrendLineToolEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetTrendLineToolEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetTrendLineToolEntityGroupVisibility: True&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -526,39 +474,24 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  TEXT TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">create_text_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Text&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello Rosette!&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteTextTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteTextTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddRosetteTextTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">create_text_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Text&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello Rosette!&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteTextTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteTextTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteTextToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteTextToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetRosetteTextToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteTextToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteTextToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteTextToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteTextToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetRosetteTextToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteTextToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteTextToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Updated Text!&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteTextTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteTextTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateRosetteTextTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Updated Text!&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteTextTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteTextTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteTextTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteTextTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteRosetteTextTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteTextTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteTextTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_arrow_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -566,39 +499,24 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  ARROW TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">create_arrow_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Arrow&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteArrowTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteArrowTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddRosetteArrowTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">create_arrow_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Arrow&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteArrowTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteArrowTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteArrowToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteArrowToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetRosetteArrowToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteArrowToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteArrowToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteArrowToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteArrowToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetRosetteArrowToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteArrowToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteArrowToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Arrow&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteArrowTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteArrowTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateRosetteArrowTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Arrow&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteArrowTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteArrowTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteArrowTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteArrowTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteRosetteArrowTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteArrowTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteArrowTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_line_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -606,39 +524,24 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  LINE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">create_line_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Line&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteLineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteLineTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddRosetteLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">create_line_tool</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;Demo Line&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteLineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteLineTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteLineToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteLineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetRosetteLineToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteLineToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteLineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteLineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteLineToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetRosetteLineToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteLineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteLineToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Line&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteLineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteLineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateRosetteLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Line&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteLineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteLineTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteLineTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteLineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteRosetteLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteLineTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteLineTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_polyline_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -646,45 +549,30 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  POLYLINE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPolylineToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Polyline&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">))</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosettePolylineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosettePolylineTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddRosettePolylineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPolylineToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Polyline&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">))</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosettePolylineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosettePolylineTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosettePolylineToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosettePolylineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetRosettePolylineToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosettePolylineToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosettePolylineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetRosettePolylineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosettePolylineToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetRosettePolylineToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetRosettePolylineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosettePolylineToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Polyline&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosettePolylineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosettePolylineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateRosettePolylineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Polyline&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosettePolylineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosettePolylineTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosettePolylineTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosettePolylineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteRosettePolylineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosettePolylineTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosettePolylineTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_polygon_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -692,45 +580,30 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  POLYGON TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPolygonToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Polygon&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosettePolygonTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosettePolygonTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddRosettePolygonTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultPolygonToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Polygon&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_vector2d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosettePolygonTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosettePolygonTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosettePolygonToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosettePolygonToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetRosettePolygonToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosettePolygonToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosettePolygonToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetRosettePolygonToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosettePolygonToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetRosettePolygonToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetRosettePolygonToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosettePolygonToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Polygon&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosettePolygonTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosettePolygonTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateRosettePolygonTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Polygon&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosettePolygonTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosettePolygonTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosettePolygonTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosettePolygonTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteRosettePolygonTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosettePolygonTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosettePolygonTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_rectangle_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -738,44 +611,29 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  RECTANGLE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultRectangleToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Rectangle&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteRectangleTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteRectangleTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddRosetteRectangleTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultRectangleToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Rectangle&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteRectangleTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteRectangleTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteRectangleToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteRectangleToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetRosetteRectangleToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteRectangleToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteRectangleToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteRectangleToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteRectangleToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetRosetteRectangleToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteRectangleToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteRectangleToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Rectangle&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteRectangleTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteRectangleTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateRosetteRectangleTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Rectangle&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteRectangleTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteRectangleTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteRectangleTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteRectangleTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteRosetteRectangleTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteRectangleTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteRectangleTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_ellipse_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -783,44 +641,29 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  ELLIPSE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultEllipseToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Ellipse&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">)</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteEllipseTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteEllipseTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddRosetteEllipseTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultEllipseToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo Ellipse&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">line_format</span> <span class="o">=</span> <span class="n">create_line_format</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">first_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">second_corner</span> <span class="o">=</span> <span class="n">create_vector2d</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteEllipseTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteEllipseTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteEllipseToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteEllipseToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetRosetteEllipseToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteEllipseToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteEllipseToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteEllipseToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteEllipseToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetRosetteEllipseToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteEllipseToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteEllipseToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Ellipse&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteEllipseTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteEllipseTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateRosetteEllipseTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated Ellipse&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteEllipseTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteEllipseTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteEllipseTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteEllipseTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteRosetteEllipseTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteEllipseTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteEllipseTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_trendline_tool</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -828,42 +671,27 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  TREND LINE TOOL:&quot;</span><span class="p">)</span>
     <span class="n">ref</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultTrendLineToolEntityInfo</span><span class="p">()</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo TrendLine&quot;</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">tool</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-        <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteTrendLineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteTrendLineTool&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ AddRosetteTrendLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultTrendLineToolEntityInfo</span><span class="p">()</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Demo TrendLine&quot;</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">is_visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tool</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">AddRosetteTrendLineTool</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ AddRosetteTrendLineTool&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteTrendLineToolList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteTrendLineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ GetRosetteTrendLineToolList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tool_list</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetRosetteTrendLineToolList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✓ GetRosetteTrendLineToolList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tool_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">ref</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteTrendLineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteTrendLineToolVisibility&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ SetRosetteTrendLineToolVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">SetRosetteTrendLineToolVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ SetRosetteTrendLineToolVisibility&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated TrendLine&quot;</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteTrendLineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteTrendLineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ UpdateRosetteTrendLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Updated TrendLine&quot;</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">UpdateRosetteTrendLineTool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ UpdateRosetteTrendLineTool&quot;</span><span class="p">)</span>
         
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteTrendLineTool</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteTrendLineTool&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ✗ DeleteRosetteTrendLineTool: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">DeleteRosetteTrendLineTool</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    ✓ DeleteRosetteTrendLineTool&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_all_tools</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -894,13 +722,8 @@
     
     <span class="c1"># Connect to Dips</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
     
     <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
     

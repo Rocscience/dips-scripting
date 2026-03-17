@@ -1,0 +1,7 @@
+dips.DipsAPI\_enums module
+==========================
+
+.. automodule:: dips.DipsAPI_enums
+   :members:
+   :show-inheritance:
+   :undoc-members:

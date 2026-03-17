@@ -360,17 +360,16 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
 
 <span class="c1"># Settings wrappers</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.WeightingSettingsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ProjectSummaryVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.KinematicAnalysisDisplayOptionsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.Stereonet2DDisplayOptionsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.Stereonet3DDisplayOptionsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.GeneralSymbolDisplayOptionsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.EntityColorOptionsVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.RosettePlotDisplayOptionsVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.WeightingSettingsVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">WeightingSettingsVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.ProjectSummaryVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectSummaryVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.KinematicAnalysisDisplayOptionsVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">KinematicAnalysisDisplayOptionsVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.Stereonet2DDisplayOptionsVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stereonet2DDisplayOptionsVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.Stereonet3DDisplayOptionsVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stereonet3DDisplayOptionsVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.GeneralSymbolDisplayOptionsVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">GeneralSymbolDisplayOptionsVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.EntityColorOptionsVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">EntityColorOptionsVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.RosettePlotDisplayOptionsVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">RosettePlotDisplayOptionsVal</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -400,19 +399,13 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="c1"># Get current unit system</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetUnitSystem</span><span class="p">()</span>
-        <span class="n">unit_name</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eUnitSystem</span><span class="o">.</span><span class="n">Name</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetUnitSystem: </span><span class="si">{</span><span class="n">unit_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetUnitSystem: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetUnitSystem</span><span class="p">()</span>
+    <span class="n">unit_name</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetUnitSystem: </span><span class="si">{</span><span class="n">unit_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="c1"># Set unit system to Imperial</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetUnitSystem</span><span class="p">(</span><span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eUnitSystem</span><span class="o">.</span><span class="n">Imperial</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetUnitSystem: Imperial&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetUnitSystem: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetUnitSystem</span><span class="p">(</span><span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eUnitSystem</span><span class="o">.</span><span class="n">Imperial</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetUnitSystem: Imperial&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -426,25 +419,16 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="c1"># Get current reporting convention</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetReportingConvention</span><span class="p">()</span>
-        <span class="n">convention_name</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">Name</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetReportingConvention: </span><span class="si">{</span><span class="n">convention_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetReportingConvention: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetReportingConvention</span><span class="p">()</span>
+    <span class="n">convention_name</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetReportingConvention: </span><span class="si">{</span><span class="n">convention_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="c1"># Set reporting convention</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetReportingConvention</span><span class="p">(</span><span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">DipDipDirectionOrientation</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetReportingConvention: DipDipDirectionOrientation&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetReportingConvention: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetReportingConvention</span><span class="p">(</span><span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">DipDipDirectionOrientation</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetReportingConvention: DipDipDirectionOrientation&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetReportingConvention</span><span class="p">(</span><span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetReportingConvention: TrendPlungeOrientation&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetReportingConvention: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetReportingConvention</span><span class="p">(</span><span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetReportingConvention: TrendPlungeOrientation&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -458,23 +442,17 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="c1"># Get current weighting options</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">weighting</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetWeightingOptions</span><span class="p">()</span>
-        <span class="n">option_name</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eWeightingOption</span><span class="o">.</span><span class="n">Name</span><span class="p">(</span><span class="n">weighting</span><span class="o">.</span><span class="n">weighting_option</span><span class="p">)</span>
-        <span class="n">min_bias_angle</span> <span class="o">=</span> <span class="n">weighting</span><span class="o">.</span><span class="n">minimum_bias_angle</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetWeightingOptions: weighting_option=</span><span class="si">{</span><span class="n">option_name</span><span class="si">}</span><span class="s2"> min bias angle=</span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">min_bias_angle</span><span class="o">.</span><span class="n">angle_radians</span><span class="p">)</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetWeightingOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">weighting</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetWeightingOptions</span><span class="p">()</span>
+    <span class="n">option_name</span> <span class="o">=</span> <span class="n">weighting</span><span class="o">.</span><span class="n">weighting_option</span>
+    <span class="n">min_bias_angle</span> <span class="o">=</span> <span class="n">weighting</span><span class="o">.</span><span class="n">minimum_bias_angle</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetWeightingOptions: weighting_option=</span><span class="si">{</span><span class="n">option_name</span><span class="si">}</span><span class="s2"> min bias angle=</span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">min_bias_angle</span><span class="o">.</span><span class="n">angle_radians</span><span class="p">)</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">)</span>
     
     <span class="c1"># Set weighting options</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">weighting</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultWeightingSettings</span><span class="p">()</span>
-        <span class="n">weighting</span><span class="o">.</span><span class="n">weighting_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eWeightingOption</span><span class="o">.</span><span class="n">TerzaghiWeighting</span>
-        <span class="n">weighting</span><span class="o">.</span><span class="n">minimum_bias_angle</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetWeightingOptions</span><span class="p">(</span><span class="n">weighting</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetWeightingOptions: TerzaghiWeighting&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetWeightingOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">weighting</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultWeightingSettings</span><span class="p">()</span>
+    <span class="n">weighting</span><span class="o">.</span><span class="n">weighting_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eWeightingOption</span><span class="o">.</span><span class="n">TerzaghiWeighting</span>
+    <span class="n">weighting</span><span class="o">.</span><span class="n">minimum_bias_angle</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetWeightingOptions</span><span class="p">(</span><span class="n">weighting</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetWeightingOptions: TerzaghiWeighting&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -488,23 +466,17 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="c1"># Get current project summary</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">summary</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetProjectSummary</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetProjectSummary: title=&#39;</span><span class="si">{</span><span class="n">summary</span><span class="o">.</span><span class="n">project_title</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetProjectSummary: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetProjectSummary</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetProjectSummary: title=&#39;</span><span class="si">{</span><span class="n">summary</span><span class="o">.</span><span class="n">project_title</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
     
     <span class="c1"># Set project summary</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">summary</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultProjectSummary</span><span class="p">()</span>
-        <span class="n">summary</span><span class="o">.</span><span class="n">project_title</span> <span class="o">=</span> <span class="s2">&quot;Demo Project&quot;</span>
-        <span class="n">summary</span><span class="o">.</span><span class="n">company</span> <span class="o">=</span> <span class="s2">&quot;Demo Company&quot;</span>
-        <span class="n">summary</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;Demo Author&quot;</span>
-        <span class="n">summary</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="s2">&quot;This is a demo project created by the Python API.&quot;</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetProjectSummary</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetProjectSummary: Updated project info&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetProjectSummary: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultProjectSummary</span><span class="p">()</span>
+    <span class="n">summary</span><span class="o">.</span><span class="n">project_title</span> <span class="o">=</span> <span class="s2">&quot;Demo Project&quot;</span>
+    <span class="n">summary</span><span class="o">.</span><span class="n">company</span> <span class="o">=</span> <span class="s2">&quot;Demo Company&quot;</span>
+    <span class="n">summary</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;Demo Author&quot;</span>
+    <span class="n">summary</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="s2">&quot;This is a demo project created by the Python API.&quot;</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetProjectSummary</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetProjectSummary: Updated project info&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -517,18 +489,12 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KINEMATIC ANALYSIS DISPLAY OPTIONS&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetKinematicAnalysisDisplayOptions</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetKinematicAnalysisDisplayOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetKinematicAnalysisDisplayOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetKinematicAnalysisDisplayOptions</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetKinematicAnalysisDisplayOptions&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultKinematicAnalysisDisplayOptions</span><span class="p">()</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetKinematicAnalysisDisplayOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetKinematicAnalysisDisplayOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetKinematicAnalysisDisplayOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultKinematicAnalysisDisplayOptions</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetKinematicAnalysisDisplayOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetKinematicAnalysisDisplayOptions&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_stereonet2d_display_options</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -537,18 +503,12 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STEREONET 2D DISPLAY OPTIONS&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetStereonet2DDisplayOptions</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetStereonet2DDisplayOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetStereonet2DDisplayOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetStereonet2DDisplayOptions</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetStereonet2DDisplayOptions&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultStereonet2DDisplayOptions</span><span class="p">()</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetStereonet2DDisplayOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetStereonet2DDisplayOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetStereonet2DDisplayOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultStereonet2DDisplayOptions</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetStereonet2DDisplayOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetStereonet2DDisplayOptions&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_stereonet3d_display_options</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -557,18 +517,12 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STEREONET 3D DISPLAY OPTIONS&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetStereonet3DDisplayOptions</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetStereonet3DDisplayOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetStereonet3DDisplayOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetStereonet3DDisplayOptions</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetStereonet3DDisplayOptions&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultStereonet3DDisplayOptions</span><span class="p">()</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetStereonet3DDisplayOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetStereonet3DDisplayOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetStereonet3DDisplayOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultStereonet3DDisplayOptions</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetStereonet3DDisplayOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetStereonet3DDisplayOptions&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_general_symbol_display_options</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -577,18 +531,12 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GENERAL SYMBOL DISPLAY OPTIONS&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetGeneralSymbolDisplayOptions</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetGeneralSymbolDisplayOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetGeneralSymbolDisplayOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetGeneralSymbolDisplayOptions</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetGeneralSymbolDisplayOptions&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultGeneralSymbolDisplayOptions</span><span class="p">()</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetGeneralSymbolDisplayOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetGeneralSymbolDisplayOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetGeneralSymbolDisplayOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultGeneralSymbolDisplayOptions</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetGeneralSymbolDisplayOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetGeneralSymbolDisplayOptions&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_entity_color_options</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -597,18 +545,12 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ENTITY COLOR OPTIONS&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetEntityColorOptions</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetEntityColorOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetEntityColorOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetEntityColorOptions</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetEntityColorOptions&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultEntityColorOptions</span><span class="p">()</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetEntityColorOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetEntityColorOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetEntityColorOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultEntityColorOptions</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetEntityColorOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetEntityColorOptions&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_rosette_display_options</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -617,18 +559,12 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ROSETTE PLOT DISPLAY OPTIONS&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetRosettePlotDisplayOptions</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetRosettePlotDisplayOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetRosettePlotDisplayOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetRosettePlotDisplayOptions</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetRosettePlotDisplayOptions&quot;</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultRosettePlotDisplayOptions</span><span class="p">()</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">SetRosettePlotDisplayOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetRosettePlotDisplayOptions&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetRosettePlotDisplayOptions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultRosettePlotDisplayOptions</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SetRosettePlotDisplayOptions</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">to_proto</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetRosettePlotDisplayOptions&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -643,14 +579,8 @@
     
     <span class="c1"># Connect to Dips</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
-    
+    <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
     
     <span class="c1"># Run all demonstrations</span>

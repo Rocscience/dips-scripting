@@ -360,44 +360,17 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuiltInDataFormatters</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span><span class="p">,</span> <span class="n">BuiltInDataFormatters</span>
 
 <span class="c1"># Helper value wrappers</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.AngleDataVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.StereonetProjectionModeVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.RosetteSettingsVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrendPlungeVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSurrogateVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.StereonetProjectionModeVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">StereonetProjectionModeVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.RosetteSettingsVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">RosetteSettingsVal</span>
 
 <span class="c1"># Data wrappers</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.DiscontinuityDataVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.OrientationDataSetVal</span>
-
-
-<span class="c1"># =============================================================================</span>
-<span class="c1"># HELPER FUNCTIONS</span>
-<span class="c1"># =============================================================================</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">create_trend_plunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a TrendPlunge from degrees.&quot;&quot;&quot;</span>
-    <span class="n">tp</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">)</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge_deg</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">tp</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">create_color</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">255</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Color from RGBA values.&quot;&quot;&quot;</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="p">()</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
-    <span class="k">return</span> <span class="n">color</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.DiscontinuityDataVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">DiscontinuityDataVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.OrientationDataSetVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrientationDataSetVal</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -408,9 +381,9 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a sample traverse with discontinuities (poles) for demonstration.&quot;&quot;&quot;</span>
     <span class="n">ods</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultOrientationDataSet</span><span class="p">()</span>
     <span class="n">ods</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Sample Traverse for Rosette Demo&quot;</span>
-    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
-    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_data_type</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationDataType</span><span class="o">.</span><span class="n">SpotMapping</span>
-    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_orientation_convention</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_convention</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">orientation_data_type</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eOrientationDataType</span><span class="o">.</span><span class="n">SpotMapping</span>
+    <span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_orientation_convention</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eOrientationConvention</span><span class="o">.</span><span class="n">TrendPlungeOrientation</span>
     
     <span class="c1"># Use built-in unit formatters</span>
     <span class="n">ods</span><span class="o">.</span><span class="n">traverse_elevation_unit</span> <span class="o">=</span> <span class="n">BuiltInDataFormatters</span><span class="o">.</span><span class="n">LengthMeterDataFormatter</span>
@@ -429,7 +402,7 @@
     <span class="p">]</span>
     
     <span class="k">for</span> <span class="n">trend_deg</span><span class="p">,</span> <span class="n">plunge_deg</span> <span class="ow">in</span> <span class="n">sample_poles</span><span class="p">:</span>
-        <span class="n">discontinuity</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="o">.</span><span class="n">DiscontinuityDataVal</span><span class="p">()</span>
+        <span class="n">discontinuity</span> <span class="o">=</span> <span class="n">DiscontinuityDataVal</span><span class="p">()</span>
         <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation1</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">)</span>
         <span class="n">discontinuity</span><span class="o">.</span><span class="n">orientation2</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge_deg</span><span class="p">)</span>
         <span class="n">discontinuity</span><span class="o">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="mf">1.0</span>
@@ -449,23 +422,15 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="c1"># Get existing views</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">views</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetRosetteViewList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetRosetteViewList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">views</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetRosetteViewList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">views</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">views</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetRosetteViewList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetRosetteViewList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">views</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
     
     <span class="c1"># Create a new view</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Creating new Rosette view...&quot;</span><span class="p">)</span>
-        <span class="n">new_view</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">CreateRosetteView</span><span class="p">()</span>
-        <span class="n">view_value</span> <span class="o">=</span> <span class="n">new_view</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ CreateRosetteView: &#39;</span><span class="si">{</span><span class="n">view_value</span><span class="o">.</span><span class="n">view_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">new_view</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ CreateRosetteView: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">views</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">views</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Creating new Rosette view...&quot;</span><span class="p">)</span>
+    <span class="n">new_view</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">CreateRosetteView</span><span class="p">()</span>
+    <span class="n">view_value</span> <span class="o">=</span> <span class="n">new_view</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ CreateRosetteView: &#39;</span><span class="si">{</span><span class="n">view_value</span><span class="o">.</span><span class="n">view_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_view</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -479,18 +444,12 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="c1"># Legend visibility</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetLegendVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetLegendVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetLegendVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetLegendVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetLegendVisibility: True&quot;</span><span class="p">)</span>
     
     <span class="c1"># IsWeighted</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetIsWeighted: False&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetIsWeighted: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetIsWeighted</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetIsWeighted: False&quot;</span><span class="p">)</span>
     
     <span class="c1"># Rosette settings - use GetDefault</span>
     <span class="c1"># RosetteSettings properties:</span>
@@ -502,24 +461,18 @@
     <span class="c1">#   - custom_scaling: bool</span>
     <span class="c1">#   - num_planes_per_circle_increment: int</span>
     <span class="c1">#   - is_weighted: bool</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">rosette_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultRosetteSettings</span><span class="p">()</span>
-        <span class="n">rosette_settings</span><span class="o">.</span><span class="n">num_bins</span> <span class="o">=</span> <span class="mi">36</span>
-        <span class="n">rosette_settings</span><span class="o">.</span><span class="n">is_weighted</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetRosetteSettings</span><span class="p">(</span><span class="n">rosette_settings</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetRosetteSettings (36 bins)&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetRosetteSettings: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">rosette_settings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultRosetteSettings</span><span class="p">()</span>
+    <span class="n">rosette_settings</span><span class="o">.</span><span class="n">num_bins</span> <span class="o">=</span> <span class="mi">36</span>
+    <span class="n">rosette_settings</span><span class="o">.</span><span class="n">is_weighted</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetRosetteSettings</span><span class="p">(</span><span class="n">rosette_settings</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetRosetteSettings (36 bins)&quot;</span><span class="p">)</span>
     
     <span class="c1"># Projection mode - use GetDefault</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">projection</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultStereonetProjectionMode</span><span class="p">()</span>
-        <span class="n">projection</span><span class="o">.</span><span class="n">hemisphere_draw_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eHemisphereDrawOption</span><span class="o">.</span><span class="n">Lower</span>
-        <span class="n">projection</span><span class="o">.</span><span class="n">projection_method_draw_option</span> <span class="o">=</span> <span class="n">DipsAPI_pb2</span><span class="o">.</span><span class="n">eProjectionMethodDrawOption</span><span class="o">.</span><span class="n">EqualArea</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetProjectionMode</span><span class="p">(</span><span class="n">projection</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetProjectionMode: Lower Hemisphere, EqualArea&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetProjectionMode: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">projection</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDefaultStereonetProjectionMode</span><span class="p">()</span>
+    <span class="n">projection</span><span class="o">.</span><span class="n">hemisphere_draw_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eHemisphereDrawOption</span><span class="o">.</span><span class="n">Lower</span>
+    <span class="n">projection</span><span class="o">.</span><span class="n">projection_method_draw_option</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">eProjectionMethodDrawOption</span><span class="o">.</span><span class="n">EqualArea</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetProjectionMode</span><span class="p">(</span><span class="n">projection</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetProjectionMode: Lower Hemisphere, EqualArea&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -532,11 +485,8 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GROUP VISIBILITY&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">SetUserPlaneEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetUserPlaneEntityGroupVisibility: True&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetUserPlaneEntityGroupVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">SetUserPlaneEntityGroupVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetUserPlaneEntityGroupVisibility: True&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -549,11 +499,8 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ENTITY REFERENCES&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetUserPlaneEntityVisibilityList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetUserPlaneEntityVisibilityList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetUserPlaneEntityVisibilityList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetUserPlaneEntityVisibilityList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetUserPlaneEntityVisibilityList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span><span class="si">}</span><span class="s2"> found&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_individual_entity_visibility</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
@@ -562,15 +509,12 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INDIVIDUAL ENTITY VISIBILITY&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetUserPlaneEntityVisibilityList</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">entities</span><span class="p">:</span>
-            <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetUserPlaneEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetUserPlaneEntityVisibility: True&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetUserPlaneEntityVisibility: No user planes available&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetUserPlaneEntityVisibility: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">entities</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetUserPlaneEntityVisibilityList</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">entities</span><span class="p">:</span>
+        <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetRosetteUserPlaneEntityVisibility</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ SetRosetteUserPlaneEntityVisibility: True&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetRosetteUserPlaneEntityVisibility: No user planes available&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -584,27 +528,21 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="c1"># Get current active filter</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">active_filter</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetActiveDataFilter</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">active_filter</span><span class="p">:</span>
-            <span class="n">filter_value</span> <span class="o">=</span> <span class="n">active_filter</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetActiveDataFilter: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ GetActiveDataFilter: None (no active filter)&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetActiveDataFilter: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">active_filter</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetActiveDataFilter</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">active_filter</span><span class="p">:</span>
+        <span class="n">filter_value</span> <span class="o">=</span> <span class="n">active_filter</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetActiveDataFilter: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ✓ GetActiveDataFilter: None (no active filter)&quot;</span><span class="p">)</span>
     
     <span class="c1"># Set active filter (if filters exist)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">filters</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDataFilterList</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">filters</span><span class="p">:</span>
-            <span class="n">view</span><span class="o">.</span><span class="n">SetActiveDataFilter</span><span class="p">(</span><span class="n">filters</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ SetActiveDataFilter: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetActiveDataFilter: No filters available&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ SetActiveDataFilter: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">filters</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetDataFilterList</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">filters</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SetActiveDataFilter</span><span class="p">(</span><span class="n">filters</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">filter_value</span> <span class="o">=</span> <span class="n">filters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ SetActiveDataFilter: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - SetActiveDataFilter: No filters available&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -617,13 +555,10 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CLOSE VIEW&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">view_value</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-        <span class="n">view_name</span> <span class="o">=</span> <span class="n">view_value</span><span class="o">.</span><span class="n">view_name</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">CloseRosetteView</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ CloseRosetteView: &#39;</span><span class="si">{</span><span class="n">view_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ CloseRosetteView: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">view_value</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+    <span class="n">view_name</span> <span class="o">=</span> <span class="n">view_value</span><span class="o">.</span><span class="n">view_name</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">CloseRosetteView</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ CloseRosetteView: &#39;</span><span class="si">{</span><span class="n">view_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -638,31 +573,22 @@
     
     <span class="c1"># Connect to Dips</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
-    
+    <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
     
     <span class="c1"># Create sample data if needed</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SAMPLE DATA SETUP&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">traverses</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetTraverseList</span><span class="p">()</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">traverses</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating sample traverse with poles...&quot;</span><span class="p">)</span>
-            <span class="n">ods</span> <span class="o">=</span> <span class="n">create_sample_traverse_with_poles</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-            <span class="n">model</span><span class="o">.</span><span class="n">AddTraverse</span><span class="p">(</span><span class="n">ods</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created traverse with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> poles&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">traverses</span><span class="p">)</span><span class="si">}</span><span class="s2"> existing traverse(s)&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Note: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">traverses</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetTraverseList</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">traverses</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating sample traverse with poles...&quot;</span><span class="p">)</span>
+        <span class="n">ods</span> <span class="o">=</span> <span class="n">create_sample_traverse_with_poles</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">AddTraverse</span><span class="p">(</span><span class="n">ods</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created traverse with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ods</span><span class="o">.</span><span class="n">discontinuity_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> poles&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">traverses</span><span class="p">)</span><span class="si">}</span><span class="s2"> existing traverse(s)&quot;</span><span class="p">)</span>
     
     <span class="c1"># Get or create a view</span>
     <span class="n">views</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetRosetteViewList</span><span class="p">()</span>
@@ -720,7 +646,7 @@
 <span class="s2">  - GetUserPlaneEntityVisibilityList</span>
 
 <span class="s2">INDIVIDUAL ENTITY VISIBILITY (1 method):</span>
-<span class="s2">  - SetUserPlaneEntityVisibility</span>
+<span class="s2">  - SetRosetteUserPlaneEntityVisibility</span>
 
 <span class="s2">DATA FILTER (2 methods):</span>
 <span class="s2">  - GetActiveDataFilter</span>

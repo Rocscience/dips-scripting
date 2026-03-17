@@ -1,0 +1,7 @@
+dips.ValidatableResult\_List\_ProtoReference\_SetEntityInfoVal module
+=====================================================================
+
+.. automodule:: dips.ValidatableResult_List_ProtoReference_SetEntityInfoVal
+   :members:
+   :show-inheritance:
+   :undoc-members:

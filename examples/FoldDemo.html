@@ -361,53 +361,31 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsApp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dips</span><span class="w"> </span><span class="kn">import</span> <span class="n">DipsAPI_pb2</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.FoldWindowEntityInfoVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.WrappedFreehandWindowVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.FreehandWindowVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.AngleDataVal</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.FoldWindowEntityInfoVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">FoldWindowEntityInfoVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.WrappedFreehandWindowVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">WrappedFreehandWindowVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.FreehandWindowVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">FreehandWindowVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.TrendPlungeVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrendPlungeVal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dips.ColorSurrogateVal</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSurrogateVal</span>
 
 
 <span class="c1"># =============================================================================</span>
 <span class="c1"># HELPER FUNCTIONS</span>
 <span class="c1"># =============================================================================</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">create_trend_plunge</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plunge_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a TrendPlunge from degrees.&quot;&quot;&quot;</span>
-    <span class="n">tp</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">TrendPlungeVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">trend_deg</span><span class="p">)</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="o">.</span><span class="n">AngleDataVal</span><span class="p">()</span>
-    <span class="n">tp</span><span class="o">.</span><span class="n">plunge</span><span class="o">.</span><span class="n">angle_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">plunge_deg</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">tp</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">create_color</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">255</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Color from RGBA values.&quot;&quot;&quot;</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">ColorSurrogateVal</span><span class="p">()</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-    <span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
-    <span class="k">return</span> <span class="n">color</span>
-
-
 <span class="k">def</span><span class="w"> </span><span class="nf">create_freehand_window</span><span class="p">(</span><span class="n">polygon_points</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a FreehandWindow from a list of (trend, plunge) tuples.&quot;&quot;&quot;</span>
-    <span class="n">window</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="p">()</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">FreehandWindowVal</span><span class="p">()</span>
     <span class="c1"># Use append() for protobuf list fields instead of direct assignment</span>
     <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">polygon_points</span><span class="p">:</span>
-        <span class="n">window</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_trend_plunge</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+        <span class="n">window</span><span class="o">.</span><span class="n">polygon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TrendPlungeVal</span><span class="o">.</span><span class="n">FromTrendPlunge</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
     <span class="n">window</span><span class="o">.</span><span class="n">is_wrapped</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">return</span> <span class="n">window</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">create_empty_freehand_window</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an empty FreehandWindow (for secondary window when not wrapped).&quot;&quot;&quot;</span>
-    <span class="n">window</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="o">.</span><span class="n">FreehandWindowVal</span><span class="p">()</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">FreehandWindowVal</span><span class="p">()</span>
     <span class="n">window</span><span class="o">.</span><span class="n">is_wrapped</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">return</span> <span class="n">window</span>
 
@@ -421,14 +399,14 @@
     <span class="n">secondary</span> <span class="o">=</span> <span class="n">create_empty_freehand_window</span><span class="p">()</span>
     
     <span class="c1"># Create the wrapped freehand window</span>
-    <span class="n">wrapped</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">WrappedFreehandWindowVal</span><span class="o">.</span><span class="n">WrappedFreehandWindowVal</span><span class="p">()</span>
+    <span class="n">wrapped</span> <span class="o">=</span> <span class="n">WrappedFreehandWindowVal</span><span class="p">()</span>
     <span class="n">wrapped</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">fold_id</span>
     <span class="n">wrapped</span><span class="o">.</span><span class="n">primary_window</span> <span class="o">=</span> <span class="n">primary</span>
     <span class="n">wrapped</span><span class="o">.</span><span class="n">secondary_window</span> <span class="o">=</span> <span class="n">secondary</span>
     
     <span class="c1"># Create the fold window entity info</span>
-    <span class="n">fold_info</span> <span class="o">=</span> <span class="n">dips</span><span class="o">.</span><span class="n">FoldWindowEntityInfoVal</span><span class="o">.</span><span class="n">FoldWindowEntityInfoVal</span><span class="p">()</span>
-    <span class="n">fold_info</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">create_color</span><span class="p">(</span><span class="o">*</span><span class="n">color_tuple</span><span class="p">)</span>
+    <span class="n">fold_info</span> <span class="o">=</span> <span class="n">FoldWindowEntityInfoVal</span><span class="p">()</span>
+    <span class="n">fold_info</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">ColorSurrogateVal</span><span class="o">.</span><span class="n">FromRGBA</span><span class="p">(</span><span class="o">*</span><span class="n">color_tuple</span><span class="p">)</span>
     <span class="n">fold_info</span><span class="o">.</span><span class="n">wrapped_freehand_fold_window</span> <span class="o">=</span> <span class="n">wrapped</span>
     
     <span class="k">return</span> <span class="n">fold_info</span>
@@ -444,29 +422,25 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADD FOLD WINDOW&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Define a triangular fold window region</span>
-        <span class="c1"># Points define a polygon on the stereonet (trend/plunge pairs)</span>
-        <span class="n">polygon_points</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>   <span class="c1"># Point 1</span>
-            <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>   <span class="c1"># Point 2</span>
-            <span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span>   <span class="c1"># Point 3</span>
-            <span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>   <span class="c1"># Point 4</span>
-        <span class="p">]</span>
-        
-        <span class="n">fold_info</span> <span class="o">=</span> <span class="n">create_fold_window</span><span class="p">(</span>
-            <span class="n">fold_id</span><span class="o">=</span><span class="s2">&quot;DemoFold&quot;</span><span class="p">,</span>
-            <span class="n">color_tuple</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>  <span class="c1"># Orange</span>
-            <span class="n">polygon_points</span><span class="o">=</span><span class="n">polygon_points</span>
-        <span class="p">)</span>
-        
-        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddFoldWindow</span><span class="p">(</span><span class="n">fold_info</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddFoldWindow: &#39;DemoFold&#39;&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Polygon with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">polygon_points</span><span class="p">)</span><span class="si">}</span><span class="s2"> vertices&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ AddFoldWindow: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1"># Define a triangular fold window region</span>
+    <span class="c1"># Points define a polygon on the stereonet (trend/plunge pairs)</span>
+    <span class="n">polygon_points</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>   <span class="c1"># Point 1</span>
+        <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>   <span class="c1"># Point 2</span>
+        <span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span>   <span class="c1"># Point 3</span>
+        <span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>   <span class="c1"># Point 4</span>
+    <span class="p">]</span>
+    
+    <span class="n">fold_info</span> <span class="o">=</span> <span class="n">create_fold_window</span><span class="p">(</span>
+        <span class="n">fold_id</span><span class="o">=</span><span class="s2">&quot;DemoFold&quot;</span><span class="p">,</span>
+        <span class="n">color_tuple</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>  <span class="c1"># Orange</span>
+        <span class="n">polygon_points</span><span class="o">=</span><span class="n">polygon_points</span>
+    <span class="p">)</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddFoldWindow</span><span class="p">(</span><span class="n">fold_info</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ AddFoldWindow: &#39;DemoFold&#39;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Polygon with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">polygon_points</span><span class="p">)</span><span class="si">}</span><span class="s2"> vertices&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_get_fold_list</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -475,18 +449,14 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GET FOLD LIST&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">folds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetFoldList</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetFoldList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">folds</span><span class="p">)</span><span class="si">}</span><span class="s2"> fold(s) found&quot;</span><span class="p">)</span>
-        
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">fold_ref</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">folds</span><span class="p">):</span>
-            <span class="n">fold_value</span> <span class="o">=</span> <span class="n">fold_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    [</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">] ID: &#39;</span><span class="si">{</span><span class="n">fold_value</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        
-        <span class="k">return</span> <span class="n">folds</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ GetFoldList: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">folds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetFoldList</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ GetFoldList: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">folds</span><span class="p">)</span><span class="si">}</span><span class="s2"> fold(s) found&quot;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">fold_ref</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">folds</span><span class="p">):</span>
+        <span class="n">fold_value</span> <span class="o">=</span> <span class="n">fold_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    [</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">] ID: &#39;</span><span class="si">{</span><span class="n">fold_value</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">folds</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_delete_fold</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">fold_ref</span><span class="p">):</span>
@@ -499,13 +469,10 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - DeleteFold: No fold to delete&quot;</span><span class="p">)</span>
         <span class="k">return</span>
     
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">fold_value</span> <span class="o">=</span> <span class="n">fold_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-        <span class="n">fold_id</span> <span class="o">=</span> <span class="n">fold_value</span><span class="o">.</span><span class="n">id</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">DeleteFold</span><span class="p">(</span><span class="n">fold_ref</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ DeleteFold: &#39;</span><span class="si">{</span><span class="n">fold_id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ DeleteFold: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">fold_value</span> <span class="o">=</span> <span class="n">fold_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+    <span class="n">fold_id</span> <span class="o">=</span> <span class="n">fold_value</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">DeleteFold</span><span class="p">(</span><span class="n">fold_ref</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ DeleteFold: &#39;</span><span class="si">{</span><span class="n">fold_id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_multiple_folds</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -530,13 +497,10 @@
     <span class="n">created_folds</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="k">for</span> <span class="n">fold_id</span><span class="p">,</span> <span class="n">color_rgb</span><span class="p">,</span> <span class="n">polygon_points</span> <span class="ow">in</span> <span class="n">fold_examples</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">fold_info</span> <span class="o">=</span> <span class="n">create_fold_window</span><span class="p">(</span><span class="n">fold_id</span><span class="p">,</span> <span class="n">color_rgb</span><span class="p">,</span> <span class="n">polygon_points</span><span class="p">)</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddFoldWindow</span><span class="p">(</span><span class="n">fold_info</span><span class="p">)</span>
-            <span class="n">created_folds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created: &#39;</span><span class="si">{</span><span class="n">fold_id</span><span class="si">}</span><span class="s2">&#39; (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">polygon_points</span><span class="p">)</span><span class="si">}</span><span class="s2"> vertices)&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Failed to create &#39;</span><span class="si">{</span><span class="n">fold_id</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">fold_info</span> <span class="o">=</span> <span class="n">create_fold_window</span><span class="p">(</span><span class="n">fold_id</span><span class="p">,</span> <span class="n">color_rgb</span><span class="p">,</span> <span class="n">polygon_points</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AddFoldWindow</span><span class="p">(</span><span class="n">fold_info</span><span class="p">)</span>
+        <span class="n">created_folds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Created: &#39;</span><span class="si">{</span><span class="n">fold_id</span><span class="si">}</span><span class="s2">&#39; (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">polygon_points</span><span class="p">)</span><span class="si">}</span><span class="s2"> vertices)&quot;</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">created_folds</span>
 
@@ -548,12 +512,9 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
     
     <span class="k">for</span> <span class="n">fold_ref</span> <span class="ow">in</span> <span class="n">folds_to_delete</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">fold_value</span> <span class="o">=</span> <span class="n">fold_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-            <span class="n">model</span><span class="o">.</span><span class="n">DeleteFold</span><span class="p">(</span><span class="n">fold_ref</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Deleted: &#39;</span><span class="si">{</span><span class="n">fold_value</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✗ Delete failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">fold_value</span> <span class="o">=</span> <span class="n">fold_ref</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">DeleteFold</span><span class="p">(</span><span class="n">fold_ref</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✓ Deleted: &#39;</span><span class="si">{</span><span class="n">fold_value</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># =============================================================================</span>
@@ -568,14 +529,8 @@
     
     <span class="c1"># Connect to Dips</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Connecting to Dips application...&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✗ Failed to connect: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make sure Dips is running with scripting enabled on port 62535&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
-    
+    <span class="n">app</span> <span class="o">=</span> <span class="n">DipsApp</span><span class="o">.</span><span class="n">LaunchApp</span><span class="p">(</span><span class="mi">62535</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Connected to Dips&quot;</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetModel</span><span class="p">()</span>
     
     <span class="c1"># Show initial state</span>
